@@ -525,13 +525,15 @@
 
     const PRELOADED_QUESTIONS = [];
 
-    let questionBank = [];
-    let userHistory = {};
-    let lectureSlidesMap = {
+    const DEFAULT_SLIDES_MAP = {
       "Renal functional anatomy & development": "slides/w1_01_renal_functional_anatomy_and_development_slides.pdf",
       "Renal histology": "slides/w1_02_renal_histology_slides.pdf",
       "Nitrogen disposal and the urea cycle I & II": "slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
     };
+
+    let questionBank = [];
+    let userHistory = {};
+    let lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
     let activeModalLecture = '';
     let currentQuiz = [];
     let currentIndex = 0;
@@ -570,10 +572,41 @@
       });
     }
 
+    function normalizeKey(s) {
+      if (!s) return "";
+      return s.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '');
+    }
+
+    function getSlideUrl(lecName) {
+      if (!lecName) return null;
+      if (lectureSlidesMap[lecName]) return lectureSlidesMap[lecName];
+      const norm = normalizeKey(lecName);
+      for (const k of Object.keys(lectureSlidesMap)) {
+        if (normalizeKey(k) === norm) {
+          return lectureSlidesMap[k];
+        }
+      }
+      return null;
+    }
+
+    function setSlideUrl(lecName, url) {
+      if (!lecName) return;
+      lectureSlidesMap[lecName] = url;
+      const normKey = normalizeKey(lecName);
+      for (const k of Object.keys(lectureSlidesMap)) {
+        if (normalizeKey(k) === normKey) {
+          lectureSlidesMap[k] = url;
+        }
+      }
+    }
+
     function loadSlidesMap() {
       try {
         const savedMap = localStorage.getItem('renal_quiz_slides');
-        if (savedMap) lectureSlidesMap = JSON.parse(savedMap);
+        if (savedMap) {
+          const parsed = JSON.parse(savedMap);
+          lectureSlidesMap = { ...DEFAULT_SLIDES_MAP, ...parsed };
+        }
       } catch(e) { console.warn('localStorage slides map read error:', e); }
     }
 
@@ -619,7 +652,6 @@
     async function loadRemoteQuestions() {
       let remoteQuestions = [];
       
-      // 1. Try to fetch questions/manifest.json relative to index.html
       try {
         const manifestRes = await fetch('questions/manifest.json');
         if (manifestRes.ok) {
@@ -640,8 +672,8 @@
                 const rootLec = manifestLec || data.lecture_title || data.lecture || 'General Vignettes';
                 
                 const slideSource = manifestSlides || data.slides || data.slides_url || data.pdf;
-                if (slideSource && rootLec && !lectureSlidesMap[rootLec]) {
-                  lectureSlidesMap[rootLec] = slideSource;
+                if (slideSource && rootLec) {
+                  setSlideUrl(rootLec, slideSource);
                 }
 
                 items.forEach((item, idx) => {
@@ -649,8 +681,8 @@
                   const cat = manifestCat || determineCategory(item, data, filePath);
                   const itemLec = item.lecture_title || manifestLec || rootLec || item.lecture || 'General Vignettes';
 
-                  if ((item.slides || item.slides_url) && !lectureSlidesMap[itemLec]) {
-                    lectureSlidesMap[itemLec] = item.slides || item.slides_url;
+                  if (item.slides || item.slides_url) {
+                    setSlideUrl(itemLec, item.slides || item.slides_url);
                   }
 
                   remoteQuestions.push({
@@ -675,56 +707,6 @@
         console.warn("No questions/manifest.json found or failed to fetch:", err);
       }
 
-      // 2. If running on GitHub Pages and manifest wasn't found, auto-detect JSON files via GitHub API
-      if (remoteQuestions.length === 0 && location.hostname.endsWith('github.io')) {
-        try {
-          const parts = location.pathname.split('/').filter(Boolean);
-          if (parts.length > 0) {
-            const repoOwner = location.hostname.split('.')[0];
-            const repoName = parts[0];
-            const apiRes = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/questions`);
-            if (apiRes.ok) {
-              const files = await apiRes.json();
-              const jsonFiles = files.filter(f => f.name.endsWith('.json') && f.name !== 'manifest.json');
-              for (const file of jsonFiles) {
-                try {
-                  const qRes = await fetch(file.download_url || file.path);
-                  if (qRes.ok) {
-                    const data = await qRes.json();
-                    const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || data.data || []);
-                    const rootLec = data.lecture_title || data.lecture || 'General Vignettes';
-
-                    if ((data.slides || data.slides_url) && rootLec && !lectureSlidesMap[rootLec]) {
-                      lectureSlidesMap[rootLec] = data.slides || data.slides_url;
-                    }
-
-                    items.forEach((item, idx) => {
-                      const qId = item.id ? String(item.id) : `gh_${file.name.replace(/[^a-zA-Z0-9]/g, '_')}_${idx}`;
-                      const cat = determineCategory(item, data, file.name);
-                      const itemLec = item.lecture_title || rootLec || item.lecture || 'General Vignettes';
-
-                      remoteQuestions.push({
-                        id: qId,
-                        vignette: item.vignette || item.question || '',
-                        options: item.options || {},
-                        correct_answer: item.correct_answer || item.correctAnswer || 'A',
-                        explanation: item.rationale || item.explanation || item.reasoning || '',
-                        category: cat,
-                        lecture: itemLec,
-                        order: item.order || ''
-                      });
-                    });
-                  }
-                } catch(e) {}
-              }
-              saveSlidesMap();
-            }
-          }
-        } catch(e) {
-          console.warn("GitHub API auto-detect failed:", e);
-        }
-      }
-
       return remoteQuestions;
     }
 
@@ -736,53 +718,18 @@
         if (savedHist) userHistory = JSON.parse(savedHist);
       } catch(e) { console.warn('localStorage read error:', e); }
 
-      try {
-        const db = await initDB();
-        if (db) {
-          const tx = db.transaction("store", "readonly");
-          const store = tx.objectStore("store");
-          const bankReq = store.get("renal_quiz_bank");
-          const histReq = store.get("renal_quiz_history");
-
-          await new Promise((resolve) => {
-            let done = 0;
-            const check = () => { done++; if (done === 2) resolve(); };
-            bankReq.onsuccess = function() {
-              if (bankReq.result && (!questionBank || questionBank.length === 0)) {
-                questionBank = bankReq.result;
-              }
-              check();
-            };
-            bankReq.onerror = check;
-            histReq.onsuccess = function() {
-              if (histReq.result && Object.keys(userHistory).length === 0) {
-                userHistory = histReq.result;
-              }
-              check();
-            };
-            histReq.onerror = check;
-          });
-        }
-      } catch(e) { console.warn('IndexedDB read error:', e); }
-
-      // Check for remote question files in questions/ folder
       const remoteQs = await loadRemoteQuestions();
       if (remoteQs.length > 0) {
-        // Upsert remote questions into questionBank (updates categories/lectures if changed)
         remoteQs.forEach(rq => {
           const idx = questionBank.findIndex(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
           if (idx >= 0) {
-            questionBank[idx] = {
-              ...questionBank[idx],
-              ...rq
-            };
+            questionBank[idx] = { ...questionBank[idx], ...rq };
           } else {
             questionBank.push(rq);
           }
         });
         saveToStorage();
       } else if (!questionBank || questionBank.length === 0) {
-        // Fallback to inline preloaded questions if offline
         questionBank = [...PRELOADED_QUESTIONS];
         saveToStorage();
       }
@@ -809,15 +756,6 @@
         localStorage.setItem('renal_quiz_bank', JSON.stringify(questionBank));
         localStorage.setItem('renal_quiz_history', JSON.stringify(userHistory));
       } catch(e) { console.warn('localStorage write error:', e); }
-
-      try {
-        if (dbInstance) {
-          const tx = dbInstance.transaction("store", "readwrite");
-          const store = tx.objectStore("store");
-          store.put(questionBank, "renal_quiz_bank");
-          store.put(userHistory, "renal_quiz_history");
-        }
-      } catch(e) { console.warn('IndexedDB write error:', e); }
     }
 
     function changeTheme(themeName) {
@@ -841,7 +779,7 @@
     // SLIDE VIEWER MODAL FUNCTIONS
     function openSlidesModal(lectureTitle, categoryName) {
       activeModalLecture = lectureTitle || 'General Vignettes';
-      const slideUrl = lectureSlidesMap[activeModalLecture];
+      const slideUrl = getSlideUrl(activeModalLecture);
 
       document.getElementById('modal-lecture-title').innerText = activeModalLecture;
       document.getElementById('modal-lecture-subtitle').innerText = categoryName ? `${categoryName} • Lecture Slides` : 'Lecture Slides';
@@ -887,9 +825,9 @@
       const choice = confirm(`Configure slides for "${targetLecture}":\n\nClick [OK] to enter a Web/PDF URL.\nClick [Cancel] to upload a local PDF file.`);
       
       if (choice) {
-        const url = prompt(`Paste PDF or Google Slides URL for "${targetLecture}":`, lectureSlidesMap[targetLecture] || "");
+        const url = prompt(`Paste PDF or Google Slides URL for "${targetLecture}":`, getSlideUrl(targetLecture) || "");
         if (url !== null && url.trim() !== "") {
-          lectureSlidesMap[targetLecture] = url.trim();
+          setSlideUrl(targetLecture, url.trim());
           saveSlidesMap();
           showToast(`Saved slides link for "${targetLecture}"`);
           openSlidesModal(targetLecture);
@@ -904,7 +842,7 @@
           if (file) {
             const reader = new FileReader();
             reader.onload = function(evt) {
-              lectureSlidesMap[targetLecture] = evt.target.result;
+              setSlideUrl(targetLecture, evt.target.result);
               saveSlidesMap();
               showToast(`Attached PDF file to "${targetLecture}"`);
               openSlidesModal(targetLecture);
@@ -947,7 +885,7 @@
           lectureNames.forEach(lec => {
             const count = lectures[lec];
             const lecKey = `${cat}::${lec}`;
-            const hasSlides = !!lectureSlidesMap[lec];
+            const hasSlides = !!getSlideUrl(lec);
             const slideBadgeStyle = hasSlides ? "bg-blue-600 text-white" : "bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 opacity-70";
 
             lectureCheckboxesHTML += `
@@ -1221,7 +1159,28 @@
       const container = document.getElementById('review-list-container');
       container.innerHTML = '';
 
-      const pool = currentQuiz.length > 0 ? currentQuiz : questionBank;
+      let pool = [];
+      if (currentQuiz && currentQuiz.length > 0) {
+        pool = currentQuiz;
+      } else {
+        pool = questionBank.filter(q => {
+          const hist = userHistory[q.id];
+          return hist && (hist.status === 'correct' || hist.status === 'incorrect' || hist.bookmarked === true);
+        });
+      }
+
+      if (pool.length === 0) {
+        container.innerHTML = `
+          <div class="card-theme rounded-2xl p-12 text-center border space-y-3">
+            <div class="text-4xl">📝</div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">You have no questions to review</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 max-w-md mx-auto">
+              You haven't answered or bookmarked any questions yet. Start a quiz session in the <strong>Launcher</strong> tab or answer practice questions to see your review and rationales here!
+            </p>
+          </div>
+        `;
+        return;
+      }
 
       const filtered = pool.filter(q => {
         const hist = userHistory[q.id] || { status: 'unused', bookmarked: false };
@@ -1360,7 +1319,7 @@
           items = parsed.usmle_practice_problems || parsed.questions || parsed.data || parsed.items || [];
           
           if (parsed.slides || parsed.slides_url) {
-            lectureSlidesMap[rootLectureTitle] = parsed.slides || parsed.slides_url;
+            setSlideUrl(rootLectureTitle, parsed.slides || parsed.slides_url);
             saveSlidesMap();
           }
 
@@ -1386,7 +1345,7 @@
           const qExplanation = item.rationale || item.explanation || item.reasoning || '';
 
           if (item.slides || item.slides_url) {
-            lectureSlidesMap[qLecture] = item.slides || item.slides_url;
+            setSlideUrl(qLecture, item.slides || item.slides_url);
           }
 
           const newQ = {
@@ -1434,10 +1393,7 @@
         remoteQs.forEach(rq => {
           const idx = questionBank.findIndex(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
           if (idx >= 0) {
-            questionBank[idx] = {
-              ...questionBank[idx],
-              ...rq
-            };
+            questionBank[idx] = { ...questionBank[idx], ...rq };
             updatedCount++;
           } else {
             questionBank.push(rq);
@@ -1445,10 +1401,11 @@
           }
         });
         saveToStorage();
+        saveSlidesMap();
         renderCategoryGrid();
         renderAnalytics();
         renderReviewList();
-        showToast(`Synced! Updated ${updatedCount} questions from repository.`);
+        showToast(`Synced! Updated ${updatedCount} questions & slides.`);
       } else {
         showToast("No new question files found in questions/ folder.");
       }
@@ -1456,21 +1413,32 @@
 
     function resetToPreloaded() {
       questionBank = [...PRELOADED_QUESTIONS];
+      localStorage.removeItem('renal_quiz_slides');
+      localStorage.removeItem('renal_quiz_bank');
+      localStorage.removeItem('renal_quiz_history');
+      userHistory = {};
+      lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
+      saveSlidesMap();
       saveToStorage();
       renderCategoryGrid();
       renderAnalytics();
       renderReviewList();
-      showToast("Question bank reset to empty local state.");
+      showToast("Question bank & cache reset.");
     }
 
     function clearQuestionBank() {
       questionBank = [];
       userHistory = {};
+      localStorage.removeItem('renal_quiz_slides');
+      localStorage.removeItem('renal_quiz_bank');
+      localStorage.removeItem('renal_quiz_history');
+      lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
+      saveSlidesMap();
       saveToStorage();
       renderCategoryGrid();
       renderAnalytics();
       renderReviewList();
-      showToast("Cleared question bank.");
+      showToast("Cleared question bank & cache.");
     }
 
     // RADAR ANALYTICS: Evaluates accuracy (Correct ÷ Answered) for answered questions
