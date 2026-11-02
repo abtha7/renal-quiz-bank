@@ -1,1 +1,286 @@
-
+{
+  "lecture_title": "Renal Histology",
+  "total_questions": 20,
+  "usmle_practice_problems": [
+    {
+      "lecture_title": "Renal Histology",
+      "order": "1st order",
+      "vignette": "A 26-year-old male presents to the emergency department with hemoptysis, dyspnea, and cola-colored urine. Laboratory evaluation reveals elevated serum creatinine and hematuria with dysmorphic red blood cells. A renal core biopsy shows crescentic glomerulonephritis with extensive cellular crescents occupying Bowman capsular space. Immunofluorescence microscopy demonstrates smooth, linear deposition of IgG along the glomerular basement membrane (GBM). In Goodpasture syndrome, the pathogenic autoantibodies are specifically directed against which of the following molecular components of the GBM?",
+      "options": {
+        "A": "Type I collagen",
+        "B": "Type IV collagen",
+        "C": "Heparan sulfate proteoglycan",
+        "D": "Podocalyxin",
+        "E": "Nephrin"
+      },
+      "correct_answer": "B",
+      "rationale": "Goodpasture syndrome is an autoimmune disorder caused by circulating anti-GBM antibodies targeted specifically against the non-collagenous domain of type IV collagen within the glomerular basement membrane (and alveolar basement membrane). Disruption of the GBM leads to rapidly progressive crescentic glomerulonephritis and pulmonary alveolar hemorrhage."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 2-week-old female infant is evaluated in the pediatric intensive care unit for massive generalized edema, severe hypoalbuminemia (serum albumin: 1.4 g/dL), and heavy selective proteinuria (> 2 g/24 hr). Renal ultrasonography demonstrates bilaterally enlarged, hyperechoic kidneys. Genetic testing confirms congenital nephrotic syndrome of the Finnish type (CNF), an autosomal recessive disorder caused by a homozygous mutation in the NPHS1 gene. The transmembrane protein encoded by this mutated gene normally forms which of the following critical structures of the glomerular filtration barrier?",
+      "options": {
+        "A": "Endothelial cell fenestrations",
+        "B": "Lamina densa of the glomerular basement membrane",
+        "C": "Filtration slit diaphragms between podocyte pedicels",
+        "D": "Intraglomerular mesangial matrix anchors",
+        "E": "Apical brush border tight junctions of the proximal tubule"
+      },
+      "correct_answer": "C",
+      "rationale": "Congenital nephrotic syndrome of the Finnish type (CNF) is caused by autosomal recessive mutations in the NPHS1 gene, which encodes nephrin. Nephrin is an essential transmembrane adhesion protein that interdigitates with cadherins to assemble the ultra-thin filtration slit diaphragms bridging the filtration slits between podocyte foot processes (pedicels). Defective nephrin abolishes size selectivity, producing profound congenital nephrotic-range proteinuria."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 58-year-old male with long-standing atherosclerotic renovascular disease presents with severe, treatment-resistant hypertension. Renal angiography demonstrates severe bilateral renal artery stenosis. The resulting reduction in renal perfusion pressure stimulates the juxtaglomerular apparatus (JGA) to increase the synthesis and systemic release of renin, driving secondary hyperaldosteronism. The specific granulated secretory cells responsible for releasing renin into the circulation represent specialized modifications of which of the following cellular elements?",
+      "options": {
+        "A": "Simple cuboidal epithelial cells of the distal straight tubule",
+        "B": "Vascular smooth muscle cells of the afferent arteriole",
+        "C": "Extraglomerular lacis mesangial cells",
+        "D": "Fenestrated endothelial cells of glomerular capillaries",
+        "E": "Parietal epithelial cells of Bowman capsule"
+      },
+      "correct_answer": "B",
+      "rationale": "Juxtaglomerular granular cells (JG cells) are modified vascular smooth muscle cells located predominantly in the tunica media of the afferent arteriole near the vascular pole of the renal corpuscle. They function as intrarenal baroreceptors and synthesize, store, and secrete renin into the bloodstream in response to decreased arterial perfusion pressure or paracrine stimulation from the macula densa."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A pathologist examines a renal cortical biopsy taken from a patient who developed acute tubular necrosis following prolonged hypovolemic shock. Light microscopy reveals extensive ischemic injury isolated primarily to tubules within the cortical labyrinth that display tall simple cuboidal epithelial cells with a densely packed apical brush border of microvilli that occludes the lumen, extensive lateral interdigitations, and abundant basal mitochondria. In addition to reabsorbing the majority of filtered water, sodium, glucose, and amino acids, epithelial cells of this specific nephron segment normally perform which of the following physiological functions?",
+      "options": {
+        "A": "Secretion of renin into the afferent arteriolar lumen",
+        "B": "Hydroxylation of 25-hydroxyvitamin D into active 1,25-dihydroxyvitamin D (calcitriol)",
+        "C": "Parathyroid hormone-dependent reabsorption of calcium without a brush border",
+        "D": "Vasopressin-regulated insertion of aquaporin-2 water channels",
+        "E": "Active secretion of hydrogen ions via intercalated cells"
+      },
+      "correct_answer": "B",
+      "rationale": "The histological features (tall simple cuboidal epithelium, prominent apical microvillar brush border creating an irregular lumen, indistinct cell boundaries due to lateral interdigitations, and rich basal mitochondria) identify the proximal convoluted tubule (PCT). In addition to carrying out bulk solute and water reabsorption, PCT epithelial cells uniquely express 1-alpha-hydroxylase, which converts 25-hydroxyvitamin D into active 1,25-dihydroxyvitamin D (calcitriol)."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "5th order",
+      "vignette": "A 64-year-old female with a 22-year history of poorly controlled type 2 diabetes mellitus presents with worsening bilateral lower extremity pitting edema and foamy urine. Laboratory evaluation reveals heavy proteinuria (4.6 g/24 hr) and hypoalbuminemia (serum albumin: 2.1 g/dL). A renal biopsy confirms nodular diabetic glomerulosclerosis (Kimmelstiel-Wilson lesions) with advanced effacement of the glomerular filtration barrier and total collapse of its charge-selective filter. Under normal physiological conditions, the filtration slits situated between interdigitating podocyte pedicels remain patent and resist collapse because the apical surface of the foot processes is coated by a thick glycocalyx bearing dense negative electrostatic charges that also repel filtered polyanions. Which of the following specific transmembrane sialoglycoproteins in the podocyte glycocalyx is primarily responsible for generating these negative charges to keep the filtration slits open?",
+      "options": {
+        "A": "Nephrin",
+        "B": "Podocalyxin",
+        "C": "P-cadherin",
+        "D": "Alpha-actinin",
+        "E": "Type IV collagen"
+      },
+      "correct_answer": "B",
+      "rationale": "This multi-step question requires working through a 5-step clinical-histological reasoning sequence: (1) Recognize the clinical syndrome: diabetic glomerulosclerosis causing disruption of the glomerular filtration barrier (GFB) and loss of charge selectivity, leading to nephrotic-range proteinuria; (2) Identify the outermost cellular layer of the GFB: the visceral layer of Bowman capsule consisting of specialized epithelial cells (podocytes) with interdigitating foot processes (pedicels); (3) Understand the physical forces maintaining filtration slit architecture: without electrostatic repulsion, adjacent pedicels would collapse onto one another and obliterate the filtration slits; (4) Recall the molecular composition of the podocyte apical surface: foot processes are covered by an extensive, negatively charged glycocalyx; (5) Identify the key functional protein: podocalyxin is the principal negatively charged transmembrane sialoglycoprotein of the podocyte apical glycocalyx that provides mutual electrostatic repulsion to keep adjacent filtration slits open and contributes to repelling polyanionic plasma proteins (such as albumin)."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "1st order",
+      "vignette": "A 48-year-old male presents with polydipsia, polyuria, and chronic fatigue. A 24-hour urine collection demonstrates a daily volume of 5.5 L with a urine osmolality of 120 mOsm/kg. An MRI of the brain confirms a diagnosis of central diabetes insipidus resulting from deficient secretion of antidiuretic hormone (ADH) from the posterior pituitary. In the renal collecting duct epithelium, the targeted insertion of aquaporin-2 water channels that mediates ADH-dependent water reabsorption occurs in which of the following specific cell types?",
+      "options": {
+        "A": "Alpha-intercalated cells",
+        "B": "Beta-intercalated cells",
+        "C": "Principal cells",
+        "D": "Macula densa cells",
+        "E": "Lacis cells"
+      },
+      "correct_answer": "C",
+      "rationale": "In the cortical and medullary collecting ducts, principal (light) cells are the predominant cell type responsible for water reabsorption. In response to antidiuretic hormone (ADH/vasopressin) released from the posterior pituitary, aquaporin-2 channels are translocated to the apical membrane of principal cells to facilitate free water reabsorption."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 34-year-old female presents to the nephrology clinic for evaluation of persistent metabolic acidosis. Laboratory evaluation reveals a normal anion gap metabolic acidosis with hypokalemia and an abnormally alkaline urine pH of 6.2 (reference: < 5.3 in the setting of systemic acidemia). A diagnosis of Type 1 (distal) renal tubular acidosis is established. This disorder is caused by impaired apical proton (H+) secretion into the tubular lumen by which of the following cells in the collecting duct system?",
+      "options": {
+        "A": "Alpha-intercalated cells",
+        "B": "Beta-intercalated cells",
+        "C": "Principal cells",
+        "D": "Podocytes",
+        "E": "Juxtaglomerular granular cells"
+      },
+      "correct_answer": "A",
+      "rationale": "Alpha-intercalated cells of the collecting ducts are specialized for net acid secretion. They actively pump hydrogen ions (H+) across their apical membranes into the tubular lumen via H+-ATPase and H+/K+-ATPase transporters to acidify urine and regenerate bicarbonate. Failure of apical proton pumping by alpha-intercalated cells produces distal (Type 1) renal tubular acidosis, characterized by an inability to acidify urine below pH 5.3 despite systemic acidemia."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A renal pathologist examines a kidney biopsy from a 23-year-old male with recurrent macroscopic hematuria following an upper respiratory infection. Light microscopy of the renal corpuscles reveals prominent hypercellularity and matrix expansion restricted exclusively to the central stalk regions supporting the glomerular capillary loops, accompanied by diffuse mesangial IgA immune complex deposition. In normal glomeruli, which of the following physiological functions is carried out by the resident stromal cells occupying this central stalk region?",
+      "options": {
+        "A": "Synthesis and secretion of renin into the afferent arteriolar lumen",
+        "B": "Phagocytosis of macromolecules and immune complexes trapped on the filtration barrier",
+        "C": "Formation of filtration slit diaphragms bridging adjacent pedicels",
+        "D": "Monitoring of luminal sodium and chloride concentrations in the distal tubule",
+        "E": "Active hydroxylation of 25-hydroxyvitamin D into calcitriol"
+      },
+      "correct_answer": "B",
+      "rationale": "Intraglomerular mesangial cells form the structural central core/stalk of the glomerulus. Key functions of mesangial cells include structural support of glomerular capillary loops, phagocytosis and clearance of aggregated proteins, macromolecules, and immune complexes adhered to the glomerular basement membrane, secretion of inflammatory and repair cytokines, and contractile regulation of capillary blood flow in response to blood pressure fluctuations."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 52-year-old female presents to the emergency department with profound weakness and lightheadedness following three days of severe vomiting and watery diarrhea. Physical examination demonstrates severe orthostatic hypotension (blood pressure 88/54 mmHg seated, dropping to 72/40 mmHg standing) and dry mucous membranes. In response to reduced renal perfusion pressure and decreased glomerular filtration rate, the concentration of sodium chloride reaching the early distal tubule drops precipitously. Specialized sensor cells situated at the transition between the distal straight tubule and distal convoluted tubule detect this decrease in luminal sodium and chloride. What histological appearance uniquely characterizes these sensor cells relative to the adjacent tubular epithelium?",
+      "options": {
+        "A": "Tall, tightly packed columnar epithelial cells with closely spaced, hyperchromatic nuclei",
+        "B": "Large cuboidal cells with a prominent apical brush border occluding the lumen",
+        "C": "Flattened simple squamous cells with bulging central nuclei",
+        "D": "Modified vascular smooth muscle cells containing basophilic cytoplasmic granules",
+        "E": "Large binucleated cells displaying umbrella-shaped apical plaques"
+      },
+      "correct_answer": "A",
+      "rationale": "The macula densa consists of specialized, crowded columnar epithelial cells located in the wall of the distal tubule at the transition from the distal straight tubule (thick ascending limb) to the distal convoluted tubule where it contacts the vascular pole of its originating nephron corpuscle. Histologically, macula densa cells appear distinctly taller, more crowded, and narrower (columnar) than the surrounding cuboidal tubular cells, with closely packed, prominent hyperchromatic nuclei that stand out as a dark, dense plaque."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "5th order",
+      "vignette": "A 62-year-old male with chronic primary hyperparathyroidism presents with recurrent bilateral nephrolithiasis. Serum calcium is elevated at 11.4 mg/dL and intact PTH is significantly increased. In response to elevated circulating PTH, renal epithelial cells in a specific cortical nephron segment increase active transcellular calcium reabsorption. A biopsy of this active cortical segment reveals tubules lined by simple cuboidal epithelium with wide, clearly patent lumens, a complete absence of an apical brush border, and small cells displaying multiple visible nuclei that bulge slightly into the lumen. If this patient is subsequently administered a loop diuretic that abolishes the medullary countercurrent multiplier, in which of the following tubular segments would active, parathyroid hormone-regulated transcellular calcium uptake remain directly functional?",
+      "options": {
+        "A": "Proximal convoluted tubule",
+        "B": "Thick descending limb",
+        "C": "Thin descending limb",
+        "D": "Distal convoluted tubule",
+        "E": "Papillary duct"
+      },
+      "correct_answer": "D",
+      "rationale": "This multi-step question requires working through a 5-step clinical-histological reasoning chain: (1) Recognize the physiological stimulus: elevated parathyroid hormone (PTH) drives active renal calcium reabsorption; (2) Identify the histological description: tubules with simple cuboidal epithelium, empty/regular patent lumens, no apical brush border, and multiple crowded nuclei bulging into the lumen correspond specifically to the distal convoluted tubule (DCT); (3) Differentiate calcium transport mechanisms: in the thick ascending limb, calcium reabsorption is predominantly passive and paracellular, driven by the lumen-positive transepithelial potential generated by NKCC2; (4) Understand the pharmacologic effect of loop diuretics: loop diuretics inhibit NKCC2 in the thick ascending limb, abolishing the positive lumen charge and dissipating paracellular calcium reabsorption; (5) Deduce the resistant site: in contrast to the loop of Henle, active transcellular calcium uptake regulated directly by PTH occurs via apical TRPV5 channels and basolateral extrusion mechanisms in the distal convoluted tubule (DCT), remaining intact and functional."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "1st order",
+      "vignette": "A 22-year-old female presents to the emergency department with severe lightheadedness and muscle spasms following five days of intractable vomiting. Arterial blood gas analysis reveals a severe metabolic alkalosis (pH 7.54, HCO3- 34 mEq/L, PaCO2 46 mmHg). In response to systemic alkalemia, specialized renal tubular epithelial cells within the cortical collecting ducts actively secrete bicarbonate into the tubular lumen while reabsorbing protons to restore physiological acid-base balance. Which of the following specific cell types is responsible for this active bicarbonate secretion?",
+      "options": {
+        "A": "Alpha-intercalated cells",
+        "B": "Beta-intercalated cells",
+        "C": "Principal cells",
+        "D": "Macula densa cells",
+        "E": "Lacis cells"
+      },
+      "correct_answer": "B",
+      "rationale": "Beta-intercalated cells of the collecting duct are specialized for net bicarbonate secretion and proton reabsorption during systemic alkalosis. They express apical pendrin (Cl-/HCO3- exchangers) that secrete bicarbonate into the tubular fluid and basolateral H+-ATPases that transport protons into the blood, directly counteracting metabolic alkalosis."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 4-year-old boy is brought to the pediatric emergency department with pallor, oliguria, petechiae, and dark urine following three days of bloody diarrhea. Laboratory testing demonstrates microangiopathic hemolytic anemia with schistocytes, thrombocytopenia, and acute kidney injury, confirming hemolytic uremic syndrome (HUS). Circulating Shiga toxin directly binds to receptors on the innermost cellular component of the glomerular filtration barrier, triggering microvascular endothelial necrosis, swelling, and localized thrombosis. Under normal physiological conditions, which of the following features uniquely distinguishes this specific inner endothelial layer of the glomerular capillaries from continuous capillaries found elsewhere in the body?",
+      "options": {
+        "A": "Numerous large, irregular fenestrations lacking diaphragms that permit passage of plasma solutes while barring blood cells",
+        "B": "Intercellular occluding junctions formed by nephrin and P-cadherin",
+        "C": "A dense, non-fenestrated plasma membrane that relies exclusively on caveolae-mediated transcytosis",
+        "D": "A prominent apical brush border composed of microvilli designed for bulk transcellular reabsorption",
+        "E": "A total absence of an underlying basal lamina or basement membrane"
+      },
+      "correct_answer": "A",
+      "rationale": "Glomerular capillaries are lined by fenestrated endothelial cells that possess numerous large, irregular fenestrations (70\u2013100 nm in diameter) that typically lack bridging diaphragms. This morphological specialization allows free passage of water, plasma solutes, and small polypeptides into the subendothelial space while serving as an initial cellular barrier that restricts erythrocytes, leukocytes, and platelets from entering the ultrafiltrate."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 35-year-old male with a history of sickle cell trait presents with acute flank pain and gross hematuria. Renal imaging and retrograde pyelography demonstrate bilateral renal papillary necrosis, characterized by sloughing of necrotic papillae into the minor calyces. Light microscopy of normal tissue at the apex of the renal pyramid (renal papilla) shows terminal papillary ducts (ducts of Bellini) converging at the area cribrosa to empty urine into a minor calyx. As the simple columnar epithelium of the papillary duct terminates at the area cribrosa, it becomes directly continuous with which of the following epithelial linings of the renal calyx?",
+      "options": {
+        "A": "Simple squamous epithelium",
+        "B": "Keratinized stratified squamous epithelium",
+        "C": "Urothelium (transitional epithelium)",
+        "D": "Pseudostratified ciliated columnar epithelium",
+        "E": "Simple cuboidal epithelium with a dense brush border"
+      },
+      "correct_answer": "C",
+      "rationale": "Papillary ducts drain urine at the area cribrosa located at the apex of the renal papilla into a minor calyx. The simple columnar epithelium of the papillary ducts is directly continuous with the urothelium (transitional epithelium) that lines the minor calyx, major calyces, renal pelvis, ureters, and urinary bladder."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A medical student is analyzing the functional histology of the renal medulla in a healthy subject producing maximally concentrated urine. In the countercurrent multiplier system, simple squamous epithelial segments of the loop of Henle traverse the hyperosmotic inner medulla. The thin descending limb transitions into the thin ascending limb at the hairpin turn. In contrast to the thin descending limb, which is highly permeable to water via aquaporins, which of the following physiological transport properties uniquely characterizes the simple squamous epithelium of the thin ascending limb?",
+      "options": {
+        "A": "Highly permeable to water and completely impermeable to sodium and chloride",
+        "B": "Impermeable to water, but permeable to sodium, potassium, and chloride",
+        "C": "Active ATP-dependent transport of glucose via apical sodium-glucose cotransporters",
+        "D": "Aldosterone-dependent sodium reabsorption accompanied by potassium secretion",
+        "E": "Vasopressin-regulated translocation of aquaporin-2 water channels"
+      },
+      "correct_answer": "B",
+      "rationale": "The thin ascending limb of the loop of Henle is lined by simple squamous epithelium that is completely impermeable to water, but highly permeable to electrolytes (Na+, K+, and Cl-). This property allows solutes to passively diffuse out of the concentrated luminal fluid into the medullary interstitium, essential for maintaining the hyperosmotic medullary gradient without diluting it with water."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "5th order",
+      "vignette": "A 56-year-old male with severe renovascular hypertension undergoes functional renal imaging. The investigation demonstrates that reduced perfusion pressure in the afferent arteriole combined with decreased delivery of sodium and chloride to the early distal tubule triggers substantial renin release by the juxtaglomerular apparatus (JGA). Histologic examination of the vascular pole of the renal corpuscle demonstrates three contiguous cellular elements constituting the JGA: (1) columnar macula densa cells sensing luminal NaCl in the distal tubule, (2) renin-granule-containing juxtaglomerular cells in the afferent arteriole tunica media, and (3) a pale-staining cluster of specialized stromal cells filling the triangular vascular cleft between the afferent and efferent arterioles. If the extensive network of intercellular gap junctions within this triangular stromal cluster is disrupted, the transmission of paracrine and vasomotor signals between the macula densa and the juxtaglomerular cells is severely blunted. Which of the following specific cell types comprises this intervening regulatory stromal cluster?",
+      "options": {
+        "A": "Podocytes of the visceral glomerular layer",
+        "B": "Extraglomerular mesangial (lacis) cells",
+        "C": "Parietal epithelial cells of Bowman capsule",
+        "D": "Principal cells of the cortical collecting duct",
+        "E": "Alpha-intercalated cells of the collecting tubule"
+      },
+      "correct_answer": "B",
+      "rationale": "This multi-step question requires working through a 5-step clinical-histological sequence: (1) Recognize the clinical setting of renovascular hypertension activating the juxtaglomerular apparatus (JGA) at the vascular pole of the renal corpuscle; (2) Break down the tripartite cellular composition of the JGA: macula densa cells (osmoreceptors in the distal tubule), juxtaglomerular granular cells (renin-producing mechanoreceptors in the afferent arteriole), and extraglomerular mesangial cells; (3) Identify the specific anatomical location described: the triangular vascular cleft bounded by the afferent arteriole, efferent arteriole, and macula densa; (4) Understand the structural connectivity of these cells: extraglomerular mesangial (lacis or Goormaghtigh) cells form an extensive syncytium interconnected by gap junctions that is continuous with the intraglomerular mesangium; (5) Conclude that extraglomerular mesangial (lacis) cells function as the critical cellular bridge that relays tubuloglomerular feedback signals from the macula densa to the juxtaglomerular granular cells to modulate renin secretion and arteriolar tone."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "1st order",
+      "vignette": "A 30-year-old male presents with acute renal failure, hemoptysis, and tea-colored urine. A percutaneous renal core biopsy reveals extensive crescentic glomerulonephritis. Light microscopy demonstrates that the cellular crescents compressing the capillary tufts are formed predominantly by the proliferation of parietal epithelial cells and infiltrating monocytes within Bowman capsular space. Under normal physiological conditions, which of the following types of epithelium lines the parietal layer of Bowman capsule?",
+      "options": {
+        "A": "Simple squamous epithelium",
+        "B": "Simple cuboidal epithelium with a dense brush border",
+        "C": "Simple columnar ciliated epithelium",
+        "D": "Transitional epithelium (urothelium)",
+        "E": "Stratified squamous non-keratinized epithelium"
+      },
+      "correct_answer": "A",
+      "rationale": "The parietal layer of Bowman (glomerular) capsule is lined by a simple squamous epithelium resting on a thin basal lamina. At the urinary (tubular) pole of the renal corpuscle, this simple squamous lining transitions directly into the simple cuboidal epithelium of the proximal convoluted tubule."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 58-year-old male who suffered prolonged cardiac arrest during a myocardial infarction develops oliguric acute kidney injury. A biopsy demonstrates ischemic acute tubular necrosis with marked cellular shedding and necrosis concentrated within the medullary rays of the cortex and the outer stripe of the outer medulla (OSOM). Light microscopy of the damaged tubules in the OSOM shows simple cuboidal epithelial cells that normally retain a microvillar apical brush border and carry out residual glucose reabsorption. Which of the following nephron segments is predominantly affected in this zone?",
+      "options": {
+        "A": "Proximal straight tubule (thick descending limb)",
+        "B": "Distal straight tubule (thick ascending limb)",
+        "C": "Thin descending limb",
+        "D": "Thin ascending limb",
+        "E": "Medullary collecting duct"
+      },
+      "correct_answer": "A",
+      "rationale": "The proximal straight tubule (PST, or thick descending limb of Henle loop) traverses the medullary rays of the cortex and extends into the outer stripe of the outer medulla (OSOM). It is lined by simple cuboidal epithelium that retains an apical brush border of microvilli (continuous with the PCT) and reabsorbs remaining glucose. Due to its high metabolic activity and location within the relatively hypoxic outer medulla, the PST (S3 segment) is exquisitely vulnerable to ischemic and nephrotoxic acute tubular necrosis."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A 2-year-old boy is diagnosed with Bartter syndrome Type I, an autosomal recessive tubulopathy caused by loss-of-function mutations in the SLC12A1 gene, which encodes the apical Na+-K+-2Cl- cotransporter (NKCC2). This transporter drives the active reabsorption of sodium, potassium, and chloride to establish the corticomedullary osmotic gradient. In a normal kidney, which of the following histological characteristics distinguishes the specific tubular segment expressing this cotransporter from the proximal straight tubule?",
+      "options": {
+        "A": "A prominent apical brush border that occludes the tubular lumen",
+        "B": "A simple cuboidal epithelium lacking an apical brush border, resulting in a clear, regular lumen",
+        "C": "A simple squamous epithelium permeable to water via aquaporin-1 channels",
+        "D": "Tall columnar epithelial cells displaying distinct, visible lateral cell boundaries",
+        "E": "A multistratified umbrella cell layer coated by uroplakin plaques"
+      },
+      "correct_answer": "B",
+      "rationale": "The thick ascending limb of Henle loop (distal straight tubule, DST) expresses the apical NKCC2 cotransporter and is lined by a simple cuboidal epithelium that lacks an apical brush border. Because it lacks microvilli, the DST exhibits a clear, wide, uniform (regular) lumen on light microscopy, easily distinguishing it from the proximal straight tubule (PST), which features a tall microvillar brush border that renders its lumen irregular and partially occluded."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "2nd order",
+      "vignette": "A medical student is examining a cross-section of normal renal cortex stained with hematoxylin and eosin. Within the cortical labyrinth and medullary rays, she identifies multiple tubular profiles. One specific category of tubules displays simple cuboidal epithelium with wide, patent lumens and distinct, clearly visible lateral cell borders between adjacent cells. Which of the following tubular structures is characterized histologically by these conspicuous lateral cell borders?",
+      "options": {
+        "A": "Proximal convoluted tubule",
+        "B": "Distal convoluted tubule",
+        "C": "Collecting duct",
+        "D": "Thick descending limb",
+        "E": "Glomerular capillary loop"
+      },
+      "correct_answer": "C",
+      "rationale": "Collecting ducts are lined by a simple cuboidal epithelium in the cortex (becoming columnar in the medulla) and are uniquely identifiable histologically by their distinct, clearly visible lateral cell boundaries on routine light microscopy. In contrast, epithelial cells of proximal and distal convoluted tubules feature extensive lateral and basal interdigitations with neighboring cells, which completely obscure lateral cell margins in standard histologic sections."
+    },
+    {
+      "lecture_title": "Renal Histology",
+      "order": "5th order",
+      "vignette": "A 14-year-old boy presents with progressive bilateral sensorineural hearing loss, anterior lenticonus on slit-lamp examination, and persistent microscopic hematuria with mild proteinuria. Renal biopsy confirms Alport syndrome, an inherited nephropathy caused by a mutation in the COL4A5 gene that encodes the alpha-5 chain of type IV collagen. Transmission electron microscopy (TEM) of the renal corpuscle is performed to assess the ultrastructural integrity of the specialized extracellular layer normally assembled by the fusion of the basal laminae of the podocytes and capillary endothelial cells. Which of the following ultrastructural findings on TEM is the characteristic pathognomonic hallmark of this disease?",
+      "options": {
+        "A": "Subepithelial humps composed of electron-dense immune deposits",
+        "B": "Diffuse effacement of podocyte pedicels with an otherwise structurally intact, normal basement membrane",
+        "C": "Irregular thickening, thinning, and multi-layered splitting (basket-weave appearance) of the lamina densa of the glomerular basement membrane",
+        "D": "Extensive subendothelial wire-loop deposits with mesangial interposition",
+        "E": "Complete absence of endothelial fenestrations with normal basement membrane architecture"
+      },
+      "correct_answer": "C",
+      "rationale": "This multi-step question requires working through a 5-step clinical-histological reasoning sequence: (1) Recognize the classic triad of Alport syndrome: progressive sensorineural deafness, ocular defects (anterior lenticonus), and hematuric nephropathy; (2) Identify the genetic etiology: mutations in the COL4A5 gene encoding the alpha-5(IV) chain of type IV collagen; (3) Recall the normal histological location of type IV collagen: it forms the fundamental structural network of the glomerular basement membrane (GBM), which is the fused basal lamina shared between the fenestrated capillary endothelium and the podocyte pedicels; (4) Understand the structural consequence of defective alpha-3-4-5(IV) collagen network assembly: the GBM becomes mechanically unstable and undergoes iterative cycles of enzymatic injury, degradation, and disorganized repair; (5) Deduce the pathognomonic ultrastructural appearance on transmission electron microscopy (TEM): the lamina densa of the GBM shows characteristic alternating areas of thinning, irregular thickening, and longitudinal splitting with multi-lamellation, famously referred to as a \"basket-weave\" pattern."
+    }
+  ]
+}
