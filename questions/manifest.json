@@ -1,17 +1,20 @@
-{
-  "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
-  "category": "Biochemistry",
-  "slides": "slides/nitrogen_disposal.pdf",
-  "questions": [
-    {
-      "id": "nitr_1",
-      "vignette": "A 4-day-old male infant presents with hyperammonemia...",
-      "options": {
-        "A": "Autosomal recessive",
-        "B": "X-linked recessive"
-      },
-      "correct_answer": "B",
-      "explanation": "Ornithine transcarbamoylase (OTC) deficiency..."
-    }
-  ]
-}
+[
+  {
+    "path": "questions/renal_functional_anatomy_and_development.json",
+    "category": "Anatomy",
+    "lecture": "Renal functional anatomy & development",
+    "slides": "slides/w1_01_renal_functional_anatomy_and_development_slides.pdf"
+  },
+  {
+    "path": "questions/renal_histology.json",
+    "category": "Anatomy",
+    "lecture": "Renal histology",
+    "slides": "slides/w1_02_renal_histology_slides.pdf"
+  },
+  {
+    "path": "questions/nitrogen_disposal_and_the_urea_cycle.json",
+    "category": "Biochemistry",
+    "lecture": "Nitrogen disposal and the urea cycle I & II",
+    "slides": "slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
+  }
+]
