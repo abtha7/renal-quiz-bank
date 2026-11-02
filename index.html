@@ -542,9 +542,9 @@
     let quizMode = 'practice';
     let currentReviewFilter = 'all';
 
-    window.onload = function() {
+    window.onload = async function() {
       loadSlidesMap();
-      loadFromStorage();
+      await loadFromStorage();
       renderCategoryGrid();
       renderAnalytics();
       renderReviewList();
@@ -729,6 +729,7 @@
           }
         });
         saveToStorage();
+        renderCategoryGrid();
       } else if (!questionBank || questionBank.length === 0) {
         questionBank = [...PRELOADED_QUESTIONS];
         saveToStorage();
