@@ -678,10 +678,15 @@ async function loadFromStorage() {
       // Check for remote question files in questions/ folder
       const remoteQs = await loadRemoteQuestions();
       if (remoteQs.length > 0) {
-        // Merge remote questions into questionBank without duplicating
+        // Upsert remote questions into questionBank (updates categories/lectures if changed)
         remoteQs.forEach(rq => {
-          const exists = questionBank.some(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
-          if (!exists) {
+          const idx = questionBank.findIndex(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
+          if (idx >= 0) {
+            questionBank[idx] = {
+              ...questionBank[idx],
+              ...rq
+            };
+          } else {
             questionBank.push(rq);
           }
         });
@@ -1250,19 +1255,25 @@ function saveToStorage() {
       showToast("Fetching latest questions from repository...");
       const remoteQs = await loadRemoteQuestions();
       if (remoteQs.length > 0) {
-        let addedCount = 0;
+        let updatedCount = 0;
         remoteQs.forEach(rq => {
-          const exists = questionBank.some(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
-          if (!exists) {
+          const idx = questionBank.findIndex(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
+          if (idx >= 0) {
+            questionBank[idx] = {
+              ...questionBank[idx],
+              ...rq
+            };
+            updatedCount++;
+          } else {
             questionBank.push(rq);
-            addedCount++;
+            updatedCount++;
           }
         });
         saveToStorage();
         renderCategoryGrid();
         renderAnalytics();
         renderReviewList();
-        showToast(`Synced! Added ${addedCount} new questions from repository.`);
+        showToast(`Synced! Updated ${updatedCount} questions from repository.`);
       } else {
         showToast("No new question files found in questions/ folder.");
       }
@@ -1449,5 +1460,3 @@ function saveToStorage() {
   </script>
 </body>
 </html>
-
-
