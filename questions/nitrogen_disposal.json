@@ -1,1 +1,286 @@
-
+{
+  "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+  "total_questions": 20,
+  "usmle_practice_problems": [
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "1st order",
+      "vignette": "A 4-day-old male infant is brought to the emergency department for poor feeding, progressive lethargy, and vomiting. Physical examination reveals tachypnea and hypotonia. Laboratory evaluation demonstrates marked hyperammonemia (plasma ammonia: 450 umol/L; reference < 50 umol/L), a low blood urea nitrogen (BUN: 3 mg/dL), and severe orotic aciduria. A defect in the most common inborn error of the urea cycle is suspected. Which of the following is the mode of inheritance of this genetic condition?",
+      "options": {
+        "A": "Autosomal recessive",
+        "B": "Autosomal dominant",
+        "C": "X-linked recessive",
+        "D": "X-linked dominant",
+        "E": "Mitochondrial"
+      },
+      "correct_answer": "C",
+      "rationale": "The patient presents with classic signs of ornithine transcarbamoylase (OTC) deficiency, which is the most common inborn error of the urea cycle. OTC deficiency is uniquely inherited in an X-linked recessive manner, distinguishing it from all other urea cycle enzyme deficiencies, which are inherited as autosomal recessive traits."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 19-year-old male presents to the clinic with severe, sharp left flank pain that radiates to his groin, accompanied by hematuria. A non-contrast helical CT scan reveals an obstructing renal calculus in the left distal ureter. Urinalysis demonstrates hexagonal crystals in the urinary sediment. A positive sodium cyanide-nitroprusside test confirms cystinuria. The underlying genetic defect impairs a sodium-independent basic amino acid transporter shared by the proximal convoluted tubule and small intestine. In addition to cystine, which of the following groups of amino acids fails to be reabsorbed in the proximal tubule of this patient?",
+      "options": {
+        "A": "Alanine, Serine, and Cysteine",
+        "B": "Ornithine, Arginine, and Lysine",
+        "C": "Leucine, Isoleucine, and Valine",
+        "D": "Aspartate and Glutamate",
+        "E": "Phenylalanine, Tyrosine, and Tryptophan"
+      },
+      "correct_answer": "B",
+      "rationale": "Cystinuria is caused by an inherited defect in the apical dibasic amino acid transporter responsible for the reabsorption of Cystine, Ornithine, Arginine, and Lysine (mnemonic: COAL) in the renal proximal convoluted tubule and small intestine. Defective reabsorption leads to high urinary concentrations of cystine, which is poorly soluble at normal urine pH and precipitates into characteristic hexagonal calculi."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 6-year-old girl is evaluated by a dermatologist for a dry, scaly, erythematous rash over sun-exposed areas of her face, neck, and dorsal hands that worsens during the summer months. Her parents note that she has had episodes of cerebellar ataxia and mood lability. Laboratory testing confirms Hartnup disease, an autosomal recessive defect in the B0 neutral amino acid transporter in the intestinal brush border and renal proximal tubule. This patient is at high risk for developing pellagra-like symptoms because the impaired transport of a specific amino acid restricts the endogenous synthesis of which of the following cofactors?",
+      "options": {
+        "A": "Tetrahydrofolate (THF)",
+        "B": "Pyridoxal phosphate (PLP)",
+        "C": "Nicotinamide adenine dinucleotide (NAD+)",
+        "D": "Flavin adenine dinucleotide (FAD)",
+        "E": "Thiamine pyrophosphate (TPP)"
+      },
+      "correct_answer": "C",
+      "rationale": "Hartnup disease results from defective renal and intestinal transport of neutral amino acids, predominantly tryptophan. Because tryptophan is an essential precursor for the de novo synthesis of niacin (vitamin B3), a deficiency in tryptophan leads to inadequate production of NAD+ and NADP+, precipitating pellagra-like symptoms (photosensitive dermatitis, diarrhea, and dementia/ataxia)."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 58-year-old male with end-stage cirrhosis secondary to chronic alcohol use is admitted to the hospital with confusion, slurred speech, and asterixis. Serum ammonia is significantly elevated at 180 umol/L. As part of acute hyperammonemia management, the inpatient team initiates medical therapy to promote alternative pathway nitrogen disposal. The patient is administered oral sodium phenylbutyrate. Before assisting in urinary nitrogen excretion, the active metabolite of this prodrug must enzymatically conjugate with which of the following compounds?",
+      "options": {
+        "A": "Alanine",
+        "B": "Glutamine",
+        "C": "Aspartate",
+        "D": "Glycine",
+        "E": "Glutamate"
+      },
+      "correct_answer": "B",
+      "rationale": "Sodium phenylbutyrate is a prodrug rapidly converted in vivo to phenylacetate. Phenylacetate enzymatically conjugates with glutamine to form phenylacetylglutamine. Because each glutamine molecule carries two nitrogen atoms, excretion of phenylacetylglutamine in the urine provides an effective alternative pathway for the clearance of nitrogenous waste independent of the impaired urea cycle."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "5th order",
+      "vignette": "A 2-day-old full-term male newborn becomes progressively unresponsive, hypothermic, and tachypneic. Arterial blood gas shows a primary respiratory alkalosis, and serum ammonia is markedly elevated at 820 umol/L. Plasma citrulline is undetectable, blood urea nitrogen (BUN) is markedly decreased, and urinary orotic acid levels are normal. Genetic analysis confirms an autosomal recessive inborn error affecting the enzyme responsible for synthesizing the obligatory allosteric activator of the rate-limiting step of the urea cycle. Under normal physiologic conditions, which of the following pairs of substrates is utilized to synthesize this critical allosteric activator?",
+      "options": {
+        "A": "Ammonia and Bicarbonate",
+        "B": "Glutamate and Acetyl-CoA",
+        "C": "Carbamoyl phosphate and Ornithine",
+        "D": "Citrulline and Aspartate",
+        "E": "Glutamine and alpha-Ketoglutarate"
+      },
+      "correct_answer": "B",
+      "rationale": "This multi-step question requires working through a 5-step biochemical reasoning chain: (1) Recognize that severe neonatal hyperammonemia with respiratory alkalosis, undetectable citrulline, low BUN, and normal orotic acid indicates an enzymatic block at or before carbamoyl phosphate synthetase I (CPS I), excluding OTC deficiency (which produces high orotic acid); (2) Identify the rate-limiting enzyme of the urea cycle as mitochondrial carbamoyl phosphate synthetase I (CPS I); (3) Recall that CPS I has an absolute, obligate requirement for the allosteric activator N-acetylglutamate (NAG); (4) Determine that deficiency of N-acetylglutamate synthase (NAGS) prevents the synthesis of NAG, clinically and biochemically mimicking CPS I deficiency; (5) Identify the biochemical substrates utilized by NAG synthase (NAGS) to produce N-acetylglutamate, which are glutamate and acetyl-CoA (allosterically stimulated by arginine)."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "1st order",
+      "vignette": "A 45-year-old male with a history of alcohol use disorder presents for a routine health maintenance exam. Serum liver chemistries reveal an aspartate aminotransferase (AST) of 115 U/L and an alanine aminotransferase (ALT) of 58 U/L. Both AST and ALT catalyze the reversible transfer of an amino group from an amino acid to an alpha-keto acid acceptor. Which of the following vitamin derivatives serves as the obligatory coenzyme and temporary carrier of the amino group during these transamination reactions?",
+      "options": {
+        "A": "Thiamine pyrophosphate (TPP)",
+        "B": "Flavin adenine dinucleotide (FAD)",
+        "C": "Pyridoxal phosphate (PLP)",
+        "D": "Biotin",
+        "E": "Methylcobalamin"
+      },
+      "correct_answer": "C",
+      "rationale": "Aminotransferases (including AST and ALT) universally require pyridoxal phosphate (PLP), an active derivative of vitamin B6, as an essential coenzyme. During the transamination reaction, PLP acts as a temporary covalent carrier of the amino group, transitioning to pyridoxamine phosphate before transferring the amino group to an alpha-keto acid acceptor (such as alpha-ketoglutarate)."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 52-year-old male with decompensated alcoholic cirrhosis is brought to the emergency department by his family due to confusion, slurred speech, and daytime somnolence. Physical examination demonstrates asterixis and hyperreflexia. Non-contrast brain CT reveals mild diffuse cerebral edema. Arterial blood gas and laboratory studies demonstrate a serum ammonia level of 172 \u00b5mol/L (reference: 11\u201335 \u00b5mol/L). In the central nervous system, excessive circulating ammonia freely crosses the blood-brain barrier and is metabolized within astrocytes. Which of the following biochemical mechanisms is the direct cause of astrocyte swelling and resultant cerebral edema in this patient?",
+      "options": {
+        "A": "Accumulation of intracellular glutamine causing osmotic water shift",
+        "B": "Depletion of intracellular ATP from excessive protein kinase A activation",
+        "C": "Extracellular accumulation of aspartate triggering NMDA receptor excitotoxicity",
+        "D": "Inhibition of astrocyte sodium-potassium ATPase by unconjugated bilirubin",
+        "E": "Impaired oligodendrocyte myelination secondary to tryptophan deficiency"
+      },
+      "correct_answer": "A",
+      "rationale": "In the central nervous system, astrocytes detoxify excess ammonia via glutamine synthetase, combining ammonia with glutamate to form glutamine. The resulting intracellular accumulation of osmotically active glutamine within astrocytes draws free water across the membrane, leading to astrocyte swelling, cytotoxic cerebral edema, and intracranial hypertension characteristic of hepatic encephalopathy."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 26-year-old female with type 1 diabetes mellitus presents to the emergency department with abdominal pain, nausea, and deep, rapid respirations (Kussmaul breathing). Arterial blood gas demonstrates a severe high anion gap metabolic acidosis (pH 7.18, HCO3- 8 mEq/L, PaCO2 22 mmHg). In response to systemic acidosis, renal tubular epithelial cells upregulate urinary net acid excretion while generating new bicarbonate. Which of the following renal enzymes hydrolyzes an amino acid amide group to produce free ammonia (NH3) that buffers secreted luminal hydrogen ions to form excretable ammonium (NH4+)?",
+      "options": {
+        "A": "Alanine aminotransferase",
+        "B": "Glutaminase",
+        "C": "Argininosuccinate synthetase",
+        "D": "Carbamoyl phosphate synthetase I",
+        "E": "Ornithine transcarbamoylase"
+      },
+      "correct_answer": "B",
+      "rationale": "In the renal proximal convoluted tubule, glutaminase hydrolyzes glutamine into glutamate and free ammonia (NH3). The generated ammonia diffuses into the tubular lumen, where it accepts a secreted proton (H+) to form ammonium (NH4+). Because NH4+ is charged, it is trapped within the lumen and excreted in the urine, providing an essential mechanism for eliminating fixed acid and maintaining systemic acid-base balance."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 2-year-old boy is brought to the pediatric genetics clinic due to developmental delay, episodic lethargy following high-protein meals, and recurrent ataxia. Laboratory testing demonstrates marked hyperammonemia, markedly elevated plasma ornithine levels, and the presence of homocitrulline in the urine. Genetic analysis reveals a homozygous mutation in the SLC25A15 gene, which encodes the mitochondrial ornithine translocase (ORNT1). Defective function of this inner mitochondrial membrane transporter primarily disrupts which of the following steps of the urea cycle?",
+      "options": {
+        "A": "Condensation of citrulline with aspartate in the cytosol",
+        "B": "Cleavage of argininosuccinate to form arginine and fumarate in the cytosol",
+        "C": "Transport of cytosolic ornithine into the mitochondrial matrix to react with carbamoyl phosphate",
+        "D": "Synthesis of carbamoyl phosphate from bicarbonate and ammonia in the mitochondrial matrix",
+        "E": "Hydrolysis of arginine to regenerate ornithine and produce urea in the cytosol"
+      },
+      "correct_answer": "C",
+      "rationale": "The mitochondrial ornithine translocase (ORNT1, encoded by SLC25A15) transports ornithine across the inner mitochondrial membrane from the cytosol into the mitochondrial matrix in exchange for citrulline. In hyperammonemia-hyperornithinemia-homocitrullinuria (HHH) syndrome, impaired inward transport of ornithine leaves mitochondrial ornithine transcarbamoylase (OTC) without sufficient substrate, precipitating hyperammonemia, cytosolic accumulation of ornithine, and spillover of carbamoyl phosphate into lysine carbamoylation to form homocitrulline."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "5th order",
+      "vignette": "A 3-year-old boy is evaluated for progressive difficulty walking, lower extremity stiffness, and cognitive regression. Physical examination reveals spastic diplegia with hyperreflexia, bilateral ankle clonus, and choreoathetoid posturing. Unlike other inborn errors of the urea cycle, he has never experienced severe neonatal hyperammonemic coma or catastrophic encephalopathy in infancy. Laboratory evaluation reveals mild intermittent hyperammonemia (blood ammonia: 68 \u00b5mol/L; reference < 35 \u00b5mol/L), low blood urea nitrogen, and markedly elevated plasma and urinary arginine levels. If a cell-free hepatic cytosolic extract from a healthy individual were incubated with the specific intermediate that pathologically accumulates in this child's bloodstream, which pair of products would normally be generated?",
+      "options": {
+        "A": "Citrulline and inorganic phosphate",
+        "B": "Argininosuccinate and AMP",
+        "C": "Ornithine and Urea",
+        "D": "Fumarate and Malate",
+        "E": "Glutamate and Alpha-ketoglutarate"
+      },
+      "correct_answer": "C",
+      "rationale": "This multi-step question requires working through a 5-step clinical-biochemical reasoning sequence: (1) Recognize the distinct clinical presentation (progressive spastic diplegia, choreoathetosis, lack of severe neonatal crisis) as Arginase-1 deficiency; (2) Correlate this diagnosis with the laboratory profile of marked argininemia, mild hyperammonemia, and low BUN; (3) Identify the pathologically accumulating intermediate in this child's circulation as L-arginine; (4) Recall that the deficient enzyme, Arginase-1, is localized exclusively in the cytosol of hepatocytes where it catalyzes the final step of the urea cycle; (5) Deduce that when cytosolic arginase hydrolyzes L-arginine under normal physiologic conditions, it cleaves the guanidino group to yield L-ornithine and free urea."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "1st order",
+      "vignette": "A 2-day-old male infant is diagnosed with an inborn error of metabolism causing life-threatening hyperammonemia. As part of acute pharmacologic nitrogen scavenging therapy, intravenous sodium benzoate is administered. Sodium benzoate lowers circulating nitrogen levels by conjugating with an endogenous amino acid to form hippuric acid, which is rapidly cleared by the kidneys. Which of the following amino acids conjugates with benzoate in this alternative clearance pathway?",
+      "options": {
+        "A": "Alanine",
+        "B": "Glutamine",
+        "C": "Glycine",
+        "D": "Aspartate",
+        "E": "Cysteine"
+      },
+      "correct_answer": "C",
+      "rationale": "Sodium benzoate acts as a nitrogen scavenger by conjugating with glycine to form hippuric acid (hippurate), which is excreted in the urine. Because each glycine molecule contains one nitrogen atom, excretion of hippurate provides an alternative pathway for eliminating nitrogen independent of the urea cycle."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 24-year-old amateur marathon runner collapses near the finish line of a race due to severe exhaustion and dehydration. In active skeletal muscle, extensive branched-chain amino acid oxidation generates surplus amino groups that are funneled into glutamate. To safely transport this excess nitrogen through the circulation to the liver for urea synthesis, an aminotransferase transfers the amino group from glutamate onto a glycolytic end-product. Which of the following glycolytic intermediates directly serves as the amino group acceptor in this muscle-to-liver transport mechanism?",
+      "options": {
+        "A": "Oxaloacetate",
+        "B": "Pyruvate",
+        "C": "Phosphoenolpyruvate",
+        "D": "3-Phosphoglycerate",
+        "E": "Alpha-ketoglutarate"
+      },
+      "correct_answer": "B",
+      "rationale": "During prolonged exercise and muscle protein catabolism, alanine aminotransferase (ALT) transfers the amino group from glutamate onto the glycolytic intermediate pyruvate to generate alanine and alpha-ketoglutarate. Alanine is released into the bloodstream and taken up by the liver in the glucose-alanine cycle, where it is converted back to pyruvate for gluconeogenesis while its nitrogen enters the urea cycle."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 5-month-old infant is evaluated for recurrent episodes of diaphoresis, lethargy, and seizures that typically occur shortly after protein-rich meals. Laboratory evaluation reveals marked hyperinsulinemic hypoglycemia accompanied by persistent, mild hyperammonemia. Genetic testing reveals a heterozygous missense mutation in the GLUD1 gene, which encodes mitochondrial glutamate dehydrogenase (GDH). The mutation abolishes normal allosteric inhibition of GDH. Under normal physiologic conditions, which of the following intracellular nucleotides serves as the primary allosteric inhibitor of this hepatic enzyme?",
+      "options": {
+        "A": "Guanosine triphosphate (GTP)",
+        "B": "Guanosine diphosphate (GDP)",
+        "C": "Adenosine diphosphate (ADP)",
+        "D": "Adenosine monophosphate (AMP)",
+        "E": "Nicotinamide adenine dinucleotide (NAD+)"
+      },
+      "correct_answer": "A",
+      "rationale": "Glutamate dehydrogenase (GDH) catalyzes the reversible oxidative deamination of glutamate to alpha-ketoglutarate and free ammonia. It is allosterically inhibited by high cellular energy charge in the form of guanosine triphosphate (GTP) and ATP, and allosterically activated by low energy charge in the form of GDP and ADP. Loss of GTP-mediated allosteric inhibition results in hyperinsulinism-hyperammonemia syndrome."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 3-week-old female infant is brought to the pediatric emergency department due to poor feeding, vomiting, and progressive lethargy. Physical examination reveals tachypnea and hypotonia. Laboratory evaluation demonstrates severe hyperammonemia (plasma ammonia: 420 \u00b5mol/L; reference: < 50 \u00b5mol/L), primary respiratory alkalosis, and a markedly elevated plasma citrulline concentration (> 2,800 \u00b5mol/L; reference: < 45 \u00b5mol/L). Plasma argininosuccinate is undetectable, and urinary orotic acid is within normal limits. An inherited deficiency of which of the following enzymes is the primary cause of this patient condition?",
+      "options": {
+        "A": "Carbamoyl phosphate synthetase I",
+        "B": "Ornithine transcarbamoylase",
+        "C": "Argininosuccinate synthetase",
+        "D": "Argininosuccinate lyase",
+        "E": "Arginase-1"
+      },
+      "correct_answer": "C",
+      "rationale": "Classical citrullinemia (Type I) is caused by an autosomal recessive deficiency of argininosuccinate synthetase (ASS), the cytosolic urea cycle enzyme that condenses citrulline with aspartate to form argininosuccinate. A block at this step results in massive accumulation of citrulline in the plasma and urine along with hyperammonemia, while downstream argininosuccinate remains undetectable."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "5th order",
+      "vignette": "A 5-day-old male newborn is admitted to the intensive care unit in a hyperammonemic coma. Plasma amino acid analysis demonstrates severe hyperammonemia, moderately elevated citrulline, massively elevated argininosuccinate, and undetectable arginine, establishing the diagnosis of argininosuccinate lyase (ASL) deficiency. The medical genetics team initiates daily high-dose oral supplementation with L-arginine. This treatment restores the continuous stoichiometric clearance of waste nitrogen into the urine despite the complete block in ASL activity. Under this therapeutic regimen, which of the following molecules directly donates the second nitrogen atom incorporated into the primary water-soluble intermediate excreted in this patient urine?",
+      "options": {
+        "A": "Free ammonium ion",
+        "B": "Glutamine",
+        "C": "Aspartate",
+        "D": "Alanine",
+        "E": "Glycine"
+      },
+      "correct_answer": "C",
+      "rationale": "This multi-step question requires working through a 5-step clinical-biochemical reasoning sequence: (1) Recognize the clinical and biochemical presentation (neonatal hyperammonemic coma, elevated citrulline and argininosuccinate, undetectable arginine) as argininosuccinate lyase (ASL) deficiency; (2) Understand the metabolic consequence: ASL cleavage of argininosuccinate is blocked, rendering arginine an essential amino acid and preventing the cycle from regenerating ornithine; (3) Trace the fate of supplemental L-arginine: it is cleaved by intact cytosolic arginase-1 to produce urea and regenerate L-ornithine; (4) Follow regenerated ornithine: it enters the mitochondria, receives the first nitrogen atom from free ammonia via carbamoyl phosphate to form citrulline, which exits to the cytosol; (5) Identify the reaction forming the excreted end product: citrulline condenses with L-aspartate via argininosuccinate synthetase to yield argininosuccinate. Because ASL cannot cleave it, argininosuccinate is excreted directly in the urine, with L-aspartate directly donating the second of the two waste nitrogen atoms carried by the excreted molecule."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "1st order",
+      "vignette": "A medical student is studying the hepatic synthesis of urea and the stoichiometry of waste nitrogen elimination. In the complete synthesis of one molecule of urea from free ammonium, bicarbonate, and aspartate by the hepatic urea cycle, which of the following pairs of molecules directly donates the two nitrogen atoms incorporated into the final excreted urea product?",
+      "options": {
+        "A": "Free ammonium and Aspartate",
+        "B": "Glutamine and Alanine",
+        "C": "Free ammonium and Glutamate",
+        "D": "Aspartate and Glycine",
+        "E": "Citrulline and Ornithine"
+      },
+      "correct_answer": "A",
+      "rationale": "In the urea cycle, the two nitrogen atoms incorporated into each molecule of excreted urea originate from two distinct, direct donors: one nitrogen atom is derived from free ammonium (NH4+) via mitochondrial carbamoyl phosphate synthetase I (CPS I), and the second nitrogen atom is donated directly by the alpha-amino group of aspartate via cytosolic argininosuccinate synthetase (ASS)."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A 2-week-old female infant presents with poor feeding, lethargy, failure to thrive, and generalized pitting edema. Laboratory studies reveal severe hypoproteinemia and hypoalbuminemia. Sweat chloride testing is normal. Duodenal aspirate analysis shows an absence of active trypsin, chymotrypsin, and carboxypeptidases. However, incubation of the infant's duodenal fluid with a catalytic amount of an isolated duodenal brush border mucosal enzyme immediately restores active trypsin and subsequent cleavage of all other pancreatic zymogens. A congenital deficiency of which of the following enzymes is the underlying cause of this infant's condition?",
+      "options": {
+        "A": "Enteropeptidase (Enterokinase)",
+        "B": "Pepsin",
+        "C": "Aminopeptidase N",
+        "D": "Carboxypeptidase B",
+        "E": "Secretin"
+      },
+      "correct_answer": "A",
+      "rationale": "Enteropeptidase (enterokinase) is a critical brush border enzyme of the duodenal mucosa responsible for cleaving inactive trypsinogen into active trypsin. Once formed, trypsin autocatalytically activates additional trypsinogen and cleaves and activates all other downstream pancreatic zymogens (chymotrypsinogen, proelastase, procarboxypeptidases A and B). Congenital enteropeptidase deficiency results in complete failure of intraluminal protein digestion, causing severe protein malabsorption, hypoalbuminemia, generalized edema, and failure to thrive."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A researcher is studying the metabolic integration of hepatic nitrogen excretion and cellular respiration. The cytosolic reactions of the urea cycle are physically and biochemically connected to the mitochondrial tricarboxylic acid (TCA) cycle via the \"Krebs bicycle\" (the aspartate-argininosuccinate shunt). In this shunt pathway, cytosolic cleavage of argininosuccinate releases arginine alongside a 4-carbon dicarboxylic acid intermediate that enters the TCA cycle to ultimately regenerate the aspartate needed for subsequent rounds of the urea cycle. Which of the following intermediates represents this direct metabolic link?",
+      "options": {
+        "A": "Citrate",
+        "B": "Fumarate",
+        "C": "Succinate",
+        "D": "Alpha-ketoglutarate",
+        "E": "Pyruvate"
+      },
+      "correct_answer": "B",
+      "rationale": "Argininosuccinate lyase (ASL) cleaves argininosuccinate into arginine and fumarate. Fumarate serves as the direct metabolic bridge between the urea cycle and the TCA cycle (the aspartate-argininosuccinate shunt or \"Krebs bicycle\"). Fumarate is converted to malate by cytosolic fumarase; malate can then enter the mitochondrion to join the TCA cycle, regenerate oxaloacetate, and undergo transamination with glutamate to regenerate aspartate for the urea cycle."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "2nd order",
+      "vignette": "A research scientist compares the biochemical and regulatory properties of human carbamoyl phosphate synthetase I (CPS I) and carbamoyl phosphate synthetase II (CPS II). While CPS I operates in hepatocytes to eliminate toxic nitrogenous waste, CPS II functions in all dividing cells to support nucleic acid production. In contrast to CPS I, which of the following features is uniquely characteristic of CPS II?",
+      "options": {
+        "A": "It utilizes free ammonium as its obligate nitrogen substrate",
+        "B": "It is localized within the inner mitochondrial matrix",
+        "C": "It utilizes the amide nitrogen of glutamine within the cytosol",
+        "D": "It exhibits an absolute requirement for N-acetylglutamate as an allosteric activator",
+        "E": "It catalyzes the rate-limiting committed step of the hepatic urea cycle"
+      },
+      "correct_answer": "C",
+      "rationale": "Carbamoyl phosphate synthetase II (CPS II) is localized in the cytosol, utilizes the amide nitrogen of glutamine as its nitrogen source (rather than free ammonia), is independent of N-acetylglutamate (it is allosterically activated by PRPP and inhibited by UTP), and serves as the committed step of de novo pyrimidine synthesis. In contrast, CPS I is localized in the mitochondrial matrix, utilizes free ammonia and bicarbonate, requires N-acetylglutamate as an obligate allosteric activator, and catalyzes the rate-limiting step of the urea cycle."
+    },
+    {
+      "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
+      "order": "5th order",
+      "vignette": "A 3-day-old male newborn develops poor feeding, persistent vomiting, hypothermia, and rapidly progressive somnolence culminating in a coma. Arterial blood gas demonstrates a marked respiratory alkalosis (pH 7.55, PaCO2 24 mmHg). Serum ammonia is profoundly elevated at 680 \u00b5mol/L (reference: < 50 \u00b5mol/L), and blood urea nitrogen is low at 2 mg/dL. Quantitative plasma amino acid analysis demonstrates undetectable citrulline, markedly reduced arginine, and elevated glutamine. Quantitative urine organic acid analysis reveals massive excretion of orotic acid. Genetic sequencing confirms an inborn error affecting the intramitochondrial enzyme that condenses carbamoyl phosphate with ornithine. Under these pathological conditions, the accumulating mitochondrial substrate diffuses across the inner mitochondrial membrane into the cytoplasm, bypassing its normal regulatory controls and aberrantly feeding into the de novo pyrimidine synthesis pathway. Which of the following cytosolic enzymes directly consumes this leaked mitochondrial metabolite to initiate this abnormal pyrimidine branch?",
+      "options": {
+        "A": "Aspartate transcarbamoylase",
+        "B": "Dihydroorotase",
+        "C": "Dihydroorotate dehydrogenase",
+        "D": "Uridine monophosphate (UMP) synthase",
+        "E": "Ribonucleotide reductase"
+      },
+      "correct_answer": "A",
+      "rationale": "This multi-step question requires following a 5-step clinical-biochemical reasoning sequence: (1) Recognize the clinical picture of neonatal hyperammonemic coma, respiratory alkalosis, low BUN, undetectable citrulline, and marked urinary orotic acid as ornithine transcarbamoylase (OTC) deficiency; (2) Identify the biochemical consequence of defective OTC: failure to condense carbamoyl phosphate with ornithine leads to massive intra-mitochondrial accumulation of carbamoyl phosphate; (3) Recognize the compartmental spillover: excess carbamoyl phosphate diffuses out of the mitochondria into the cytoplasm; (4) Understand the metabolic shunt: once in the cytosol, carbamoyl phosphate bypasses the normal rate-limiting regulation of carbamoyl phosphate synthetase II (CPS II) and enters the de novo pyrimidine synthesis pathway; (5) Identify the cytosolic enzyme that directly condenses this leaked carbamoyl phosphate with aspartate: aspartate transcarbamoylase (ATCase, part of the trifunctional cytosolic CAD enzyme complex) catalyzes this reaction to form N-carbamoylaspartate, which subsequently cyclizes and oxidizes to yield excess orotic acid."
+    }
+  ]
+}
