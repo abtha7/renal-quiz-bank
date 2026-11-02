@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renal Quiz Bank</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-header: #0f172a;
+      --text-header: #ffffff;
+      --btn-primary: #2563eb;
+      --btn-primary-hover: #1d4ed8;
+      --border-accent: #2563eb;
+      --bg-accent-light: #eff6ff;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #000000;
+      --text-muted: #000000;
+      --border-main: #cbd5e1;
+      --radar-grid: #cbd5e1;
+      --radar-poly: rgba(37, 99, 235, 0.25);
+      --radar-stroke: #2563eb;
+    }
+
+    /* Dark Mode Defaults */
+    html.dark {
+      --bg-main: #0f172a;
+      --bg-card: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --border-main: #334155;
+      --bg-accent-light: rgba(37, 99, 235, 0.15);
+      --radar-grid: #475569;
+    }
+
+    /* Gryffindor Theme */
+    html[data-theme="gryffindor"] {
+      --bg-header: #740001;
+      --btn-primary: #d3a625;
+      --btn-primary-hover: #b58c1c;
+      --border-accent: #d3a625;
+      --bg-accent-light: #fefce8;
+      --radar-poly: rgba(211, 166, 37, 0.3);
+      --radar-stroke: #d3a625;
+    }
+    html[data-theme="gryffindor"].dark {
+      --bg-main: #1c0202;
+      --bg-card: #2e0505;
+      --text-main: #fef08a;
+      --text-muted: #ca8a04;
+      --border-main: #740001;
+      --bg-accent-light: rgba(211, 166, 37, 0.2);
+    }
+
+    /* Slytherin Theme */
+    html[data-theme="slytherin"] {
+      --bg-header: #1a472a;
+      --btn-primary: #2a623d;
+      --btn-primary-hover: #1f492d;
+      --border-accent: #2a623d;
+      --bg-accent-light: #f0fdf4;
+      --radar-poly: rgba(42, 98, 61, 0.3);
+      --radar-stroke: #2a623d;
+    }
+    html[data-theme="slytherin"].dark {
+      --bg-main: #07170d;
+      --bg-card: #0e2918;
+      --text-main: #f0fdf4;
+      --text-muted: #86efac;
+      --border-main: #1a472a;
+      --bg-accent-light: rgba(42, 98, 61, 0.25);
+    }
+
+    /* Ravenclaw Theme */
+    html[data-theme="ravenclaw"] {
+      --bg-header: #0e1a40;
+      --btn-primary: #946b2d;
+      --btn-primary-hover: #785420;
+      --border-accent: #946b2d;
+      --bg-accent-light: #faf4e8;
+      --radar-poly: rgba(148, 107, 45, 0.3);
+      --radar-stroke: #946b2d;
+    }
+    html[data-theme="ravenclaw"].dark {
+      --bg-main: #050a1a;
+      --bg-card: #0d1738;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --border-main: #946b2d;
+      --bg-accent-light: rgba(148, 107, 45, 0.25);
+    }
+
+    /* Hufflepuff Theme */
+    html[data-theme="hufflepuff"] {
+      --bg-header: #111111;
+      --btn-primary: #ecb939;
+      --btn-primary-hover: #d4a325;
+      --border-accent: #ecb939;
+      --bg-accent-light: #fffbeb;
+      --radar-poly: rgba(236, 185, 57, 0.3);
+      --radar-stroke: #ecb939;
+    }
+    html[data-theme="hufflepuff"].dark {
+      --bg-main: #121212;
+      --bg-card: #1e1e1e;
+      --text-main: #fef08a;
+      --text-muted: #a1a1aa;
+      --border-main: #ecb939;
+      --bg-accent-light: rgba(236, 185, 57, 0.2);
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .header-bar {
+      background-color: var(--bg-header);
+    }
+    .card-theme {
+      background-color: var(--bg-card);
+      border-color: var(--border-main);
+    }
+    .btn-primary-theme {
+      background-color: var(--btn-primary);
+      color: #ffffff;
+    }
+    .btn-primary-theme:hover {
+      background-color: var(--btn-primary-hover);
+    }
+    .option-btn {
+      transition: all 0.15s ease-in-out;
+      background-color: var(--bg-card);
+      border-color: var(--border-main);
+      color: var(--text-main) !important;
+    }
+    .option-btn.selected {
+      border: 2px solid var(--border-accent) !important;
+      background-color: var(--bg-accent-light) !important;
+    }
+    .option-btn.selected .badge-letter {
+      background-color: var(--btn-primary) !important;
+      color: #ffffff !important;
+    }
+    .option-btn.correct-reveal {
+      border: 2px solid #16a34a !important;
+      background-color: rgba(22, 163, 74, 0.15) !important;
+      color: var(--text-main) !important;
+    }
+    .option-btn.incorrect-reveal {
+      border: 2px solid #dc2626 !important;
+      background-color: rgba(220, 38, 38, 0.15) !important;
+      color: var(--text-main) !important;
+    }
+
+    /* Universal High-Contrast Select Dropdown & Option Styling */
+    select {
+      color: #0f172a !important;
+      background-color: #ffffff !important;
+    }
+    html.dark select {
+      color: #f8fafc !important;
+      background-color: #1e293b !important;
+    }
+    .header-bar select {
+      color: #ffffff !important;
+      background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+
+    select option {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      font-weight: 600 !important;
+    }
+    html.dark select option,
+    .header-bar select option {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+    }
+  
+    /* Pure black text for all content elements in Light Mode */
+    html:not(.dark) main,
+    html:not(.dark) main p,
+    html:not(.dark) main span:not(.btn-primary-theme):not(.bg-blue-600),
+    html:not(.dark) main h1,
+    html:not(.dark) main h2,
+    html:not(.dark) main h3,
+    html:not(.dark) main h4,
+    html:not(.dark) main label,
+    html:not(.dark) main select,
+    html:not(.dark) main option,
+    html:not(.dark) main input,
+    html:not(.dark) main textarea,
+    html:not(.dark) main div,
+    html:not(.dark) select,
+    html:not(.dark) select option {
+      color: #000000 !important;
+    }
+
+    /* Badges & special elements inside main that need explicit contrast */
+    html:not(.dark) .badge-letter {
+      color: #000000 !important;
+      background-color: #e2e8f0 !important;
+    }
+
+    /* Header remains high-contrast white text on top of the themed dark bar */
+    .header-bar, .header-bar * {
+      color: #ffffff !important;
+    }
+    .header-bar select {
+      background-color: rgba(0, 0, 0, 0.4) !important;
+      color: #ffffff !important;
+    }
+    .header-bar select option {
+      background-color: #0f172a !important;
+      color: #ffffff !important;
+    }
+
+  </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col">
+
+  <!-- Header Navigation -->
+  <header class="header-bar text-white shadow-md sticky top-0 z-50 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg btn-primary-theme flex items-center justify-center font-bold text-xl">R</div>
+        <div>
+          <h1 class="text-lg font-bold leading-tight">Renal Quiz Bank</h1>
+          <p class="text-xs opacity-80">Renal & Clinical Question Bank</p>
+        </div>
+      </div>
+
+      <!-- Navigation & Customization Bar -->
+      <div class="flex items-center gap-3 flex-wrap">
+        <nav class="flex items-center gap-1 bg-black/20 p-1 rounded-lg">
+          <button onclick="switchTab('launcher')" id="nav-launcher" class="px-3 py-1.5 rounded-md text-xs font-semibold bg-white/20">Launcher</button>
+          <button onclick="switchTab('quiz')" id="nav-quiz" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Quiz Engine</button>
+          <button onclick="switchTab('review')" id="nav-review" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Review</button>
+          <button onclick="switchTab('analytics')" id="nav-analytics" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Analytics</button>
+          <button onclick="switchTab('bank')" id="nav-bank" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Bank</button>
+        </nav>
+
+        <!-- Color Themes Dropdown -->
+        <select id="theme-selector" onchange="changeTheme(this.value)" class="font-medium text-xs px-2.5 py-1.5 rounded-lg border border-white/30 outline-none cursor-pointer">
+          <option value="default">🏥 Default Medical</option>
+          <option value="gryffindor">🦁 Gryffindor</option>
+          <option value="slytherin">🐍 Slytherin</option>
+          <option value="ravenclaw">🦅 Ravenclaw</option>
+          <option value="hufflepuff">🦡 Hufflepuff</option>
+        </select>
+
+        <!-- Dark / Light Mode Toggle -->
+        <button onclick="toggleDarkMode()" id="mode-toggle-btn" class="p-1.5 rounded-lg bg-black/30 hover:bg-black/40 text-sm border border-white/20">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="hidden fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-3 border border-slate-700">
+    <span id="toast-msg">Notification</span>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+
+    <!-- TAB 1: EXAM LAUNCHER -->
+    <section id="tab-launcher" class="space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border">
+        <h2 class="text-xl font-bold mb-1 text-slate-900 dark:text-slate-100">Create Custom Study Session</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">Select your target categories & specific uploaded lectures, question status filters, and testing parameters.</p>
+
+        <!-- Category & Lecture Drill-down Selection -->
+        <div class="mb-6">
+          <div class="flex justify-between items-center mb-3">
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100">Select Categories & Uploaded Lectures</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Expand any category to toggle specific uploaded lectures.</p>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="selectAllLectures(true)" class="text-xs font-bold hover:underline text-blue-600 dark:text-blue-400">Select All</button>
+              <button onclick="selectAllLectures(false)" class="text-xs font-bold hover:underline text-slate-600 dark:text-slate-300">Deselect All</button>
+            </div>
+          </div>
+          <div class="space-y-3" id="category-selector-grid"></div>
+        </div>
+
+        <!-- Question Status Filters -->
+        <div class="mb-6">
+          <h3 class="text-sm font-bold uppercase tracking-wider mb-3 text-slate-900 dark:text-slate-100">Filter by Question Status</h3>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="all" checked class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">All Questions</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="unused" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Unused Only</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="incorrect" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Incorrect Only</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="correct" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Correct Only</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="bookmarked" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Bookmarked</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Quiz Settings -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-slate-900 dark:text-slate-100">Number of Questions</label>
+            <input type="number" id="question-count" min="1" max="50" value="10" class="w-full px-4 py-2 card-theme border rounded-xl outline-none text-slate-900 dark:text-slate-100 font-medium">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-slate-900 dark:text-slate-100">Quiz Mode</label>
+            <select id="quiz-mode" class="w-full px-4 py-2 card-theme border rounded-xl outline-none font-medium">
+              <option value="practice">Practice Mode (Instant Feedback)</option>
+              <option value="test">Test Mode (Hidden Feedback until Submit)</option>
+            </select>
+          </div>
+          <div class="flex flex-col justify-end gap-2">
+            <label class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-slate-100 cursor-pointer">
+              <input type="checkbox" id="shuffle-questions" checked class="accent-blue-600 w-4 h-4">
+              Randomize Question Order
+            </label>
+            <label class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-slate-100 cursor-pointer">
+              <input type="checkbox" id="shuffle-options" checked class="accent-blue-600 w-4 h-4">
+              Randomize Choices (A-E)
+            </label>
+          </div>
+        </div>
+
+        <button onclick="startQuiz()" class="w-full btn-primary-theme font-bold py-3.5 rounded-xl text-center shadow-lg transition">
+          Start Quiz Session
+        </button>
+      </div>
+    </section>
+
+    <!-- TAB 2: ACTIVE QUIZ ENGINE -->
+    <section id="tab-quiz" class="hidden space-y-4">
+      <div id="quiz-empty-msg" class="card-theme rounded-2xl p-12 text-center border">
+        <p class="text-slate-600 dark:text-slate-300 mb-4">No active quiz session running.</p>
+        <button onclick="switchTab('launcher')" class="btn-primary-theme font-bold px-6 py-2.5 rounded-xl">Go to Launcher</button>
+      </div>
+
+      <div id="quiz-container" class="hidden space-y-4">
+        <!-- Top Toolbar -->
+        <div class="card-theme rounded-xl p-4 shadow-sm border flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <span id="quiz-progress-text" class="text-sm font-bold text-slate-900 dark:text-slate-100">Question 1 of 10</span>
+            <span id="category-badge" class="px-2.5 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold rounded-md">Category</span>
+            <span id="lecture-badge" class="px-2.5 py-1 bg-slate-200 text-slate-900 dark:bg-slate-700 dark:text-slate-100 text-xs font-semibold rounded-md">Lecture</span>
+          </div>
+          <button onclick="toggleBookmarkCurrent()" id="bookmark-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold card-theme text-slate-900 dark:text-slate-100">
+            ★ Bookmark
+          </button>
+        </div>
+
+        <!-- Question Card -->
+        <div class="card-theme rounded-2xl p-6 shadow-sm border space-y-6">
+          <div id="question-text" class="text-base md:text-lg leading-relaxed font-semibold whitespace-pre-line text-slate-900 dark:text-slate-100">
+            Vignette content...
+          </div>
+
+          <!-- Answer Options -->
+          <div id="options-container" class="space-y-3"></div>
+
+          <!-- Explanation Box -->
+          <div id="explanation-box" class="hidden card-theme border rounded-xl p-5 space-y-2">
+            <h4 class="font-bold text-sm uppercase text-slate-900 dark:text-slate-100">Explanation & Rationale</h4>
+            <p id="explanation-text" class="text-sm leading-relaxed whitespace-pre-line text-slate-800 dark:text-slate-200"></p>
+          </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="flex justify-between items-center">
+          <button onclick="prevQuestion()" id="prev-btn" class="px-5 py-2.5 rounded-xl border font-semibold text-sm card-theme disabled:opacity-50 text-slate-900 dark:text-slate-100">Previous</button>
+          <div class="flex gap-2">
+            <button onclick="submitExam()" id="submit-btn" class="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm">Submit Exam</button>
+            <button onclick="nextQuestion()" id="next-btn" class="px-5 py-2.5 rounded-xl btn-primary-theme font-semibold text-sm">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: POST-EXAM & QUESTION BANK REVIEW SCREEN -->
+    <section id="tab-review" class="hidden space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border space-y-4">
+        <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">Detailed Question Review</h2>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Review vignettes, your chosen answers, correct responses, and explanations.</p>
+          </div>
+          
+          <!-- Review Filters -->
+          <div class="flex gap-2 flex-wrap">
+            <button onclick="filterReviewList('all')" id="rf-all" class="px-3 py-1.5 rounded-lg border text-xs font-bold btn-primary-theme">All Questions</button>
+            <button onclick="filterReviewList('incorrect')" id="rf-incorrect" class="px-3 py-1.5 rounded-lg border text-xs font-bold card-theme text-slate-900 dark:text-slate-100">Incorrect Only</button>
+            <button onclick="filterReviewList('correct')" id="rf-correct" class="px-3 py-1.5 rounded-lg border text-xs font-bold card-theme text-slate-900 dark:text-slate-100">Correct Only</button>
+            <button onclick="filterReviewList('bookmarked')" id="rf-bookmarked" class="px-3 py-1.5 rounded-lg border text-xs font-bold card-theme text-slate-900 dark:text-slate-100">Bookmarked ★</button>
+          </div>
+        </div>
+
+        <!-- Review Question List -->
+        <div id="review-list-container" class="space-y-6">
+          <p class="text-center text-sm text-slate-600 dark:text-slate-300 py-8">No questions loaded or attempted yet. Import questions in the Bank tab to get started!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: ANALYTICS WITH RADAR CHART -->
+    <section id="tab-analytics" class="hidden space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border text-center space-y-4">
+        <h2 class="text-xl font-bold mb-1 text-slate-900 dark:text-slate-100">6-Discipline Performance Radar</h2>
+        <p class="text-xs text-slate-600 dark:text-slate-300">Overall Mastery: (Total Correct ÷ Total Available) scaled from 0% (Center) to 100% (Outer Ring).</p>
+
+        <!-- Canvas Container -->
+        <div class="relative flex justify-center">
+          <canvas id="analyticsRadarCanvas" width="560" height="420" class="max-w-full h-auto"></canvas>
+        </div>
+
+        <h3 class="text-sm font-bold uppercase tracking-wider text-left pt-4 text-slate-900 dark:text-slate-100">Discipline Breakdown</h3>
+        <div id="discipline-stats-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: MANAGE BANK & JSON IMPORTER -->
+    <section id="tab-bank" class="hidden space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border">
+        <h2 class="text-xl font-bold mb-2 text-slate-900 dark:text-slate-100">JSON Question Bank Importer</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">Paste JSON question sets directly from NotebookLM or custom files. Accepts plain arrays `[ {...} ]` or objects `{ "questions": [...] }`.</p>
+
+        <!-- Category Override Selector -->
+        <div class="mb-4">
+          <label class="block text-sm font-semibold mb-2 text-slate-900 dark:text-slate-100">Target Discipline / Category Override</label>
+          <select id="import-category-override" class="w-full md:w-1/2 px-4 py-2 card-theme border rounded-xl outline-none font-medium">
+            <option value="auto">Auto-Detect from JSON</option>
+            <option value="Biochemistry">Biochemistry</option>
+            <option value="Physiology">Physiology</option>
+            <option value="Anatomy">Anatomy</option>
+            <option value="Pathology">Pathology</option>
+            <option value="Pharmacology">Pharmacology</option>
+            <option value="Clinical">Clinical</option>
+          </select>
+        </div>
+
+        <textarea id="json-input" rows="10" placeholder='Paste your JSON code here...' class="w-full p-4 font-mono text-xs card-theme border rounded-xl outline-none mb-4 text-slate-900 dark:text-slate-100"></textarea>
+
+        <div class="flex flex-wrap gap-3">
+          <button onclick="importJSON()" class="px-6 py-2.5 btn-primary-theme font-bold rounded-xl text-sm">Import Questions</button>
+          <button onclick="exportJSON()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-semibold rounded-xl text-sm">Export Entire Bank</button>
+          <button onclick="clearQuestionBank()" class="px-6 py-2.5 border border-red-300 text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 font-semibold rounded-xl text-sm ml-auto">Clear Question Bank</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const DISCIPLINES = ['Biochemistry', 'Physiology', 'Anatomy', 'Pathology', 'Pharmacology', 'Clinical'];
+
+    let questionBank = [];
+    let userHistory = {};
+    let currentQuiz = [];
+    let currentIndex = 0;
+    let selectedAnswers = {};
+    let quizSubmitted = false;
+    let quizMode = 'practice';
+    let currentReviewFilter = 'all';
+
+    window.onload = function() {
+      loadFromStorage();
+      renderCategoryGrid();
+      renderAnalytics();
+      renderReviewList();
+    };
+
+    let dbInstance = null;
+
+    function initDB() {
+      return new Promise((resolve) => {
+        if (!window.indexedDB) { resolve(null); return; }
+        const request = indexedDB.open("RenalQuizBankDB", 1);
+        request.onupgradeneeded = function(e) {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains("store")) {
+            db.createObjectStore("store");
+          }
+        };
+        request.onsuccess = function(e) {
+          dbInstance = e.target.result;
+          resolve(dbInstance);
+        };
+        request.onerror = function() {
+          resolve(null);
+        };
+      });
+    }
+
+    async function loadFromStorage() {
+      try {
+        const savedBank = localStorage.getItem('renal_quiz_bank');
+        if (savedBank) questionBank = JSON.parse(savedBank);
+        const savedHist = localStorage.getItem('renal_quiz_history');
+        if (savedHist) userHistory = JSON.parse(savedHist);
+      } catch(e) { console.warn('localStorage read error:', e); }
+
+      try {
+        const db = await initDB();
+        if (db) {
+          const tx = db.transaction("store", "readonly");
+          const store = tx.objectStore("store");
+          const bankReq = store.get("renal_quiz_bank");
+          const histReq = store.get("renal_quiz_history");
+
+          bankReq.onsuccess = function() {
+            if (bankReq.result && (!questionBank || questionBank.length === 0)) {
+              questionBank = bankReq.result;
+              renderCategoryGrid();
+              renderAnalytics();
+              renderReviewList();
+            }
+          };
+          histReq.onsuccess = function() {
+            if (histReq.result && Object.keys(userHistory).length === 0) {
+              userHistory = histReq.result;
+              renderAnalytics();
+              renderReviewList();
+            }
+          };
+        }
+      } catch(e) { console.warn('IndexedDB read error:', e); }
+
+      try {
+        const savedTheme = localStorage.getItem('renal_quiz_theme') || 'default';
+        changeTheme(savedTheme);
+
+        const savedMode = localStorage.getItem('renal_quiz_mode');
+        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedMode === 'dark' || (!savedMode && systemPrefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.getElementById('mode-toggle-btn').innerText = '☀️';
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.getElementById('mode-toggle-btn').innerText = '🌙';
+        }
+      } catch(e) {}
+    }
+
+    function saveToStorage() {
+      try {
+        localStorage.setItem('renal_quiz_bank', JSON.stringify(questionBank));
+        localStorage.setItem('renal_quiz_history', JSON.stringify(userHistory));
+      } catch(e) { console.warn('localStorage write error:', e); }
+
+      try {
+        if (dbInstance) {
+          const tx = dbInstance.transaction("store", "readwrite");
+          const store = tx.objectStore("store");
+          store.put(questionBank, "renal_quiz_bank");
+          store.put(userHistory, "renal_quiz_history");
+        }
+      } catch(e) { console.warn('IndexedDB write error:', e); }
+    }
+
+    function changeTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      document.getElementById('theme-selector').value = themeName;
+      localStorage.setItem('renal_quiz_theme', themeName);
+      if (!document.getElementById('tab-analytics').classList.contains('hidden')) {
+        renderAnalytics();
+      }
+    }
+
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('renal_quiz_mode', isDark ? 'dark' : 'light');
+      document.getElementById('mode-toggle-btn').innerText = isDark ? '☀️' : '🌙';
+      if (!document.getElementById('tab-analytics').classList.contains('hidden')) {
+        renderAnalytics();
+      }
+    }
+
+    // Listen for OS system theme changes dynamically if user hasn't set explicit preference
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('renal_quiz_mode')) {
+          if (e.matches) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('mode-toggle-btn').innerText = '☀️';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.getElementById('mode-toggle-btn').innerText = '🌙';
+          }
+          if (!document.getElementById('tab-analytics').classList.contains('hidden')) {
+            renderAnalytics();
+          }
+        }
+      });
+    }
+
+
+    // EXPANDABLE CATEGORY & LECTURE SELECTION GRID
+    function renderCategoryGrid() {
+      const grid = document.getElementById('category-selector-grid');
+      grid.innerHTML = '';
+
+      const catMap = {};
+      DISCIPLINES.forEach(c => catMap[c] = {});
+
+      questionBank.forEach(q => {
+        const cat = q.category || q.topic || 'Clinical';
+        const lec = q.lecture || 'General Vignettes';
+        if (!catMap[cat]) catMap[cat] = {};
+        catMap[cat][lec] = (catMap[cat][lec] || 0) + 1;
+      });
+
+      Object.keys(catMap).forEach(cat => {
+        const lectures = catMap[cat];
+        const lectureNames = Object.keys(lectures);
+        const totalCatCount = Object.values(lectures).reduce((a, b) => a + b, 0);
+
+        const sanitizedCatId = cat.replace(/[^a-zA-Z0-9]/g, '_');
+
+        const card = document.createElement('div');
+        card.className = "card-theme rounded-xl border p-3.5 space-y-2";
+
+        let lectureCheckboxesHTML = '';
+        if (lectureNames.length > 0) {
+          lectureNames.forEach(lec => {
+            const count = lectures[lec];
+            const lecKey = `${cat}::${lec}`;
+            lectureCheckboxesHTML += `
+              <label class="flex items-center justify-between p-2 rounded-lg card-theme border hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer text-xs">
+                <div class="flex items-center gap-2.5 overflow-hidden">
+                  <input type="checkbox" data-cat="${sanitizedCatId}" value="${lecKey}" checked onchange="updateCatMainState('${sanitizedCatId}')" class="lec-checkbox accent-blue-600 w-3.5 h-3.5 shrink-0">
+                  <span class="font-bold truncate text-slate-900 dark:text-slate-100">${lec}</span>
+                </div>
+                <span class="text-[10px] font-black px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-full shrink-0">${count} Qs</span>
+              </label>
+            `;
+          });
+        } else {
+          lectureCheckboxesHTML = `<p class="text-xs text-slate-600 dark:text-slate-400 italic p-2">No uploaded questions in this category yet. Import JSON in the Bank tab.</p>`;
+        }
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="cat-main-${sanitizedCatId}" ${totalCatCount > 0 ? 'checked' : 'disabled'} onchange="toggleCategoryAll('${sanitizedCatId}', this.checked)" class="accent-blue-600 w-4 h-4">
+              <span class="text-sm font-bold text-slate-900 dark:text-slate-100">${cat}</span>
+              <span class="text-xs font-bold px-2.5 py-0.5 bg-blue-100 text-blue-900 dark:bg-blue-900/50 dark:text-blue-200 rounded-full">${totalCatCount} Questions</span>
+            </div>
+            
+            <button onclick="toggleLectureAccordion('${sanitizedCatId}')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600 flex items-center gap-1.5 transition">
+              <span>Lectures (${lectureNames.length})</span>
+              <span id="acc-arrow-${sanitizedCatId}">▼</span>
+            </button>
+          </div>
+
+          <div id="acc-container-${sanitizedCatId}" class="pt-2 pl-4 border-l-2 border-slate-300 dark:border-slate-700 space-y-1.5 hidden">
+            ${lectureCheckboxesHTML}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function toggleLectureAccordion(catId) {
+      const container = document.getElementById(`acc-container-${catId}`);
+      const arrow = document.getElementById(`acc-arrow-${catId}`);
+      if (container) {
+        const isHidden = container.classList.toggle('hidden');
+        if (arrow) arrow.innerText = isHidden ? '▼' : '▲';
+      }
+    }
+
+    function toggleCategoryAll(catId, isChecked) {
+      document.querySelectorAll(`.lec-checkbox[data-cat="${catId}"]`).forEach(cb => cb.checked = isChecked);
+    }
+
+    function updateCatMainState(catId) {
+      const subCheckboxes = Array.from(document.querySelectorAll(`.lec-checkbox[data-cat="${catId}"]`));
+      const mainCb = document.getElementById(`cat-main-${catId}`);
+      if (!mainCb || subCheckboxes.length === 0) return;
+
+      const checkedCount = subCheckboxes.filter(cb => cb.checked).length;
+      mainCb.checked = checkedCount > 0;
+      mainCb.indeterminate = checkedCount > 0 && checkedCount < subCheckboxes.length;
+    }
+
+    function selectAllLectures(state) {
+      document.querySelectorAll('.lec-checkbox').forEach(cb => cb.checked = state);
+      document.querySelectorAll('[id^="cat-main-"]').forEach(cb => {
+        if (!cb.disabled) {
+          cb.checked = state;
+          cb.indeterminate = false;
+        }
+      });
+    }
+
+    function switchTab(tabName) {
+      ['launcher', 'quiz', 'review', 'analytics', 'bank'].forEach(t => {
+        document.getElementById(`tab-${t}`).classList.add('hidden');
+        const navBtn = document.getElementById(`nav-${t}`);
+        if (navBtn) navBtn.className = "px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100 text-white";
+      });
+      document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+      const activeNav = document.getElementById(`nav-${tabName}`);
+      if (activeNav) activeNav.className = "px-3 py-1.5 rounded-md text-xs font-semibold bg-white/20 text-white";
+      
+      if (tabName === 'analytics') renderAnalytics();
+      if (tabName === 'launcher') renderCategoryGrid();
+      if (tabName === 'review') renderReviewList();
+    }
+
+    function startQuiz() {
+      const selectedLecKeys = Array.from(document.querySelectorAll('.lec-checkbox:checked')).map(cb => cb.value);
+      const statusFilter = document.querySelector('input[name="statusFilter"]:checked').value;
+      const count = parseInt(document.getElementById('question-count').value) || 10;
+      quizMode = document.getElementById('quiz-mode').value;
+      const shuffleQ = document.getElementById('shuffle-questions').checked;
+      const shuffleO = document.getElementById('shuffle-options').checked;
+
+      if (questionBank.length === 0) {
+        showToast("Your question bank is empty. Please import questions in the Bank tab.");
+        return;
+      }
+
+      if (selectedLecKeys.length === 0) {
+        showToast("Please select at least one lecture or category.");
+        return;
+      }
+
+      let pool = questionBank.filter(q => {
+        const qCat = q.category || q.topic || 'Clinical';
+        const qLec = q.lecture || 'General Vignettes';
+        const qKey = `${qCat}::${qLec}`;
+
+        const matchesLec = selectedLecKeys.includes(qKey);
+        const hist = userHistory[q.id] || { status: 'unused', bookmarked: false };
+        
+        let matchesStatus = true;
+        if (statusFilter === 'unused') matchesStatus = hist.status === 'unused';
+        if (statusFilter === 'incorrect') matchesStatus = hist.status === 'incorrect';
+        if (statusFilter === 'correct') matchesStatus = hist.status === 'correct';
+        if (statusFilter === 'bookmarked') matchesStatus = hist.bookmarked === true;
+
+        return matchesLec && matchesStatus;
+      });
+
+      if (pool.length === 0) {
+        showToast("No questions match your selected lecture/status criteria.");
+        return;
+      }
+
+      if (shuffleQ) pool.sort(() => Math.random() - 0.5);
+      pool = pool.slice(0, count);
+
+      currentQuiz = pool.map(q => {
+        let opts = Object.entries(q.options || {});
+        if (shuffleO) opts.sort(() => Math.random() - 0.5);
+        return {
+          ...q,
+          processedOptions: opts
+        };
+      });
+
+      currentIndex = 0;
+      selectedAnswers = {};
+      quizSubmitted = false;
+
+      document.getElementById('quiz-empty-msg').classList.add('hidden');
+      document.getElementById('quiz-container').classList.remove('hidden');
+      switchTab('quiz');
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = currentQuiz[currentIndex];
+      document.getElementById('quiz-progress-text').innerText = `Question ${currentIndex + 1} of ${currentQuiz.length}`;
+      document.getElementById('category-badge').innerText = q.category || q.topic || 'General';
+      document.getElementById('lecture-badge').innerText = q.lecture || 'Lecture Note';
+      document.getElementById('question-text').innerText = q.vignette || q.question;
+
+      const isBookmarked = (userHistory[q.id] && userHistory[q.id].bookmarked);
+      const bBtn = document.getElementById('bookmark-btn');
+      bBtn.innerText = isBookmarked ? "★ Bookmarked" : "☆ Bookmark";
+
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+      q.processedOptions.forEach(([originalKey, text], idx) => {
+        const displayLetter = letters[idx];
+        const isSelected = selectedAnswers[currentIndex] === originalKey;
+        const btn = document.createElement('button');
+        btn.onclick = () => selectOption(originalKey);
+
+        let optionClass = "option-btn w-full p-4 rounded-xl border text-left flex items-start gap-3 transition font-medium text-slate-900 dark:text-slate-100";
+        if (isSelected) optionClass += " selected";
+
+        if (quizSubmitted || (quizMode === 'practice' && selectedAnswers[currentIndex] !== undefined)) {
+          if (originalKey === q.correct_answer) optionClass += " correct-reveal";
+          else if (isSelected && originalKey !== q.correct_answer) optionClass += " incorrect-reveal";
+        }
+
+        btn.className = optionClass;
+        btn.innerHTML = `
+          <span class="badge-letter w-7 h-7 rounded-lg bg-slate-200 dark:bg-white/10 font-bold text-xs flex items-center justify-center shrink-0 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100">${displayLetter}</span>
+          <span class="text-sm font-semibold leading-relaxed text-slate-900 dark:text-slate-100">${text.replace(/^[A-E]\.\s*/, '')}</span>
+        `;
+        container.appendChild(btn);
+      });
+
+      const expBox = document.getElementById('explanation-box');
+      if (quizSubmitted || (quizMode === 'practice' && selectedAnswers[currentIndex] !== undefined)) {
+        expBox.classList.remove('hidden');
+        document.getElementById('explanation-text').innerText = q.explanation || "No detailed explanation provided.";
+      } else {
+        expBox.classList.add('hidden');
+      }
+
+      document.getElementById('prev-btn').disabled = currentIndex === 0;
+      document.getElementById('next-btn').classList.toggle('hidden', currentIndex === currentQuiz.length - 1);
+      document.getElementById('submit-btn').classList.toggle('hidden', quizSubmitted || currentIndex !== currentQuiz.length - 1);
+    }
+
+    function selectOption(key) {
+      if (quizSubmitted) return;
+      selectedAnswers[currentIndex] = key;
+      const q = currentQuiz[currentIndex];
+      if (!userHistory[q.id]) userHistory[q.id] = { status: 'unused', bookmarked: false };
+      
+      userHistory[q.id].userAnswer = key;
+      if (quizMode === 'practice') {
+        userHistory[q.id].status = (key === q.correct_answer) ? 'correct' : 'incorrect';
+        saveToStorage();
+      }
+      renderQuestion();
+    }
+
+    function toggleBookmarkCurrent() {
+      const q = currentQuiz[currentIndex];
+      if (!userHistory[q.id]) userHistory[q.id] = { status: 'unused', bookmarked: false };
+      userHistory[q.id].bookmarked = !userHistory[q.id].bookmarked;
+      saveToStorage();
+      renderQuestion();
+      showToast(userHistory[q.id].bookmarked ? "Question bookmarked" : "Bookmark removed");
+    }
+
+    function nextQuestion() {
+      if (currentIndex < currentQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    }
+
+    function submitExam() {
+      quizSubmitted = true;
+      currentQuiz.forEach((q, idx) => {
+        const sel = selectedAnswers[idx];
+        if (!userHistory[q.id]) userHistory[q.id] = { status: 'unused', bookmarked: false };
+        if (sel) {
+          userHistory[q.id].userAnswer = sel;
+          userHistory[q.id].status = (sel === q.correct_answer) ? 'correct' : 'incorrect';
+        }
+      });
+      saveToStorage();
+      renderQuestion();
+      showToast("Exam submitted! Moving to Question Review.");
+      switchTab('review');
+    }
+
+    // POST-EXAM & QUESTION BANK REVIEW LIST
+    function filterReviewList(filter) {
+      currentReviewFilter = filter;
+      ['all', 'incorrect', 'correct', 'bookmarked'].forEach(f => {
+        const btn = document.getElementById(`rf-${f}`);
+        if (btn) {
+          if (f === filter) btn.className = "px-3 py-1.5 rounded-lg border text-xs font-bold btn-primary-theme";
+          else btn.className = "px-3 py-1.5 rounded-lg border text-xs font-bold card-theme text-slate-900 dark:text-slate-100";
+        }
+      });
+      renderReviewList();
+    }
+
+    function renderReviewList() {
+      const container = document.getElementById('review-list-container');
+      container.innerHTML = '';
+
+      const pool = currentQuiz.length > 0 ? currentQuiz : questionBank;
+
+      const filtered = pool.filter(q => {
+        const hist = userHistory[q.id] || { status: 'unused', bookmarked: false };
+        if (currentReviewFilter === 'incorrect') return hist.status === 'incorrect';
+        if (currentReviewFilter === 'correct') return hist.status === 'correct';
+        if (currentReviewFilter === 'bookmarked') return hist.bookmarked === true;
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<p class="text-center text-sm text-slate-600 dark:text-slate-300 py-8">No questions match the "${currentReviewFilter}" filter.</p>`;
+        return;
+      }
+
+      filtered.forEach((q, idx) => {
+        const hist = userHistory[q.id] || { status: 'unused', bookmarked: false };
+        const userChoice = hist.userAnswer || null;
+        const isCorrect = userChoice && userChoice === q.correct_answer;
+
+        const card = document.createElement('div');
+        card.className = "card-theme rounded-xl p-5 border space-y-3";
+
+        let statusBadge = `<span class="px-2.5 py-0.5 rounded text-xs font-bold bg-slate-200 text-slate-900 dark:bg-slate-700 dark:text-slate-100">Unused</span>`;
+        if (hist.status === 'correct') statusBadge = `<span class="px-2.5 py-0.5 rounded text-xs font-bold bg-green-100 text-green-900 dark:bg-green-900/50 dark:text-green-200">✓ Correct</span>`;
+        if (hist.status === 'incorrect') statusBadge = `<span class="px-2.5 py-0.5 rounded text-xs font-bold bg-red-100 text-red-900 dark:bg-red-900/50 dark:text-red-200">✗ Incorrect</span>`;
+
+        let summaryHeader = '';
+        if (userChoice) {
+          if (isCorrect) {
+            summaryHeader = `<div class="p-2.5 rounded-lg bg-green-500/10 border border-green-600 text-xs font-bold text-green-900 dark:text-green-300 flex justify-between items-center">
+              <span>Your Answer: (${userChoice}) — Correct!</span>
+              <span>✓ Score Saved</span>
+            </div>`;
+          } else {
+            summaryHeader = `<div class="p-2.5 rounded-lg bg-red-500/10 border border-red-600 text-xs font-bold text-red-900 dark:text-red-300 flex justify-between items-center">
+              <span>Your Answer: (${userChoice}) | Correct Answer: (${q.correct_answer})</span>
+              <span>✗ Incorrect Choice</span>
+            </div>`;
+          }
+        } else {
+          summaryHeader = `<div class="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-900 dark:text-slate-100 flex justify-between items-center border">
+            <span>Not Answered Yet</span>
+            <span>Correct Answer: (${q.correct_answer})</span>
+          </div>`;
+        }
+
+        let optionsMarkup = '';
+        Object.entries(q.options || {}).forEach(([key, val]) => {
+          let style = "p-3 rounded-xl text-xs font-semibold border flex items-center justify-between transition text-slate-900 dark:text-slate-100 ";
+          let labelBadge = '';
+
+          const isUserPicked = (userChoice === key);
+          const isCorrectOption = (q.correct_answer === key);
+
+          if (isCorrectOption && isUserPicked) {
+            style += "bg-green-500/20 border-2 border-green-600 font-bold";
+            labelBadge = '<span class="px-2 py-0.5 rounded bg-green-600 text-white font-bold text-[10px]">✓ Your Choice (Correct)</span>';
+          } else if (isCorrectOption) {
+            style += "bg-green-500/15 border-2 border-green-600 font-bold";
+            labelBadge = '<span class="px-2 py-0.5 rounded bg-green-600 text-white font-bold text-[10px]">✓ Correct Answer</span>';
+          } else if (isUserPicked) {
+            style += "bg-red-500/20 border-2 border-red-600 font-bold";
+            labelBadge = '<span class="px-2 py-0.5 rounded bg-red-600 text-white font-bold text-[10px]">✗ Your Choice (Incorrect)</span>';
+          } else {
+            style += "card-theme opacity-90";
+          }
+
+          optionsMarkup += `<div class="${style}">
+            <span class="pr-2 text-slate-900 dark:text-slate-100">${val}</span>
+            ${labelBadge}
+          </div>`;
+        });
+
+        card.innerHTML = `
+          <div class="flex justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-slate-900 dark:text-slate-100">#${idx + 1}</span>
+              ${statusBadge}
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200 text-xs font-semibold rounded">${q.category || q.topic}</span>
+              <span class="px-2 py-0.5 bg-slate-200 text-slate-900 dark:bg-slate-700 dark:text-slate-100 text-xs font-medium rounded">${q.lecture || 'Lecture Note'}</span>
+            </div>
+            <button onclick="toggleBookmarkId('${q.id}')" class="text-xs text-amber-500 hover:underline font-semibold">
+              ${hist.bookmarked ? '★ Bookmarked' : '☆ Bookmark'}
+            </button>
+          </div>
+          
+          <p class="text-sm font-semibold leading-relaxed text-slate-900 dark:text-slate-100">${q.vignette || q.question}</p>
+          
+          ${summaryHeader}
+
+          <div class="space-y-2 pt-1">${optionsMarkup}</div>
+
+          <div class="p-3.5 bg-black/5 dark:bg-white/5 rounded-xl text-xs leading-relaxed border space-y-1 mt-2">
+            <span class="font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Explanation & Rationale</span>
+            <p class="text-slate-900 dark:text-slate-100 font-medium">${q.explanation || 'No explanation available.'}</p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function toggleBookmarkId(id) {
+      if (!userHistory[id]) userHistory[id] = { status: 'unused', bookmarked: false };
+      userHistory[id].bookmarked = !userHistory[id].bookmarked;
+      saveToStorage();
+      renderReviewList();
+      showToast(userHistory[id].bookmarked ? "Bookmarked question" : "Removed bookmark");
+    }
+
+    function importJSON() {
+      const raw = document.getElementById('json-input').value.trim();
+      const overrideCat = document.getElementById('import-category-override').value;
+
+      if (!raw) {
+        showToast("Please paste JSON data first.");
+        return;
+      }
+
+      try {
+        let parsed = JSON.parse(raw);
+        let items = [];
+        let rootLectureTitle = '';
+
+        if (Array.isArray(parsed)) {
+          items = parsed;
+        } else if (typeof parsed === 'object' && parsed !== null) {
+          rootLectureTitle = parsed.lecture_title || parsed.lecture || parsed.title || '';
+          items = parsed.usmle_practice_problems || parsed.questions || parsed.data || parsed.items || [];
+          if (items.length === 0) {
+            const arrayKey = Object.keys(parsed).find(k => Array.isArray(parsed[k]));
+            if (arrayKey) items = parsed[arrayKey];
+          }
+        }
+
+        if (items.length === 0) {
+          showToast("No valid array of questions found in JSON.");
+          return;
+        }
+
+        let importedCount = 0;
+        items.forEach((item, idx) => {
+          const qId = item.id ? String(item.id) : `imp_${Date.now()}__${idx}`;
+          const qCategory = (overrideCat !== 'auto') ? overrideCat : (item.category || item.topic || 'Anatomy');
+          
+          // Priority for Lecture Title: item.lecture_title -> root-level lecture_title -> item.lecture -> item.lecture_name -> item.topic -> fallback
+          const qLecture = item.lecture_title || rootLectureTitle || item.lecture || item.lecture_name || item.topic || 'General Vignettes';
+          const qExplanation = item.rationale || item.explanation || item.reasoning || '';
+
+          const newQ = {
+            id: qId,
+            vignette: item.vignette || item.question || '',
+            options: item.options || {},
+            correct_answer: item.correct_answer || item.correctAnswer || 'A',
+            explanation: qExplanation,
+            category: qCategory,
+            lecture: qLecture,
+            order: item.order || ''
+          };
+
+          const existingIdx = questionBank.findIndex(b => b.id === qId);
+          if (existingIdx >= 0) questionBank[existingIdx] = newQ;
+          else questionBank.push(newQ);
+          importedCount++;
+        });
+
+        saveToStorage();
+        renderCategoryGrid();
+        showToast(`Imported ${importedCount} questions under "${items[0]?.lecture_title || rootLectureTitle || 'General Vignettes'}"!`);
+        document.getElementById('json-input').value = '';
+      } catch (err) {
+        showToast("Invalid JSON formatting.");
+      }
+    }
+
+    function exportJSON() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(questionBank, null, 2));
+      const dlAnchor = document.createElement('a');
+      dlAnchor.setAttribute("href", dataStr);
+      dlAnchor.setAttribute("download", "renal_quiz_bank.json");
+      document.body.appendChild(dlAnchor);
+      dlAnchor.click();
+      dlAnchor.remove();
+    }
+
+    function clearQuestionBank() {
+      questionBank = [];
+      userHistory = {};
+      saveToStorage();
+      renderCategoryGrid();
+      renderAnalytics();
+      renderReviewList();
+      showToast("Cleared question bank.");
+    }
+
+    // RADAR ANALYTICS: Evaluates accuracy (Correct ÷ Answered) for answered questions
+    function renderAnalytics() {
+      const container = document.getElementById('discipline-stats-container');
+      container.innerHTML = '';
+
+      const isDark = document.documentElement.classList.contains('dark');
+
+      const statsData = DISCIPLINES.map((disc, idx) => {
+        const questions = questionBank.filter(q => {
+          const cat = q.category || q.topic;
+          return cat === disc;
+        });
+
+        let correct = 0, incorrect = 0, unused = 0;
+
+        questions.forEach(q => {
+          const st = (userHistory[q.id] && userHistory[q.id].status) || 'unused';
+          if (st === 'correct') correct++;
+          else if (st === 'incorrect') incorrect++;
+          else unused++;
+        });
+
+        const totalQ = questions.length;
+        const answered = correct + incorrect;
+        const percentage = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+
+        const card = document.createElement('div');
+        card.className = "card-theme border rounded-xl p-4 space-y-2";
+        card.innerHTML = `
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold text-sm text-slate-900 dark:text-slate-100">${disc}</h3>
+            <span class="text-xs font-black px-2.5 py-0.5 bg-blue-500/20 text-blue-700 dark:text-blue-400 rounded-full">${percentage}% Accuracy</span>
+          </div>
+          <div class="text-xs text-slate-600 dark:text-slate-300">Answered: ${answered} of ${totalQ} Questions</div>
+          <div class="flex gap-2 text-xs font-semibold mt-2">
+            <span class="text-green-700 dark:text-green-400 bg-green-500/10 px-2 py-1 rounded">✓ ${correct} Correct</span>
+            <span class="text-red-700 dark:text-red-400 bg-red-500/10 px-2 py-1 rounded">✗ ${incorrect} Incorrect</span>
+            <span class="opacity-80 bg-black/10 dark:bg-white/10 px-2 py-1 rounded text-slate-900 dark:text-slate-100">${unused} Unanswered</span>
+          </div>
+        `;
+        container.appendChild(card);
+
+        return {
+          label: disc,
+          percentage: percentage,
+          correct: correct,
+          answered: answered,
+          total: totalQ,
+          angle: (idx * (Math.PI * 2 / DISCIPLINES.length)) - (Math.PI / 2)
+        };
+      });
+
+      drawAnalyticsRadarCanvas(statsData, isDark);
+    }
+
+    function drawAnalyticsRadarCanvas(statsData, isDark) {
+      const canvas = document.getElementById('analyticsRadarCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      const centerX = canvas.width / 2;
+      const centerY = 200;
+      const radius = 130;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const computedStyle = getComputedStyle(document.documentElement);
+      const strokeColor = computedStyle.getPropertyValue('--radar-stroke').trim() || '#2563eb';
+      const polyFill = computedStyle.getPropertyValue('--radar-poly').trim() || 'rgba(37, 99, 235, 0.25)';
+      const textColor = isDark ? '#f8fafc' : '#0f172a';
+      const gridColor = isDark ? '#334155' : '#cbd5e1';
+
+      // 1. Concentric Level Rings (20%, 40%, 60%, 80%, 100%)
+      for (let level = 20; level <= 100; level += 20) {
+        const r = (radius / 100) * level;
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
+        ctx.strokeStyle = gridColor;
+        ctx.lineWidth = level === 100 ? 2 : 1;
+        ctx.stroke();
+
+        ctx.fillStyle = isDark ? '#cbd5e1' : '#475569';
+        ctx.font = "bold 10px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(level + "%", centerX, centerY - r + 3);
+      }
+
+      // 2. Axis Lines
+      statsData.forEach(item => {
+        const x = centerX + Math.cos(item.angle) * radius;
+        const y = centerY + Math.sin(item.angle) * radius;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = gridColor;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+
+      // 3. Score Coordinates (0% at center to 100% at outer ring)
+      const points = statsData.map(item => {
+        const r = (radius / 100) * item.percentage;
+        return {
+          x: centerX + Math.cos(item.angle) * r,
+          y: centerY + Math.sin(item.angle) * r
+        };
+      });
+
+      // 4. Polygon Peak Fill
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y);
+      points.forEach((pt, i) => { if (i > 0) ctx.lineTo(pt.x, pt.y); });
+      ctx.closePath();
+      ctx.fillStyle = polyFill;
+      ctx.fill();
+      ctx.strokeStyle = strokeColor;
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // 5. Dots & Labels
+      statsData.forEach((item, i) => {
+        const pt = points[i];
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = strokeColor;
+        ctx.fill();
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        const labelR = radius + 35;
+        const lx = centerX + Math.cos(item.angle) * labelR;
+        const ly = centerY + Math.sin(item.angle) * labelR;
+
+        ctx.font = "bold 12px sans-serif";
+        ctx.fillStyle = textColor;
+
+        const cos = Math.cos(item.angle);
+        const sin = Math.sin(item.angle);
+
+        if (Math.abs(cos) < 0.1) ctx.textAlign = "center";
+        else if (cos > 0) ctx.textAlign = "left";
+        else ctx.textAlign = "right";
+
+        if (Math.abs(sin) < 0.1) ctx.textBaseline = "top";
+        else if (sin > 0) ctx.textBaseline = "top";
+        else ctx.textBaseline = "bottom";
+
+        ctx.fillText(`${item.label} (${item.correct}/${item.answered} • ${item.percentage}%)`, lx, ly);
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toast-msg').innerText = msg;
+      t.classList.remove('hidden');
+      setTimeout(() => t.classList.add('hidden'), 3000);
+    }
+  </script>
+</body>
+</html>
