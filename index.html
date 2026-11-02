@@ -1049,8 +1049,10 @@
         }
 
         let importedCount = 0;
+        const batchTimestamp = Date.now();
         items.forEach((item, idx) => {
-          const qId = item.id ? String(item.id) : `imp_${Date.now()}__${idx}`;
+          const rawId = item.id ? String(item.id) : `q_${idx}`;
+          const qId = `imp_${batchTimestamp}_${idx}_${rawId}`;
           const qCategory = (overrideCat !== 'auto') ? overrideCat : (item.category || item.topic || 'Anatomy');
           
           // Priority for Lecture Title: item.lecture_title -> root-level lecture_title -> item.lecture -> item.lecture_name -> item.topic -> fallback
