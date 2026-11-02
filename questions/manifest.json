@@ -1,5 +1,17 @@
 [
-  "questions/renal_histology.json",
-  "questions/nitrogen_disposal.json",
-  "questions/renal_anatomy.json"
+  {
+    "path": "questions/nitrogen_disposal.json",
+    "category": "Biochemistry",
+    "lecture": "Nitrogen Disposal and The Urea Cycle I & II"
+  },
+  {
+    "path": "questions/renal_histology.json",
+    "category": "Anatomy",
+    "lecture": "Renal Histology"
+  },
+  {
+    "path": "questions/renal_anatomy.json",
+    "category": "Physiology",
+    "lecture": "Renal Functional Anatomy & Development"
+  }
 ]
