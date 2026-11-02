@@ -460,6 +460,8 @@
         <div class="flex flex-wrap gap-3">
           <button onclick="importJSON()" class="px-6 py-2.5 btn-primary-theme font-bold rounded-xl text-sm">Import Questions</button>
           <button onclick="exportJSON()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-semibold rounded-xl text-sm">Export Entire Bank</button>
+          <button onclick="syncFromRepo()" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm">↻ Sync Repository Questions</button>
+          <button onclick="resetToPreloaded()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-sm">Reset / Clear Local Cache</button>
           <button onclick="clearQuestionBank()" class="px-6 py-2.5 border border-red-300 text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 font-semibold rounded-xl text-sm ml-auto">Clear Question Bank</button>
         </div>
       </div>
@@ -469,6 +471,8 @@
 
   <script>
     const DISCIPLINES = ['Biochemistry', 'Physiology', 'Anatomy', 'Pathology', 'Pharmacology', 'Clinical'];
+
+    const PRELOADED_QUESTIONS = [];
 
     let questionBank = [];
     let userHistory = {};
@@ -508,7 +512,90 @@
       });
     }
 
-    async function loadFromStorage() {
+    
+    async function loadRemoteQuestions() {
+      let remoteQuestions = [];
+      
+      // 1. Try to fetch questions/manifest.json relative to index.html
+      try {
+        const manifestRes = await fetch('questions/manifest.json');
+        if (manifestRes.ok) {
+          const filePaths = await manifestRes.json();
+          for (const path of filePaths) {
+            try {
+              const qRes = await fetch(path);
+              if (qRes.ok) {
+                const data = await qRes.json();
+                const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || []);
+                const rootLec = data.lecture_title || 'General Vignettes';
+                items.forEach((item, idx) => {
+                  const qId = item.id ? String(item.id) : `remote_${path.replace(/[^a-zA-Z0-9]/g, '_')}_${idx}`;
+                  remoteQuestions.push({
+                    id: qId,
+                    vignette: item.vignette || item.question || '',
+                    options: item.options || {},
+                    correct_answer: item.correct_answer || item.correctAnswer || 'A',
+                    explanation: item.rationale || item.explanation || '',
+                    category: item.category || 'Anatomy',
+                    lecture: item.lecture_title || rootLec || item.lecture || 'General Vignettes',
+                    order: item.order || ''
+                  });
+                });
+              }
+            } catch (err) {
+              console.warn("Error fetching question file:", path, err);
+            }
+          }
+        }
+      } catch (err) {
+        console.warn("No questions/manifest.json found or failed to fetch:", err);
+      }
+
+      // 2. If running on GitHub Pages and manifest wasn't found, auto-detect JSON files via GitHub API
+      if (remoteQuestions.length === 0 && location.hostname.endsWith('github.io')) {
+        try {
+          const parts = location.pathname.split('/').filter(Boolean);
+          if (parts.length > 0) {
+            const repoOwner = location.hostname.split('.')[0];
+            const repoName = parts[0];
+            const apiRes = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/questions`);
+            if (apiRes.ok) {
+              const files = await apiRes.json();
+              const jsonFiles = files.filter(f => f.name.endsWith('.json') && f.name !== 'manifest.json');
+              for (const file of jsonFiles) {
+                try {
+                  const qRes = await fetch(file.download_url || file.path);
+                  if (qRes.ok) {
+                    const data = await qRes.json();
+                    const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || []);
+                    const rootLec = data.lecture_title || 'General Vignettes';
+                    items.forEach((item, idx) => {
+                      const qId = item.id ? String(item.id) : `gh_${file.name.replace(/[^a-zA-Z0-9]/g, '_')}_${idx}`;
+                      remoteQuestions.push({
+                        id: qId,
+                        vignette: item.vignette || item.question || '',
+                        options: item.options || {},
+                        correct_answer: item.correct_answer || item.correctAnswer || 'A',
+                        explanation: item.rationale || item.explanation || '',
+                        category: item.category || 'Anatomy',
+                        lecture: item.lecture_title || rootLec || item.lecture || 'General Vignettes',
+                        order: item.order || ''
+                      });
+                    });
+                  }
+                } catch(e) {}
+              }
+            }
+          }
+        } catch(e) {
+          console.warn("GitHub API auto-detect failed:", e);
+        }
+      }
+
+      return remoteQuestions;
+    }
+
+async function loadFromStorage() {
       try {
         const savedBank = localStorage.getItem('renal_quiz_bank');
         if (savedBank) questionBank = JSON.parse(savedBank);
@@ -524,23 +611,43 @@
           const bankReq = store.get("renal_quiz_bank");
           const histReq = store.get("renal_quiz_history");
 
-          bankReq.onsuccess = function() {
-            if (bankReq.result && (!questionBank || questionBank.length === 0)) {
-              questionBank = bankReq.result;
-              renderCategoryGrid();
-              renderAnalytics();
-              renderReviewList();
-            }
-          };
-          histReq.onsuccess = function() {
-            if (histReq.result && Object.keys(userHistory).length === 0) {
-              userHistory = histReq.result;
-              renderAnalytics();
-              renderReviewList();
-            }
-          };
+          await new Promise((resolve) => {
+            let done = 0;
+            const check = () => { done++; if (done === 2) resolve(); };
+            bankReq.onsuccess = function() {
+              if (bankReq.result && (!questionBank || questionBank.length === 0)) {
+                questionBank = bankReq.result;
+              }
+              check();
+            };
+            bankReq.onerror = check;
+            histReq.onsuccess = function() {
+              if (histReq.result && Object.keys(userHistory).length === 0) {
+                userHistory = histReq.result;
+              }
+              check();
+            };
+            histReq.onerror = check;
+          });
         }
       } catch(e) { console.warn('IndexedDB read error:', e); }
+
+      // Check for remote question files in questions/ folder
+      const remoteQs = await loadRemoteQuestions();
+      if (remoteQs.length > 0) {
+        // Merge remote questions into questionBank without duplicating
+        remoteQs.forEach(rq => {
+          const exists = questionBank.some(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
+          if (!exists) {
+            questionBank.push(rq);
+          }
+        });
+        saveToStorage();
+      } else if (!questionBank || questionBank.length === 0) {
+        // Fallback to inline preloaded questions if offline
+        questionBank = [...PRELOADED_QUESTIONS];
+        saveToStorage();
+      }
 
       try {
         const savedTheme = localStorage.getItem('renal_quiz_theme') || 'default';
@@ -559,7 +666,7 @@
       } catch(e) {}
     }
 
-    function saveToStorage() {
+function saveToStorage() {
       try {
         localStorage.setItem('renal_quiz_bank', JSON.stringify(questionBank));
         localStorage.setItem('renal_quiz_history', JSON.stringify(userHistory));
@@ -1093,6 +1200,38 @@
       document.body.appendChild(dlAnchor);
       dlAnchor.click();
       dlAnchor.remove();
+    }
+
+    
+    async function syncFromRepo() {
+      showToast("Fetching latest questions from repository...");
+      const remoteQs = await loadRemoteQuestions();
+      if (remoteQs.length > 0) {
+        let addedCount = 0;
+        remoteQs.forEach(rq => {
+          const exists = questionBank.some(q => q.id === rq.id || (q.vignette === rq.vignette && q.lecture === rq.lecture));
+          if (!exists) {
+            questionBank.push(rq);
+            addedCount++;
+          }
+        });
+        saveToStorage();
+        renderCategoryGrid();
+        renderAnalytics();
+        renderReviewList();
+        showToast(`Synced! Added ${addedCount} new questions from repository.`);
+      } else {
+        showToast("No new question files found in questions/ folder.");
+      }
+    }
+
+    function resetToPreloaded() {
+      questionBank = [...PRELOADED_QUESTIONS];
+      saveToStorage();
+      renderCategoryGrid();
+      renderAnalytics();
+      renderReviewList();
+      showToast("Question bank reset to empty local state.");
     }
 
     function clearQuestionBank() {
