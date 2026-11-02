@@ -1,6 +1,6 @@
 [
   {
-    "path": "questions/renal_functional_anatomy_and_development.json",
+    "path": "questions/renal_anatomy.json",
     "category": "Anatomy",
     "lecture": "Renal functional anatomy & development",
     "slides": "slides/w1_01_renal_functional_anatomy_and_development_slides.pdf"
@@ -12,7 +12,7 @@
     "slides": "slides/w1_02_renal_histology_slides.pdf"
   },
   {
-    "path": "questions/nitrogen_disposal_and_the_urea_cycle.json",
+    "path": "questions/nitrogen_disposal.json",
     "category": "Biochemistry",
     "lecture": "Nitrogen disposal and the urea cycle I & II",
     "slides": "slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
