@@ -513,37 +513,79 @@
     }
 
     
-    async function loadRemoteQuestions() {
+    
+    function determineCategory(item, data, path) {
+      if (item && item.category) return item.category;
+      if (item && item.discipline) return item.discipline;
+      if (item && item.topic && DISCIPLINES.includes(item.topic)) return item.topic;
+
+      if (data && data.category) return data.category;
+      if (data && data.discipline) return data.discipline;
+      if (data && data.topic && DISCIPLINES.includes(data.topic)) return data.topic;
+
+      const searchStr = ((data && data.lecture_title) || (item && item.lecture_title) || (item && item.lecture) || (item && item.topic) || path || '').toLowerCase();
+
+      if (searchStr.includes('nitrogen') || searchStr.includes('urea') || searchStr.includes('biochem') || searchStr.includes('amino') || searchStr.includes('metabol') || searchStr.includes('enzyme') || searchStr.includes('dna') || searchStr.includes('rna') || searchStr.includes('gene')) {
+        return 'Biochemistry';
+      }
+      if (searchStr.includes('histo') || searchStr.includes('anat') || searchStr.includes('structure')) {
+        return 'Anatomy';
+      }
+      if (searchStr.includes('physio') || searchStr.includes('function') || searchStr.includes('clearance') || searchStr.includes('gfr') || searchStr.includes('acid-base') || searchStr.includes('electrolyte')) {
+        return 'Physiology';
+      }
+      if (searchStr.includes('patho') || searchStr.includes('nephrotic') || searchStr.includes('nephritic') || searchStr.includes('disease') || searchStr.includes('syndrome')) {
+        return 'Pathology';
+      }
+      if (searchStr.includes('pharm') || searchStr.includes('diuretic') || searchStr.includes('drug')) {
+        return 'Pharmacology';
+      }
+      if (searchStr.includes('clinic') || searchStr.includes('case') || searchStr.includes('vignette')) {
+        return 'Clinical';
+      }
+
+      return 'Biochemistry';
+    }
+
+
+async function loadRemoteQuestions() {
       let remoteQuestions = [];
       
       // 1. Try to fetch questions/manifest.json relative to index.html
       try {
         const manifestRes = await fetch('questions/manifest.json');
         if (manifestRes.ok) {
-          const filePaths = await manifestRes.json();
-          for (const path of filePaths) {
+          const manifestEntries = await manifestRes.json();
+          for (const entry of manifestEntries) {
+            const filePath = typeof entry === 'string' ? entry : (entry.path || entry.file);
+            const manifestCat = (typeof entry === 'object' && entry !== null) ? (entry.category || entry.discipline) : null;
+            const manifestLec = (typeof entry === 'object' && entry !== null) ? (entry.lecture || entry.lecture_title || entry.title) : null;
+
+            if (!filePath) continue;
+
             try {
-              const qRes = await fetch(path);
+              const qRes = await fetch(filePath);
               if (qRes.ok) {
                 const data = await qRes.json();
-                const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || []);
-                const rootLec = data.lecture_title || 'General Vignettes';
+                const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || data.data || []);
+                const rootLec = manifestLec || data.lecture_title || data.lecture || 'General Vignettes';
                 items.forEach((item, idx) => {
-                  const qId = item.id ? String(item.id) : `remote_${path.replace(/[^a-zA-Z0-9]/g, '_')}_${idx}`;
+                  const qId = item.id ? String(item.id) : `remote_${filePath.replace(/[^a-zA-Z0-9]/g, '_')}_${idx}`;
+                  const cat = manifestCat || determineCategory(item, data, filePath);
                   remoteQuestions.push({
                     id: qId,
                     vignette: item.vignette || item.question || '',
                     options: item.options || {},
                     correct_answer: item.correct_answer || item.correctAnswer || 'A',
-                    explanation: item.rationale || item.explanation || '',
-                    category: item.category || 'Anatomy',
-                    lecture: item.lecture_title || rootLec || item.lecture || 'General Vignettes',
+                    explanation: item.rationale || item.explanation || item.reasoning || '',
+                    category: cat,
+                    lecture: item.lecture_title || manifestLec || rootLec || item.lecture || 'General Vignettes',
                     order: item.order || ''
                   });
                 });
               }
             } catch (err) {
-              console.warn("Error fetching question file:", path, err);
+              console.warn("Error fetching question file:", filePath, err);
             }
           }
         }
@@ -567,17 +609,18 @@
                   const qRes = await fetch(file.download_url || file.path);
                   if (qRes.ok) {
                     const data = await qRes.json();
-                    const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || []);
-                    const rootLec = data.lecture_title || 'General Vignettes';
+                    const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || data.data || []);
+                    const rootLec = data.lecture_title || data.lecture || 'General Vignettes';
                     items.forEach((item, idx) => {
                       const qId = item.id ? String(item.id) : `gh_${file.name.replace(/[^a-zA-Z0-9]/g, '_')}_${idx}`;
+                      const cat = determineCategory(item, data, file.name);
                       remoteQuestions.push({
                         id: qId,
                         vignette: item.vignette || item.question || '',
                         options: item.options || {},
                         correct_answer: item.correct_answer || item.correctAnswer || 'A',
-                        explanation: item.rationale || item.explanation || '',
-                        category: item.category || 'Anatomy',
+                        explanation: item.rationale || item.explanation || item.reasoning || '',
+                        category: cat,
                         lecture: item.lecture_title || rootLec || item.lecture || 'General Vignettes',
                         order: item.order || ''
                       });
@@ -1160,7 +1203,7 @@ function saveToStorage() {
         items.forEach((item, idx) => {
           const rawId = item.id ? String(item.id) : `q_${idx}`;
           const qId = `imp_${batchTimestamp}_${idx}_${rawId}`;
-          const qCategory = (overrideCat !== 'auto') ? overrideCat : (item.category || item.topic || 'Anatomy');
+          const qCategory = (overrideCat !== 'auto') ? overrideCat : determineCategory(item, parsed, rootLectureTitle);
           
           // Priority for Lecture Title: item.lecture_title -> root-level lecture_title -> item.lecture -> item.lecture_name -> item.topic -> fallback
           const qLecture = item.lecture_title || rootLectureTitle || item.lecture || item.lecture_name || item.topic || 'General Vignettes';
