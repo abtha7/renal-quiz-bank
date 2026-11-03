@@ -20,13 +20,13 @@
   {
     "path": "questions/body_fluid_shifts.json",
     "category": "Physiology",
-    "lecture": "*Nitrogen disposal and the urea cycle I & II",
-    "slides": "*slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
+    "lecture": "Body fluid shifts",
+    "slides": "slides/w1_04_body_fluid_shifts.pdf"
   },
   {
     "path": "questions/four_key_processes.json",
     "category": "Physiology",
-    "lecture": "*Nitrogen disposal and the urea cycle I & II",
-    "slides": "*slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
+    "lecture": "Four key processes of kidney",
+    "slides": "slides/w1_05_four_key_processes_of_kidney.pdf"
   }
 ]
