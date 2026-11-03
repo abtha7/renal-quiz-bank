@@ -1,0 +1,286 @@
+{
+  "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+  "total_questions": 20,
+  "usmle_practice_problems": [
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "1st order",
+      "vignette": "A 52-year-old male undergoes a routine renal physiological assessment. Laboratory testing determines that his total renal blood flow (RBF) is 1,200 mL/min and his hematocrit (HCT) is 45% (0.45). The glomerulus filters aqueous plasma rather than intact erythrocytes. What is this patient's calculated renal plasma flow (RPF)?",
+      "options": {
+        "A": "480 mL/min",
+        "B": "540 mL/min",
+        "C": "660 mL/min",
+        "D": "720 mL/min",
+        "E": "1,000 mL/min"
+      },
+      "correct_answer": "C",
+      "rationale": "Renal plasma flow (RPF) is calculated by multiplying total renal blood flow (RBF) by the fraction of blood volume occupied by plasma (1 - HCT). Here, RPF = 1,200 mL/min x (1 - 0.45) = 1,200 x 0.55 = 660 mL/min. Cellular elements like erythrocytes are excluded by the filtration barrier, meaning only this 660 mL/min of aqueous plasma enters the renal microcirculation for filtration and tubular processing."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 32-year-old female is enrolled in a clinical pharmacokinetic trial evaluating a novel antibiotic. Physiological clearance measurements reveal that the drug is freely filtered at the glomerulus with a filtration rate of 150 mg/min. Proximal tubular reabsorption reclaims 40 mg/min of the filtered drug into the peritubular capillaries, while active peritubular organic anion transporters secrete an additional 15 mg/min into the tubular lumen. According to the fundamental renal mass balance equation, what is the net urinary excretion rate of this antibiotic?",
+      "options": {
+        "A": "95 mg/min",
+        "B": "110 mg/min",
+        "C": "125 mg/min",
+        "D": "175 mg/min",
+        "E": "205 mg/min"
+      },
+      "correct_answer": "C",
+      "rationale": "Urinary excretion is determined by the fundamental renal mass balance equation: Excretion = Filtration - Reabsorption + Secretion (E = F - R + S). Substituting the measured rates: E = 150 mg/min - 40 mg/min + 15 mg/min = 125 mg/min. Because tubular reabsorption (40 mg/min) exceeds tubular secretion (15 mg/min), the net tubular effect is reabsorption (25 mg/min net reabsorbed), resulting in an excretion rate lower than the filtered load (E < F)."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 58-year-old male with long-standing essential hypertension presents to the clinic with persistent headaches. An invasive arterial monitoring catheter records an acute increase in mean arterial pressure (MAP) from 95 mm Hg to 145 mm Hg. Despite this significant spike in systemic perfusion pressure, his glomerular capillary hydrostatic pressure (PGC) and glomerular filtration rate (GFR) remain remarkably constant. Which of the following intrinsic autoregulatory mechanisms is directly responsible for stabilizing this patient's GFR?",
+      "options": {
+        "A": "Stretch-induced contraction of afferent arteriolar vascular smooth muscle",
+        "B": "Nitric oxide-mediated vasodilation of the afferent arteriole",
+        "C": "Angiotensin II-induced selective vasoconstriction of the efferent arteriole",
+        "D": "Prostaglandin E2-mediated relaxation of the efferent arteriole",
+        "E": "Endothelin-1-induced constriction of the peritubular capillaries"
+      },
+      "correct_answer": "A",
+      "rationale": "The myogenic response is an intrinsic autoregulatory mechanism initiated directly by vascular smooth muscle within the afferent arterioles. An acute increase in mean arterial pressure increases transmural stretch, triggering the opening of stretch-activated cation channels, smooth muscle depolarization, and Ca2+ influx. The resulting afferent arteriolar vasoconstriction increases afferent resistance (Ra), shielding downstream glomerular capillaries from hypertensive pressure and maintaining PGC (~55-60 mm Hg) and GFR relatively constant across systemic pressures between 80 and 180 mm Hg."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 46-year-old female presents to the emergency department with severe, dehydrating cholera-like diarrhea. Physical examination demonstrates marked volume depletion with postural hypotension. In response to reduced renal perfusion, macula densa cells within the juxtaglomerular apparatus detect a decrease in luminal fluid flow and reduced NaCl delivery via their apical Na+-K+-2Cl- (NKCC2) cotransporters. In response to this reduced luminal delivery, what local signaling events occur within the juxtaglomerular apparatus to preserve glomerular filtration?",
+      "options": {
+        "A": "Increased release of ATP and adenosine, causing afferent arteriolar vasoconstriction",
+        "B": "Release of prostaglandins and nitric oxide to dilate the afferent arteriole, alongside renin secretion",
+        "C": "Direct suppression of juxtaglomerular granular cell renin release",
+        "D": "Selective constriction of the afferent arteriole and dilation of the efferent arteriole",
+        "E": "Downregulation of apical aquaporin-2 channels in the medullary collecting duct"
+      },
+      "correct_answer": "B",
+      "rationale": "Tubuloglomerular feedback (TGF) operates as an intrinsic negative feedback loop. When renal perfusion or GFR decreases, reduced luminal fluid delivery and decreased NaCl uptake by macula densa cells trigger the local release of vasodilatory mediators\u2014specifically prostaglandins (PGE2) and nitric oxide (NO). These paracrine signals dilate the afferent arteriole to restore glomerular capillary hydrostatic pressure, while stimulating adjacent juxtaglomerular granular cells to secrete renin, activating the RAAS cascade to maintain GFR."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "3rd order",
+      "vignette": "A 64-year-old male with poorly controlled type 2 diabetes mellitus is initiated on empagliflozin, an oral sodium-glucose cotransporter 2 (SGLT2) inhibitor. This medication blocks secondary active glucose reabsorption across the apical brush border of the proximal convoluted tubule (PCT). By selectively blocking SGLT2 without directly inhibiting the basolateral Na+/K+-ATPase, which of the following intracellular and tubular fluid changes will occur within the early proximal convoluted tubule?",
+      "options": {
+        "A": "Decreased intracellular glucose concentration, increased luminal glucose delivery, and unchanged intracellular ATP consumption by the basolateral Na+/K+-ATPase",
+        "B": "Increased intracellular glucose concentration, decreased luminal glucose delivery, and increased intracellular sodium concentration",
+        "C": "Decreased intracellular glucose concentration, increased luminal glucose delivery, and decreased transcellular sodium reabsorption",
+        "D": "Increased intracellular sodium concentration, increased luminal water reabsorption, and increased intracellular glucose concentration",
+        "E": "Decreased luminal fluid osmolarity, increased intracellular glucose concentration, and stimulated basolateral GLUT2 efflux"
+      },
+      "correct_answer": "C",
+      "rationale": "This 3rd-order question requires a 3-step biochemical and physiological reasoning sequence: (1) Identify the normal transport mechanics of the PCT: the basolateral Na+/K+-ATPase expels 3 Na+ for 2 K+, establishing a steep electrochemical inward Na+ gradient. Apical SGLT2 harnesses this Na+ gradient (secondary active transport) to drive glucose uphill into the epithelial cell against its concentration gradient, followed by basolateral facilitated diffusion of glucose via GLUT2; (2) Trace the direct pharmacological effect of SGLT2 inhibition: blocking apical SGLT2 directly prevents coupled Na+ and glucose entry across the brush border. Because glucose cannot enter the cell, intracellular glucose concentration decreases, while unabsorbed glucose remains trapped in the tubular lumen, increasing downstream luminal glucose delivery; (3) Deduce the secondary consequences on sodium transport: because apical Na+ co-transport with glucose is blunted, transcellular sodium reabsorption in the early PCT decreases, leaving more sodium and osmotically active glucose in the lumen to produce osmotic diuresis."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "1st order",
+      "vignette": "A 48-year-old male undergoes a physiological evaluation of renal function. Inulin infusion clearance demonstrates a glomerular filtration rate (GFR) of 125 mL/min, while para-aminohippurate (PAH) clearance reveals a renal plasma flow (RPF) of 625 mL/min. Which of the following represents this patient's calculated filtration fraction (FF)?",
+      "options": {
+        "A": "0.10 (10%)",
+        "B": "0.15 (15%)",
+        "C": "0.20 (20%)",
+        "D": "0.25 (25%)",
+        "E": "0.30 (30%)"
+      },
+      "correct_answer": "C",
+      "rationale": "Filtration fraction (FF) is defined as the fraction of renal plasma flow that is filtered across the glomerular filtration barrier into Bowman space: FF = GFR / RPF. Substituting the patient's values: FF = (125 mL/min) / (625 mL/min) = 0.20, or 20%. The remaining 80% of renal plasma flow bypasses filtration and exits the glomerulus via the efferent arteriole to supply the peritubular capillaries."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 60-year-old male with severe osteoarthritis has been self-medicating with high daily doses of ibuprofen (an NSAID) for four months. He presents with worsening lower extremity edema and an elevated serum creatinine. Renal biopsy confirms non-inflammatory ischemic pre-renal acute kidney injury. Under normal physiological conditions, locally synthesized vasodilatory prostaglandins (PGE2 and PGI2) act on the renal microcirculation to buffer excessive vasoconstriction during sympathetic or renin-angiotensin activation. By inhibiting prostaglandin synthesis, which of the following alterations in renal hemodynamics directly precipitated this patient's acute renal failure?",
+      "options": {
+        "A": "Constriction of the afferent arteriole, decreasing both RPF and GFR",
+        "B": "Selective dilation of the efferent arteriole, decreasing GFR while increasing RPF",
+        "C": "Constriction of the efferent arteriole, increasing GFR while decreasing RPF",
+        "D": "Selective dilation of the afferent arteriole, increasing both RPF and GFR",
+        "E": "Direct constriction of the peritubular capillaries without altering GFR"
+      },
+      "correct_answer": "A",
+      "rationale": "Prostaglandins (PGE2 and PGI2) normally dilate the afferent arteriole to sustain renal blood flow and maintain glomerular capillary hydrostatic pressure (PGC). Nonsteroidal anti-inflammatory drugs (NSAIDs) inhibit cyclooxygenase (COX), blocking renal prostaglandin synthesis. Loss of this vasodilatory tone leads to unopposed vasoconstriction of the afferent arteriole. Consequently, both renal plasma flow (RPF) and glomerular capillary hydrostatic pressure fall, sharply decreasing GFR and precipitating acute prerenal azotemia."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 38-year-old male is admitted to the hospital with acute community-acquired pneumonia and is started on intravenous penicillin G. Penicillin is an organic anion that is cleared exceptionally rapidly by the kidneys, resulting in a renal clearance rate that significantly exceeds his glomerular filtration rate (GFR). Which of the following renal handling profiles explains why this antibiotic's total urinary excretion rate exceeds its filtered load (E > F)?",
+      "options": {
+        "A": "Glomerular ultrafiltration followed by extensive passive distal tubular reabsorption",
+        "B": "Complete tubular reabsorption across the apical brush border via secondary active cotransporters",
+        "C": "Glomerular filtration accompanied by active transcellular secretion via basolateral organic anion transporters (OAT)",
+        "D": "Total exclusion from glomerular filtration with paracellular non-ionic diffusion in the collecting duct",
+        "E": "Passive countercurrent exchange in the medullary vasa recta"
+      },
+      "correct_answer": "C",
+      "rationale": "In accordance with the renal mass balance equation (Excretion = Filtration - Reabsorption + Secretion), a substance exhibits a urinary excretion rate greater than its filtered load (E > F) when net tubular secretion predominates. Penicillin is moderately filtered at the glomerulus, but because it is also avidly and actively pumped from peritubular capillary blood across the proximal tubular epithelium into the lumen via basolateral organic anion transporters (OAT) and apical efflux pumps, its clearance markedly exceeds GFR."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A physiological researcher investigates the mechanisms that prevent medullary washout in the mammalian kidney. In juxtamedullary nephrons, the hyperosmotic corticomedullary gradient (300 to 1200 mOsm/kg) generated by the loops of Henle is maintained by specialized hairpin microvascular loops known as the vasa recta. Which of the following physiological features allows the vasa recta to function as passive countercurrent exchangers that preserve this hyperosmotic medullary gradient without dissipating it into the systemic circulation?",
+      "options": {
+        "A": "Active primary ATP-dependent NaCl extrusion along the ascending capillary limbs",
+        "B": "Extremely high blood flow velocity that sweeps solutes into the deep inner medulla",
+        "C": "Water-impermeable capillary walls that prevent transvascular fluid shifts",
+        "D": "Highly permeable hairpin capillary loops with sluggish blood flow permitting two-way passive solute and water equilibration",
+        "E": "Selective expression of apical Na+-K+-2Cl- (NKCC2) cotransporters on capillary endothelial cells"
+      },
+      "correct_answer": "D",
+      "rationale": "The vasa recta act as passive countercurrent exchangers that preserve (rather than generate) the corticomedullary osmotic gradient. They consist of highly permeable hairpin capillary loops with very low, sluggish blood flow. As blood descends into the hypertonic medulla, it passively gains solutes (NaCl, urea) and loses water; as it ascends back toward the cortex, it reabsorbs water and returns solutes to the interstitium. This two-way passive equilibration combined with slow blood flow prevents washout of medullary hypertonicity."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "3rd order",
+      "vignette": "A 56-year-old female with long-standing poorly controlled type 2 diabetes mellitus undergoes a renal clearance study during an intravenous glucose infusion protocol. Her GFR is stable at 100 mL/min. At plasma glucose concentrations below 200 mg/dL, her urine is completely free of glucose. When plasma glucose is acutely raised above 300 mg/dL, glucose appears in her urine (glucosuria) and the urinary excretion rate begins to rise linearly in parallel with the filtered load. Which of the following physiological principles directly explains why glucose appears in this patient's urine only when its filtered load surpasses a critical threshold?",
+      "options": {
+        "A": "Saturation of apical SGLT2 and SGLT1 carrier proteins at their maximum transport capacity (Tm)",
+        "B": "Osmotic disruption of the tight junctions (zonula occludens) in the proximal convoluted tubule",
+        "C": "Allosteric inhibition of basolateral GLUT2 facilitated diffusion by intracellular sorbitol",
+        "D": "Sudden down-regulation of the basolateral Na+/K+-ATPase pump due to ATP depletion",
+        "E": "Saturation of the glomerular filtration barrier size-selective slit diaphragms"
+      },
+      "correct_answer": "A",
+      "rationale": "This 3rd-order question requires a 3-step reasoning chain: (1) Understand normal glucose handling: Glucose is freely filtered across the glomerulus (Filtered Load = GFR x [Plasma Glucose]), and at normal physiologic concentrations (< 200 mg/dL), virtually 100% of filtered glucose is completely reabsorbed in the proximal convoluted tubule via secondary active apical sodium-glucose cotransporters (primarily SGLT2 in S1/S2 and SGLT1 in S3); (2) Identify the carrier-mediated transport limit: Apical SGLT proteins are finite, saturable carrier transporters with a defined maximal transport capacity (transport maximum, Tm, normally ~375 mg/min); (3) Deduce the emergence of glucosuria: When plasma glucose exceeds the renal threshold (~200 mg/dL, with full saturation at ~350-375 mg/dL), the filtered load exceeds the capacity of SGLT carriers (Filtered Load > Tm). The excess filtered glucose that cannot be reabsorbed remains trapped in the tubular fluid and is excreted in the urine, giving rise to glucosuria."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "1st order",
+      "vignette": "An 8-year-old boy is brought to the pediatric clinic by his parents due to facial puffiness, periorbital edema, and swollen ankles following a mild upper respiratory infection. Urinalysis demonstrates 4+ proteinuria without hematuria, and 24-hour urine collection reveals 4.2 g of protein, predominantly albumin. A diagnosis of minimal change disease is suspected. The normal glomerular filtration barrier restricts the filtration of plasma albumin (molecular weight ~69 kDa, effective radius ~3.6 nm) not only by pore size, but also through an electrostatic charge barrier. Which of the following components of the glomerular capillary wall is primarily responsible for establishing this fixed negative electrostatic charge that repels polyanionic albumin?",
+      "options": {
+        "A": "Heparan sulfate proteoglycans within the glomerular basement membrane",
+        "B": "Transmembrane aquaporin-1 channels on capillary endothelial cells",
+        "C": "Uncharged type I collagen fibrils in the mesangial matrix",
+        "D": "Claudin tight junction strands connecting podocyte foot processes",
+        "E": "Neutral dextran polymers lining the parietal layer of Bowman capsule"
+      },
+      "correct_answer": "A",
+      "rationale": "The glomerular filtration barrier functions as a charge-selective and size-selective sieve. The glomerular basement membrane (GBM) contains abundant polyanionic proteoglycans, particularly heparan sulfate, which impart a dense negative electrostatic charge across the wall. Because plasma albumin (MW 69 kDa) is polyanionic at physiological pH, it is electrostatically repelled by the negative charges of the GBM and podocyte glycocalyx, resulting in a negligible filterability (~0.005). In minimal change disease, loss of these fixed polyanionic negative charges leads to selective albuminuria and nephrotic syndrome."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A renal physiologist performs a micro-puncture experiment in an experimental mammal to evaluate fluid handling along the proximal convoluted tubule (PCT). Samples of tubular fluid are aspirated from the late proximal convoluted tubule and compared directly to systemic arterial plasma. The measurements reveal that approximately 67% (two-thirds) of the filtered sodium and water has been reabsorbed into the peritubular capillaries. Despite this massive fluid retrieval, the osmolarity of the remaining tubular fluid in the late proximal tubule is identical to plasma (~300 mOsm/L), yielding a tubular fluid-to-plasma osmolarity ratio (TF/P)osm of 1.0. Which of the following transport characteristics of the proximal convoluted tubule directly accounts for this isosmotic fluid reabsorption?",
+      "options": {
+        "A": "Active water transport driven directly by apical water ATPases",
+        "B": "Constitutive high water permeability allowing water to follow active solute reabsorption equimolarly",
+        "C": "Impermeability to water with selective paracellular reabsorption of sodium and chloride",
+        "D": "Vasopressin-regulated insertion of aquaporin-2 channels across the apical brush border",
+        "E": "Selective secretion of free water into the tubular lumen to match solute loss"
+      },
+      "correct_answer": "B",
+      "rationale": "The proximal convoluted tubule (PCT) operates as an isosmotic bulk reabsorber. Primary active extrusion of sodium by the basolateral Na+/K+-ATPase powers secondary active reabsorption of solutes (glucose, amino acids, bicarbonate, and NaCl). The PCT epithelium exhibits an exceptionally high, constitutive water permeability mediated by transcellular aquaporin-1 (AQP1) channels and high paracellular permeability. Consequently, water rapidly and passively follows solute reabsorption down osmotic gradients equimolarly, maintaining the tubular fluid osmolarity equal to peritubular plasma (~300 mOsm/L, (TF/P)osm = 1.0) along its entire length."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 42-year-old male with bipolar disorder maintained on long-term lithium therapy presents with extreme thirst, nocturia, and polyuria. A 24-hour urine collection reveals an output of 6.0 L with a urine osmolality of 85 mOsm/kg. An infusion of desmopressin (a synthetic ADH analogue) fails to produce any increase in urine osmolality, confirming lithium-induced nephrogenic diabetes insipidus. Despite the presence of a normally established hyperosmotic medullary gradient (300 to 1200 mOsm/kg), this patient excretes large volumes of dilute urine because which of the following cellular events is defective in his collecting duct principal cells?",
+      "options": {
+        "A": "Basolateral extrusion of sodium via the Na+/K+-ATPase",
+        "B": "Translocation and insertion of aquaporin-2 water channels into the apical (luminal) membrane",
+        "C": "Apical uptake of sodium, potassium, and chloride via the NKCC2 cotransporter",
+        "D": "Basolateral expression of constitutive aquaporin-3 and aquaporin-4 channels",
+        "E": "Active apical secretion of hydrogen ions via H+-ATPase pumps"
+      },
+      "correct_answer": "B",
+      "rationale": "In the collecting duct, antidiuretic hormone (ADH/vasopressin) acts on V2 receptors of principal cells to trigger cAMP-mediated trafficking and insertion of aquaporin-2 (AQP2) water channels into the apical (luminal) membrane. This allows luminal fluid to osmotically equilibrate with the hypertonic medullary interstitium, concentrating the urine up to 1200-1400 mOsm/kg. Lithium impairs intracellular signaling downstream of the V2 receptor, preventing apical AQP2 insertion. As a result, the luminal membrane remains water-impermeable, and the hypoosmotic fluid delivered from the loop of Henle passes through the collecting duct largely unchanged, producing large volumes of dilute urine (50-100 mOsm/kg)."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A medical student is studying the countercurrent multiplier system of juxtamedullary nephrons. Fluid enters the thin descending limb of the loop of Henle from the cortex as an isosmotic solution (~300 mOsm/kg) and traverses deep into the inner medulla toward the hairpin turn near the renal papilla. During antidiuresis, micro-puncture samples obtained from the very tip of the hairpin turn at the renal papilla demonstrate a maximal tubular fluid osmolarity of 1,200 mOsm/kg. Which of the following transport characteristics of the thin descending limb is responsible for this progressive luminal fluid concentration?",
+      "options": {
+        "A": "Active primary ATP-dependent sodium pumping into the tubular lumen",
+        "B": "High permeability to water with minimal solute permeability, allowing osmotic water efflux into the hypertonic interstitium",
+        "C": "Impermeability to water with active extrusion of sodium, potassium, and chloride",
+        "D": "Passive influx of urea without water movement",
+        "E": "Secondary active cotransport of glucose and amino acids"
+      },
+      "correct_answer": "B",
+      "rationale": "The thin descending limb of the loop of Henle is lined by thin, simple squamous epithelium that is highly permeable to water (via constitutive aquaporin-1 channels) but virtually impermeable to NaCl and other solutes. As tubular fluid flows downward into the progressively hyperosmotic medullary interstitium (created by the ascending limb), water leaves the tubular lumen by osmosis into the medullary interstitium. Solutes remain trapped inside the lumen, causing the luminal fluid to become progressively concentrated until its osmolarity matches the surrounding inner medullary interstitium (~1200 mOsm/kg) at the hairpin turn."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "3rd order",
+      "vignette": "A 55-year-old male with chronic recurrent urinary tract infections is prescribed oral trimethoprim-sulfamethoxazole. Routine follow-up laboratory testing after five days demonstrates an acute increase in serum creatinine from 0.9 mg/dL to 1.3 mg/dL, with a corresponding drop in calculated creatinine clearance. However, simultaneous measurement of glomerular filtration rate (GFR) using continuous inulin infusion reveals that his true GFR remains completely unchanged at 115 mL/min, and blood urea nitrogen is normal. By inhibiting which of the following renal handling processes did trimethoprim cause this benign, isolated increase in serum creatinine without true glomerular impairment?",
+      "options": {
+        "A": "Competitive inhibition of basolateral organic cation transporters (OCT) mediating proximal tubular secretion",
+        "B": "Direct constriction of the afferent arteriole mediated by thromboxane release",
+        "C": "Stimulation of passive paracellular reabsorption of creatinine in the loop of Henle",
+        "D": "Blockade of apical sodium-glucose cotransporter 2 (SGLT2) in the proximal tubule",
+        "E": "Selective decrease in the glomerular capillary filtration coefficient (Kf)"
+      },
+      "correct_answer": "A",
+      "rationale": "This 3rd-order question requires a 3-step physiological and pharmacological reasoning sequence: (1) Understand normal renal handling of creatinine: Creatinine is freely filtered across the glomerular filtration barrier, but unlike inulin, approximately 10-20% of excreted creatinine is actively secreted into the tubular lumen by proximal tubular epithelial cells via basolateral organic cation transporters (OCT2) and apical efflux pumps (MATE1). Because Excretion = Filtration + Secretion (E = F + S), creatinine clearance slightly overestimates true GFR; (2) Trace the pharmacological action of trimethoprim: Trimethoprim (as well as cimetidine) competitively blocks proximal tubular organic cation transporters (OCT), selectively inhibiting the active tubular secretion of creatinine without altering true glomerular hemodynamics; (3) Deduce the laboratory outcome: When tubular secretion is blocked, less creatinine is eliminated into the urine, causing serum creatinine to rise (~0.3-0.5 mg/dL) and calculated creatinine clearance to fall, mimicking renal failure despite a completely normal and stable inulin-measured GFR."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "1st order",
+      "vignette": "A renal physiologist is investigating the biophysical determinants of glomerular ultrafiltration. Despite experiencing net transcapillary hydrostatic driving pressures comparable to those in systemic microvascular beds, the human kidneys filter an extraordinary ~180 liters of aqueous fluid per day. This enormous volume of daily ultrafiltrate is directly attributable to the glomerular capillary filtration coefficient (Kf), which is more than 100-fold greater than that of systemic capillary beds. Which of the following pairs of physical properties directly determines the magnitude of this filtration coefficient (Kf)?",
+      "options": {
+        "A": "Water permeability per unit surface area and total capillary surface area",
+        "B": "Glomerular capillary hydrostatic pressure and Bowman space hydrostatic pressure",
+        "C": "Efferent arteriolar diameter and renal plasma flow",
+        "D": "Plasma albumin concentration and capillary length",
+        "E": "Glomerular basement membrane thickness and negative surface charge density"
+      },
+      "correct_answer": "A",
+      "rationale": "The ultrafiltration coefficient (Kf) represents the hydraulic conductance of the glomerular capillary wall (GFR = Kf x Net Ultrafiltration Pressure). Kf is determined directly by two physical factors: (1) the water permeability (hydraulic conductivity) per unit of surface area, and (2) the total surface area available for filtration. The vast surface area of the glomerular capillary network combined with highly permeable fenestrations and filtration slits yields a Kf over 100-fold higher than systemic capillaries, permitting the filtration of ~180 L of fluid daily."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "An experimental renal physiology study assesses the permselectivity of the glomerular filtration barrier using infusions of uncharged (neutral), negatively charged (polyanionic), and positively charged (polycationic) dextran polymers across varying molecular radii (between 2.0 and 4.2 nm). When dextrans of an identical effective molecular radius (e.g., 3.0 nm) are compared, significant differences in their clearance ratios (relative to inulin, Cx/Cin) are observed. Which of the following sequences correctly ranks the relative filterability of these 3.0 nm dextrans from highest to lowest?",
+      "options": {
+        "A": "Cationic dextrans > Neutral dextrans > Anionic dextrans",
+        "B": "Anionic dextrans > Neutral dextrans > Cationic dextrans",
+        "C": "Neutral dextrans > Cationic dextrans > Anionic dextrans",
+        "D": "Cationic dextrans > Anionic dextrans > Neutral dextrans",
+        "E": "Neutral dextrans > Anionic dextrans > Cationic dextrans"
+      },
+      "correct_answer": "A",
+      "rationale": "The glomerular capillary wall functions as both a size-selective and charge-selective barrier. The lamina densa of the glomerular basement membrane and the podocyte slit diaphragms are coated with fixed polyanionic glycoproteins (heparan sulfate and podocalyxin). For molecules of the same effective molecular radius (e.g., 3.0 nm), electrostatic attraction enhances the filtration of positively charged polycations (cationic dextrans filter most freely), while electrostatic repulsion strongly retards negatively charged polyanions (anionic dextrans filter least freely), with neutral uncharged dextrans displaying intermediate clearance (Cationic > Neutral > Anionic)."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 52-year-old male with acute decompensated heart failure and pulmonary edema is administered high-dose intravenous furosemide. Furosemide inhibits apical Na+-K+-2Cl- (NKCC2) cotransporters in the thick ascending limb of Henle loop, dissipating the corticomedullary osmotic gradient. In the normal countercurrent multiplier mechanism, active solute extrusion by NKCC2 establishes a horizontal osmotic gradient between the tubular lumen of the thick ascending limb and the adjacent medullary interstitium at each horizontal level (the \"single effect\"). What is the maximum horizontal osmotic gradient normally generated by this single effect?",
+      "options": {
+        "A": "50 mOsm/kg",
+        "B": "200 mOsm/kg",
+        "C": "400 mOsm/kg",
+        "D": "900 mOsm/kg",
+        "E": "1,200 mOsm/kg"
+      },
+      "correct_answer": "B",
+      "rationale": "The \"single effect\" is the fundamental repeating step of the countercurrent multiplier system. Active reabsorption of Na+, K+, and 2 Cl- by the water-impermeable thick ascending limb extrudes solute into the adjacent medullary interstitium until a maximal horizontal gradient of approximately 200 mOsm/kg is established between the lumen and the interstitium at any horizontal level. Countercurrent flow through the hairpin loop continuously multiplies this modest 200 mOsm/kg horizontal gradient into a large longitudinal corticomedullary gradient of ~900\u20131,100 mOsm/kg (rising from 300 mOsm/kg in the cortex to 1,200\u20131,400 mOsm/kg at the renal papilla)."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "2nd order",
+      "vignette": "A 31-year-old mountaineer takes oral acetazolamide as prophylaxis against acute mountain sickness while ascending high altitude. Acetazolamide acts in the proximal convoluted tubule (PCT) to inhibit both luminal brush border carbonic anhydrase IV and intracellular cytoplasmic carbonic anhydrase II. Under normal conditions, the PCT reabsorbs >85% of filtered bicarbonate. By inhibiting carbonic anhydrase, acetazolamide impairs the apical reabsorption of bicarbonate, producing alkaline diuresis. In addition to decreased transcellular bicarbonate retrieval, which of the following tubular fluid changes occurs in the proximal tubule following acetazolamide administration?",
+      "options": {
+        "A": "Decreased luminal pH in the late proximal tubule",
+        "B": "Increased luminal delivery of sodium and bicarbonate to downstream nephron segments",
+        "C": "Increased transcellular water reabsorption across the proximal tubule",
+        "D": "Complete suppression of basolateral Na+/K+-ATPase activity",
+        "E": "Stimulation of apical SGLT2 cotransport"
+      },
+      "correct_answer": "B",
+      "rationale": "Carbonic anhydrase (CA) inhibitors block the dehydration of luminal H2CO3 and intracellular hydration of CO2, preventing H+ secretion and HCO3- reclamation in the proximal convoluted tubule. Because sodium reabsorption across the brush border is coupled to H+ secretion via the Na+/H+ exchanger (NHE3), inhibiting CA leaves unabsorbed Na+, HCO3-, and accompanying water trapped inside the tubular lumen. This leads to increased luminal delivery of sodium, bicarbonate, and water to downstream nephron segments, producing alkaline urine and mild hyperchloremic metabolic acidosis."
+    },
+    {
+      "lecture_title": "Physiology of the Four Key Processes of the Kidney",
+      "order": "3rd order",
+      "vignette": "A 62-year-old female with moderate congestive heart failure presents for a routine clinical checkup. A modest reduction in effective circulating arterial volume triggers moderate activation of the renin-angiotensin-aldosterone system (RAAS). Circulating angiotensin II binds to AT1 receptors and preferentially constricts the efferent arteriole relative to the afferent arteriole. In this physiological state, how do renal plasma flow (RPF), glomerular filtration rate (GFR), filtration fraction (FF), and peritubular capillary hydrostatic pressure (Ppc) change relative to normal resting baseline?",
+      "options": {
+        "A": "RPF decreased, GFR preserved/maintained, FF increased, peritubular capillary hydrostatic pressure decreased",
+        "B": "RPF increased, GFR increased, FF unchanged, peritubular capillary hydrostatic pressure increased",
+        "C": "RPF decreased, GFR decreased, FF decreased, peritubular capillary hydrostatic pressure increased",
+        "D": "RPF unchanged, GFR increased, FF increased, peritubular capillary hydrostatic pressure increased",
+        "E": "RPF decreased, GFR preserved/maintained, FF decreased, peritubular capillary hydrostatic pressure unchanged"
+      },
+      "correct_answer": "A",
+      "rationale": "This 3rd-order question requires a 3-step hemodynamic reasoning sequence: (1) Efferent resistance effect on renal blood flow: Preferential constriction of the efferent arteriole increases overall renal vascular resistance, which decreases renal plasma flow (RPF decreases); (2) Glomerular capillary pressure and GFR: Constriction of the downstream efferent resistance vessel impedes blood outflow from the glomerulus, raising glomerular capillary hydrostatic pressure (PGC), which preserves or slightly increases GFR despite the drop in RPF. Because GFR is maintained while RPF falls, the filtration fraction (FF = GFR / RPF) increases; (3) Peritubular capillary Starling forces: Downstream of the constricted efferent arteriole, peritubular capillary hydrostatic pressure (Ppc) drops significantly. Concurrently, because a higher fraction of fluid was filtered at the glomerulus, peritubular capillary oncotic pressure (pi_pc) rises. This combination of low peritubular hydrostatic pressure and high oncotic pressure powerfully stimulates proximal tubular fluid and sodium reabsorption."
+    }
+  ]
+}
