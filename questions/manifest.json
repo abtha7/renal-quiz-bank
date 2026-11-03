@@ -16,5 +16,17 @@
     "category": "Biochemistry",
     "lecture": "Nitrogen disposal and the urea cycle I & II",
     "slides": "slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
+  },
+  {
+    "path": "questions/body_fluid_shifts.json",
+    "category": "Physiology",
+    "lecture": "*Nitrogen disposal and the urea cycle I & II",
+    "slides": "*slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
+  },
+  {
+    "path": "questions/four_key_processes.json",
+    "category": "Physiology",
+    "lecture": "*Nitrogen disposal and the urea cycle I & II",
+    "slides": "*slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
   }
 ]
