@@ -60,7 +60,7 @@
     },
     {
       "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
-      "order": "5th order",
+      "order": "3rd order",
       "vignette": "A 2-day-old full-term male newborn becomes progressively unresponsive, hypothermic, and tachypneic. Arterial blood gas shows a primary respiratory alkalosis, and serum ammonia is markedly elevated at 820 umol/L. Plasma citrulline is undetectable, blood urea nitrogen (BUN) is markedly decreased, and urinary orotic acid levels are normal. Genetic analysis confirms an autosomal recessive inborn error affecting the enzyme responsible for synthesizing the obligatory allosteric activator of the rate-limiting step of the urea cycle. Under normal physiologic conditions, which of the following pairs of substrates is utilized to synthesize this critical allosteric activator?",
       "options": {
         "A": "Ammonia and Bicarbonate",
@@ -130,7 +130,7 @@
     },
     {
       "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
-      "order": "5th order",
+      "order": "3rd order",
       "vignette": "A 3-year-old boy is evaluated for progressive difficulty walking, lower extremity stiffness, and cognitive regression. Physical examination reveals spastic diplegia with hyperreflexia, bilateral ankle clonus, and choreoathetoid posturing. Unlike other inborn errors of the urea cycle, he has never experienced severe neonatal hyperammonemic coma or catastrophic encephalopathy in infancy. Laboratory evaluation reveals mild intermittent hyperammonemia (blood ammonia: 68 \u00b5mol/L; reference < 35 \u00b5mol/L), low blood urea nitrogen, and markedly elevated plasma and urinary arginine levels. If a cell-free hepatic cytosolic extract from a healthy individual were incubated with the specific intermediate that pathologically accumulates in this child's bloodstream, which pair of products would normally be generated?",
       "options": {
         "A": "Citrulline and inorganic phosphate",
@@ -200,7 +200,7 @@
     },
     {
       "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
-      "order": "5th order",
+      "order": "3rd order",
       "vignette": "A 5-day-old male newborn is admitted to the intensive care unit in a hyperammonemic coma. Plasma amino acid analysis demonstrates severe hyperammonemia, moderately elevated citrulline, massively elevated argininosuccinate, and undetectable arginine, establishing the diagnosis of argininosuccinate lyase (ASL) deficiency. The medical genetics team initiates daily high-dose oral supplementation with L-arginine. This treatment restores the continuous stoichiometric clearance of waste nitrogen into the urine despite the complete block in ASL activity. Under this therapeutic regimen, which of the following molecules directly donates the second nitrogen atom incorporated into the primary water-soluble intermediate excreted in this patient urine?",
       "options": {
         "A": "Free ammonium ion",
@@ -270,7 +270,7 @@
     },
     {
       "lecture_title": "Nitrogen Disposal and The Urea Cycle I & II",
-      "order": "5th order",
+      "order": "3rd order",
       "vignette": "A 3-day-old male newborn develops poor feeding, persistent vomiting, hypothermia, and rapidly progressive somnolence culminating in a coma. Arterial blood gas demonstrates a marked respiratory alkalosis (pH 7.55, PaCO2 24 mmHg). Serum ammonia is profoundly elevated at 680 \u00b5mol/L (reference: < 50 \u00b5mol/L), and blood urea nitrogen is low at 2 mg/dL. Quantitative plasma amino acid analysis demonstrates undetectable citrulline, markedly reduced arginine, and elevated glutamine. Quantitative urine organic acid analysis reveals massive excretion of orotic acid. Genetic sequencing confirms an inborn error affecting the intramitochondrial enzyme that condenses carbamoyl phosphate with ornithine. Under these pathological conditions, the accumulating mitochondrial substrate diffuses across the inner mitochondrial membrane into the cytoplasm, bypassing its normal regulatory controls and aberrantly feeding into the de novo pyrimidine synthesis pathway. Which of the following cytosolic enzymes directly consumes this leaked mitochondrial metabolite to initiate this abnormal pyrimidine branch?",
       "options": {
         "A": "Aspartate transcarbamoylase",
