@@ -685,12 +685,19 @@
       try {
         const manifestRes = await fetch('questions/manifest.json');
         if (manifestRes.ok) {
-          const manifestEntries = await manifestRes.json();
+          let manifestText = await manifestRes.text();
+          // Auto-strip trailing commas before parsing to avoid JSON syntax errors
+          manifestText = manifestText.replace(/,\s*([\]}])/g, '$1');
+          const manifestEntries = JSON.parse(manifestText);
           for (const entry of manifestEntries) {
             const filePath = typeof entry === 'string' ? entry : (entry.path || entry.file);
             const manifestCat = (typeof entry === 'object' && entry !== null) ? (entry.category || entry.discipline) : null;
             const manifestLec = (typeof entry === 'object' && entry !== null) ? (entry.lecture || entry.lecture_title || entry.title) : null;
             const manifestSlides = (typeof entry === 'object' && entry !== null) ? (entry.slides || entry.slides_url || entry.pdf) : null;
+
+            if (manifestLec && manifestSlides) {
+              setSlideUrl(manifestLec, manifestSlides);
+            }
 
             if (!filePath) continue;
 
@@ -718,8 +725,9 @@
                   const cat = manifestCat || determineCategory(item, data, filePath);
                   const itemLec = item.lecture_title || manifestLec || rootLec || item.lecture || 'General Vignettes';
 
-                  if (item.slides || item.slides_url) {
-                    setSlideUrl(itemLec, item.slides || item.slides_url);
+                  const activeSlide = item.slides || item.slides_url || slideSource;
+                  if (activeSlide && itemLec) {
+                    setSlideUrl(itemLec, activeSlide);
                   }
 
                   remoteQuestions.push({
