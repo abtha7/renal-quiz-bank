@@ -1451,6 +1451,8 @@
     }
 
     function resetToPreloaded() {
+      localStorage.removeItem('renal_quiz_slides');
+      lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
       questionBank = [...PRELOADED_QUESTIONS];
       localStorage.removeItem('renal_quiz_slides');
       localStorage.removeItem('renal_quiz_bank');
