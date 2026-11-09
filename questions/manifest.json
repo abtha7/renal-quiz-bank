@@ -30,13 +30,19 @@
     "slides": "slides/w1_05_four_key_processes_of_kidney.pdf"
   },
   {
-    "path": "questions/renal_clearance_I.json",
+    "path": "questions/renal_clearance.json",
+    "category": "Physiology",
+    "lecture": "Renal clearance",
+    "slides": "slides/w1_06_renal_clearance.pdf"
+  },
+  {
+    "path": "questions/renal_processing_of_sodium_and_water_I.json",
     "category": "Physiology",
     "lecture": "Renal processing of sodium and water I",
     "slides": "slides/w1_07_renal_processing_of_sodium_and_water_I.pdf"
   },
   {
-    "path": "questions/renal_clearance_II.json",
+    "path": "questions/renal_processing_of_sodium_and_water_II.json",
     "category": "Physiology",
     "lecture": "Renal processing of sodium and water II",
     "slides": "slides/w1_08_renal_processing_of_sodium_and_water_II.pdf"
