@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renal Quiz Bank</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind = { config: { darkMode: "class" } };</script>
   <style>
     :root {
       --bg-header: #0f172a;
@@ -180,23 +181,30 @@
       font-weight: 600 !important;
     }
   
-    /* Pure black text for all content elements in Light Mode */
-    html:not(.dark) main,
-    html:not(.dark) main p,
-    html:not(.dark) main span:not(.btn-primary-theme):not(.bg-blue-600),
-    html:not(.dark) main h1,
-    html:not(.dark) main h2,
-    html:not(.dark) main h3,
-    html:not(.dark) main h4,
-    html:not(.dark) main label,
-    html:not(.dark) main select,
-    html:not(.dark) main option,
-    html:not(.dark) main input,
-    html:not(.dark) main textarea,
-    html:not(.dark) main div,
-    html:not(.dark) select,
-    html:not(.dark) select option {
-      color: #000000 !important;
+    /* Dark Mode forced color overrides for nested elements */
+    html.dark body,
+    html.dark main,
+    html.dark main div,
+    html.dark main p,
+    html.dark main span:not(.bg-blue-600):not(.bg-blue-100),
+    html.dark main h1,
+    html.dark main h2,
+    html.dark main h3,
+    html.dark main h4,
+    html.dark main label {
+      color: #f8fafc !important;
+    }
+    html.dark .card-theme {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+    }
+    html.dark select {
+      color: #f8fafc !important;
+      background-color: #1e293b !important;
+    }
+    html.dark select option {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
     }
 
     /* Badges & special elements inside main that need explicit contrast */
@@ -579,14 +587,25 @@
 
     function getSlideUrl(lecName) {
       if (!lecName) return null;
-      if (lectureSlidesMap[lecName]) return lectureSlidesMap[lecName];
-      const norm = normalizeKey(lecName);
-      for (const k of Object.keys(lectureSlidesMap)) {
-        if (normalizeKey(k) === norm) {
-          return lectureSlidesMap[k];
+      let rawUrl = lectureSlidesMap[lecName];
+      if (!rawUrl) {
+        const norm = normalizeKey(lecName);
+        for (const k of Object.keys(lectureSlidesMap)) {
+          if (normalizeKey(k) === norm) {
+            rawUrl = lectureSlidesMap[k];
+            break;
+          }
         }
       }
-      return null;
+      if (!rawUrl) return null;
+
+      // Convert relative URL to full absolute URL based on site origin
+      if (!rawUrl.startsWith('http://') && !rawUrl.startsWith('https://') && !rawUrl.startsWith('data:')) {
+        try {
+          return new URL(rawUrl, window.location.href).href;
+        } catch(e) { return rawUrl; }
+      }
+      return rawUrl;
     }
 
     function setSlideUrl(lecName, url) {
@@ -792,9 +811,15 @@
       if (slideUrl) {
         iframe.classList.remove('hidden');
         noSource.classList.add('hidden');
-        iframe.src = slideUrl;
         externalLink.href = slideUrl;
         externalLink.classList.remove('hidden');
+
+        // For cross-origin Google Sites iframe compatibility, embed PDFs using Google Docs viewer
+        if ((slideUrl.endsWith('.pdf') || slideUrl.includes('/slides/')) && slideUrl.startsWith('http')) {
+          iframe.src = `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(slideUrl)}`;
+        } else {
+          iframe.src = slideUrl;
+        }
       } else {
         iframe.classList.add('hidden');
         iframe.src = 'about:blank';
