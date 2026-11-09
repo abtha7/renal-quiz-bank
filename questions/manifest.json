@@ -28,5 +28,35 @@
     "category": "Physiology",
     "lecture": "Four key processes of kidney",
     "slides": "slides/w1_05_four_key_processes_of_kidney.pdf"
-  }
+  },
+  {
+    "path": "questions/renal_clearance_I.json",
+    "category": "Physiology",
+    "lecture": "Renal processing of sodium and water I",
+    "slides": "slides/w1_07_renal_processing_of_sodium_and_water_I.pdf"
+  },
+  {
+    "path": "questions/renal_clearance_II.json",
+    "category": "Physiology",
+    "lecture": "Renal processing of sodium and water II",
+    "slides": "slides/w1_08_renal_processing_of_sodium_and_water_II.pdf"
+  },
+  {
+    "path": "questions/nucleotide_metabolism_I_and_II.json",
+    "category": "Biochemistry",
+    "lecture": "Nucleotide metabolism I and II",
+    "slides": "slides/w1_09_nucleotide_metabolism_I_and_II.pdf"
+  },
+  {
+    "path": "questions/gout_pharm.json",
+    "category": "Pharmacology",
+    "lecture": "Gout pharmacology",
+    "slides": "slides/w1_10_gout_pharm.pdf"
+  },
+  {
+    "path": "questions/diuretics_I_II_III.json",
+    "category": "Pharmacology",
+    "lecture": "Diuretics",
+    "slides": "slides/w1_11_diuretics_I_II_III.pdf"
+  },
 ]
