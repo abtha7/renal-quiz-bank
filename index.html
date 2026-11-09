@@ -287,7 +287,7 @@
           <div class="flex justify-between items-center mb-3">
             <div>
               <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100">Select Categories & Uploaded Lectures</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-300">Expand any category to toggle specific uploaded lectures or view associated slides.</p>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Expand any category to toggle specific uploaded lectures.</p>
             </div>
             <div class="flex gap-3">
               <button onclick="selectAllLectures(true)" class="text-xs font-bold hover:underline text-blue-600 dark:text-blue-400">Select All</button>
@@ -369,9 +369,7 @@
             <span id="quiz-progress-text" class="text-sm font-bold text-slate-900 dark:text-slate-100">Question 1 of 10</span>
             <span id="category-badge" class="px-2.5 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold rounded-md">Category</span>
             <span id="lecture-badge" class="px-2.5 py-1 bg-slate-200 text-slate-900 dark:bg-slate-700 dark:text-slate-100 text-xs font-semibold rounded-md">Lecture</span>
-            <button onclick="openSlidesForCurrentQuestion()" class="px-2.5 py-1 bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold rounded-md flex items-center gap-1 shadow-sm transition">
-              📄 View Slides
-            </button>
+
           </div>
           <button onclick="toggleBookmarkCurrent()" id="bookmark-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold card-theme text-slate-900 dark:text-slate-100">
             ★ Bookmark
@@ -391,9 +389,6 @@
           <div id="explanation-box" class="hidden card-theme border rounded-xl p-5 space-y-3">
             <div class="flex justify-between items-center gap-2 flex-wrap border-b border-slate-200 dark:border-slate-800 pb-2">
               <h4 class="font-bold text-sm uppercase text-slate-900 dark:text-slate-100">Explanation & Rationale</h4>
-              <button onclick="openSlidesForCurrentQuestion()" class="px-3 py-1.5 btn-primary-theme text-xs font-bold rounded-lg flex items-center gap-1.5 shadow">
-                📄 Open Lecture Slides
-              </button>
             </div>
             <p id="explanation-text" class="text-sm leading-relaxed whitespace-pre-line text-slate-800 dark:text-slate-200"></p>
           </div>
@@ -416,7 +411,482 @@
         <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
           <div>
             <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">Detailed Question Review</h2>
-            <p class="text-xs text-slate-600 dark:text-slate-300">Review vignettes, your chosen answers, correct responses, explanations, and lecture slides.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Review vignettes, your chosen answers, correct responses, and explanations.</p>
+          </div>
+          
+          <!-- Review Filters -->
+          <div class="flex gap-2 flex-wrap">
+            <button onclick="filterReviewList('all')" id="rf-all" class="px-3 py-1.5 rounded-lg border text-xs font-bold btn-primary-theme">All Questions</button>
+            <button onclick="filterReviewList('incorrect')" id="rf-incorrect" class="px-3 py-1.5 rounded-lg border text-xs font-bold card-theme text-slate-900 dark:text-slate-100">Incorrect Only</button>
+            <button onclick="filterReviewList('correct')" id="rf-correct" class="px-3 py-1.5 rounded-lg border text-xs font-bold card-theme text-slate-900 dark:text-slate-100">Correct Only</button>
+            <button onclick="filterReviewList('bookmarked')" id="rf-bookmarked" class="px-3 py-1.5 rounded-lg border text-xs font-bold card-theme text-slate-900 dark:text-slate-100">Bookmarked ★</button>
+          </div>
+        </div>
+
+        <!-- Review Question List -->
+        <div id="review-list-container" class="space-y-6">
+          <p class="text-center text-sm text-slate-600 dark:text-slate-300 py-8">No questions loaded or attempted yet. Import questions in the Bank tab to get started!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: ANALYTICS WITH RADAR CHART -->
+    <section id="tab-analytics" class="hidden space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border text-center space-y-4">
+        <h2 class="text-xl font-bold mb-1 text-slate-900 dark:text-slate-100">6-Discipline Performance Radar</h2>
+        <p class="text-xs text-slate-600 dark:text-slate-300">Overall Mastery: (Total Correct ÷ Total Available) scaled from 0% (Center) to 100% (Outer Ring).</p>
+
+        <!-- Canvas Container -->
+        <div class="relative flex justify-center">
+          <canvas id="analyticsRadarCanvas" width="560" height="420" class="max-w-full h-auto"></canvas>
+        </div>
+
+        <h3 class="text-sm font-bold uppercase tracking-wider text-left pt-4 text-slate-900 dark:text-slate-100">Discipline Breakdown</h3>
+        <div id="discipline-stats-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: MANAGE BANK & JSON IMPORTER -->
+    <section id="tab-bank" class="hidden space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border">
+        <h2 class="text-xl font-bold mb-2 text-slate-900 dark:text-slate-100">JSON Question Bank Importer</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">Paste JSON question sets directly from NotebookLM or custom files. Accepts plain arrays `[ {...} ]` or objects `{ "questions": [...] }`.</p>
+
+        <!-- Category Override Selector -->
+        <div class="mb-4">
+          <label class="block text-sm font-semibold mb-2 text-slate-900 dark:text-slate-100">Target Discipline / Category Override</label>
+          <select id="import-category-override" class="w-full md:w-1/2 px-4 py-2 card-theme border rounded-xl outline-none font-medium">
+            <option value="auto">Auto-Detect from JSON</option>
+            <option value="Biochemistry">Biochemistry</option>
+            <option value="Physiology">Physiology</option>
+            <option value="Anatomy">Anatomy</option>
+            <option value="Pathology">Pathology</option>
+            <option value="Pharmacology">Pharmacology</option>
+            <option value="Clinical">Clinical</option>
+          </select>
+        </div>
+
+        <textarea id="json-input" rows="10" placeholder='Paste your JSON code here...' class="w-full p-4 font-mono text-xs card-theme border rounded-xl outline-none mb-4 text-slate-900 dark:text-slate-100"></textarea>
+
+        <div class="flex flex-wrap gap-3">
+          <button onclick="importJSON()" class="px-6 py-2.5 btn-primary-theme font-bold rounded-xl text-sm">Import Questions</button>
+          <button onclick="exportJSON()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-semibold rounded-xl text-sm">Export Entire Bank</button>
+          <button onclick="syncFromRepo()" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm">↻ Sync Repository Questions</button>
+          <button onclick="resetToPreloaded()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-sm">Reset / Clear Local Cache</button>
+          <button onclick="clearQuestionBank()" class="px-6 py-2.5 border border-red-300 text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 font-semibold rounded-xl text-sm ml-auto">Clear Question Bank</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>tailwind = { config: { darkMode: "class" } };</script>
+  <style>
+    :root {
+      --bg-header: #0f172a;
+      --text-header: #ffffff;
+      --btn-primary: #2563eb;
+      --btn-primary-hover: #1d4ed8;
+      --border-accent: #2563eb;
+      --bg-accent-light: #eff6ff;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #000000;
+      --text-muted: #000000;
+      --border-main: #cbd5e1;
+      --radar-grid: #cbd5e1;
+      --radar-poly: rgba(37, 99, 235, 0.25);
+      --radar-stroke: #2563eb;
+    }
+
+    /* Dark Mode Defaults */
+    html.dark {
+      --bg-main: #0f172a;
+      --bg-card: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --border-main: #334155;
+      --bg-accent-light: rgba(37, 99, 235, 0.15);
+      --radar-grid: #475569;
+    }
+
+    /* Gryffindor Theme */
+    html[data-theme="gryffindor"] {
+      --bg-header: #740001;
+      --btn-primary: #d3a625;
+      --btn-primary-hover: #b58c1c;
+      --border-accent: #d3a625;
+      --bg-accent-light: #fefce8;
+      --radar-poly: rgba(211, 166, 37, 0.3);
+      --radar-stroke: #d3a625;
+    }
+    html[data-theme="gryffindor"].dark {
+      --bg-main: #1c0202;
+      --bg-card: #2e0505;
+      --text-main: #fef08a;
+      --text-muted: #ca8a04;
+      --border-main: #740001;
+      --bg-accent-light: rgba(211, 166, 37, 0.2);
+    }
+
+    /* Slytherin Theme */
+    html[data-theme="slytherin"] {
+      --bg-header: #1a472a;
+      --btn-primary: #2a623d;
+      --btn-primary-hover: #1f492d;
+      --border-accent: #2a623d;
+      --bg-accent-light: #f0fdf4;
+      --radar-poly: rgba(42, 98, 61, 0.3);
+      --radar-stroke: #2a623d;
+    }
+    html[data-theme="slytherin"].dark {
+      --bg-main: #07170d;
+      --bg-card: #0e2918;
+      --text-main: #f0fdf4;
+      --text-muted: #86efac;
+      --border-main: #1a472a;
+      --bg-accent-light: rgba(42, 98, 61, 0.25);
+    }
+
+    /* Ravenclaw Theme */
+    html[data-theme="ravenclaw"] {
+      --bg-header: #0e1a40;
+      --btn-primary: #946b2d;
+      --btn-primary-hover: #785420;
+      --border-accent: #946b2d;
+      --bg-accent-light: #faf4e8;
+      --radar-poly: rgba(148, 107, 45, 0.3);
+      --radar-stroke: #946b2d;
+    }
+    html[data-theme="ravenclaw"].dark {
+      --bg-main: #050a1a;
+      --bg-card: #0d1738;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --border-main: #946b2d;
+      --bg-accent-light: rgba(148, 107, 45, 0.25);
+    }
+
+    /* Hufflepuff Theme */
+    html[data-theme="hufflepuff"] {
+      --bg-header: #111111;
+      --btn-primary: #ecb939;
+      --btn-primary-hover: #d4a325;
+      --border-accent: #ecb939;
+      --bg-accent-light: #fffbeb;
+      --radar-poly: rgba(236, 185, 57, 0.3);
+      --radar-stroke: #ecb939;
+    }
+    html[data-theme="hufflepuff"].dark {
+      --bg-main: #121212;
+      --bg-card: #1e1e1e;
+      --text-main: #fef08a;
+      --text-muted: #a1a1aa;
+      --border-main: #ecb939;
+      --bg-accent-light: rgba(236, 185, 57, 0.2);
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .header-bar {
+      background-color: var(--bg-header);
+    }
+    .card-theme {
+      background-color: var(--bg-card);
+      border-color: var(--border-main);
+    }
+    .btn-primary-theme {
+      background-color: var(--btn-primary);
+      color: #ffffff;
+    }
+    .btn-primary-theme:hover {
+      background-color: var(--btn-primary-hover);
+    }
+    .option-btn {
+      transition: all 0.15s ease-in-out;
+      background-color: var(--bg-card);
+      border-color: var(--border-main);
+      color: var(--text-main) !important;
+    }
+    .option-btn.selected {
+      border: 2px solid var(--border-accent) !important;
+      background-color: var(--bg-accent-light) !important;
+    }
+    .option-btn.selected .badge-letter {
+      background-color: var(--btn-primary) !important;
+      color: #ffffff !important;
+    }
+    .option-btn.correct-reveal {
+      border: 2px solid #16a34a !important;
+      background-color: rgba(22, 163, 74, 0.15) !important;
+      color: var(--text-main) !important;
+    }
+    .option-btn.incorrect-reveal {
+      border: 2px solid #dc2626 !important;
+      background-color: rgba(220, 38, 38, 0.15) !important;
+      color: var(--text-main) !important;
+    }
+
+    /* Universal High-Contrast Select Dropdown & Option Styling */
+    select {
+      color: #0f172a !important;
+      background-color: #ffffff !important;
+    }
+    html.dark select {
+      color: #f8fafc !important;
+      background-color: #1e293b !important;
+    }
+    .header-bar select {
+      color: #ffffff !important;
+      background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+
+    select option {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      font-weight: 600 !important;
+    }
+    html.dark select option,
+    .header-bar select option {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+    }
+  
+    /* Dark Mode forced color overrides for nested elements */
+    html.dark body,
+    html.dark main,
+    html.dark main div,
+    html.dark main p,
+    html.dark main span:not(.bg-blue-600):not(.bg-blue-100),
+    html.dark main h1,
+    html.dark main h2,
+    html.dark main h3,
+    html.dark main h4,
+    html.dark main label {
+      color: #f8fafc !important;
+    }
+    html.dark .card-theme {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+    }
+    html.dark select {
+      color: #f8fafc !important;
+      background-color: #1e293b !important;
+    }
+    html.dark select option {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+    }
+
+    /* Badges & special elements inside main that need explicit contrast */
+    html:not(.dark) .badge-letter {
+      color: #000000 !important;
+      background-color: #e2e8f0 !important;
+    }
+
+    /* Header remains high-contrast white text on top of the themed dark bar */
+    .header-bar, .header-bar * {
+      color: #ffffff !important;
+    }
+    .header-bar select {
+      background-color: rgba(0, 0, 0, 0.4) !important;
+      color: #ffffff !important;
+    }
+    .header-bar select option {
+      background-color: #0f172a !important;
+      color: #ffffff !important;
+    }
+
+  </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col">
+
+  <!-- Header Navigation -->
+  <header class="header-bar text-white shadow-md sticky top-0 z-50 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg btn-primary-theme flex items-center justify-center font-bold text-xl">R</div>
+        <div>
+          <h1 class="text-lg font-bold leading-tight">Renal Quiz Bank</h1>
+          <p class="text-xs opacity-80">Renal & Clinical Question Bank</p>
+        </div>
+      </div>
+
+      <!-- Navigation & Customization Bar -->
+      <div class="flex items-center gap-3 flex-wrap">
+        <nav class="flex items-center gap-1 bg-black/20 p-1 rounded-lg">
+          <button onclick="switchTab('launcher')" id="nav-launcher" class="px-3 py-1.5 rounded-md text-xs font-semibold bg-white/20">Launcher</button>
+          <button onclick="switchTab('quiz')" id="nav-quiz" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Quiz Engine</button>
+          <button onclick="switchTab('review')" id="nav-review" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Review</button>
+          <button onclick="switchTab('analytics')" id="nav-analytics" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Analytics</button>
+          <button onclick="switchTab('bank')" id="nav-bank" class="px-3 py-1.5 rounded-md text-xs font-semibold opacity-80 hover:opacity-100">Bank</button>
+        </nav>
+
+        <!-- Color Themes Dropdown -->
+        <select id="theme-selector" onchange="changeTheme(this.value)" class="font-medium text-xs px-2.5 py-1.5 rounded-lg border border-white/30 outline-none cursor-pointer">
+          <option value="default">🏥 Default Medical</option>
+          <option value="gryffindor">🦁 Gryffindor</option>
+          <option value="slytherin">🐍 Slytherin</option>
+          <option value="ravenclaw">🦅 Ravenclaw</option>
+          <option value="hufflepuff">🦡 Hufflepuff</option>
+        </select>
+
+        <!-- Dark / Light Mode Toggle -->
+        <button onclick="toggleDarkMode()" id="mode-toggle-btn" class="p-1.5 rounded-lg bg-black/30 hover:bg-black/40 text-sm border border-white/20">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="hidden fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-3 border border-slate-700">
+    <span id="toast-msg">Notification</span>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+
+    <!-- TAB 1: EXAM LAUNCHER -->
+    <section id="tab-launcher" class="space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border">
+        <h2 class="text-xl font-bold mb-1 text-slate-900 dark:text-slate-100">Create Custom Study Session</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">Select your target categories & specific uploaded lectures, question status filters, and testing parameters.</p>
+
+        <!-- Category & Lecture Drill-down Selection -->
+        <div class="mb-6">
+          <div class="flex justify-between items-center mb-3">
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100">Select Categories & Uploaded Lectures</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Expand any category to toggle specific uploaded lectures.</p>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="selectAllLectures(true)" class="text-xs font-bold hover:underline text-blue-600 dark:text-blue-400">Select All</button>
+              <button onclick="selectAllLectures(false)" class="text-xs font-bold hover:underline text-slate-600 dark:text-slate-300">Deselect All</button>
+            </div>
+          </div>
+          <div class="space-y-3" id="category-selector-grid"></div>
+        </div>
+
+        <!-- Question Status Filters -->
+        <div class="mb-6">
+          <h3 class="text-sm font-bold uppercase tracking-wider mb-3 text-slate-900 dark:text-slate-100">Filter by Question Status</h3>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="all" checked class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">All Questions</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="unused" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Unused Only</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="incorrect" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Incorrect Only</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="correct" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Correct Only</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 card-theme rounded-xl border cursor-pointer">
+              <input type="radio" name="statusFilter" value="bookmarked" class="accent-blue-600">
+              <span class="text-xs font-semibold text-slate-900 dark:text-slate-100">Bookmarked</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Quiz Settings -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-slate-900 dark:text-slate-100">Number of Questions</label>
+            <input type="number" id="question-count" min="1" max="50" value="10" class="w-full px-4 py-2 card-theme border rounded-xl outline-none text-slate-900 dark:text-slate-100 font-medium">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-slate-900 dark:text-slate-100">Quiz Mode</label>
+            <select id="quiz-mode" class="w-full px-4 py-2 card-theme border rounded-xl outline-none font-medium">
+              <option value="practice">Practice Mode (Instant Feedback)</option>
+              <option value="test">Test Mode (Hidden Feedback until Submit)</option>
+            </select>
+          </div>
+          <div class="flex flex-col justify-end gap-2">
+            <label class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-slate-100 cursor-pointer">
+              <input type="checkbox" id="shuffle-questions" checked class="accent-blue-600 w-4 h-4">
+              Randomize Question Order
+            </label>
+            <label class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-slate-100 cursor-pointer">
+              <input type="checkbox" id="shuffle-options" checked class="accent-blue-600 w-4 h-4">
+              Randomize Choices (A-E)
+            </label>
+          </div>
+        </div>
+
+        <button onclick="startQuiz()" class="w-full btn-primary-theme font-bold py-3.5 rounded-xl text-center shadow-lg transition">
+          Start Quiz Session
+        </button>
+      </div>
+    </section>
+
+    <!-- TAB 2: ACTIVE QUIZ ENGINE -->
+    <section id="tab-quiz" class="hidden space-y-4">
+      <div id="quiz-empty-msg" class="card-theme rounded-2xl p-12 text-center border">
+        <p class="text-slate-600 dark:text-slate-300 mb-4">No active quiz session running.</p>
+        <button onclick="switchTab('launcher')" class="btn-primary-theme font-bold px-6 py-2.5 rounded-xl">Go to Launcher</button>
+      </div>
+
+      <div id="quiz-container" class="hidden space-y-4">
+        <!-- Top Toolbar -->
+        <div class="card-theme rounded-xl p-4 shadow-sm border flex justify-between items-center gap-2 flex-wrap">
+          <div class="flex items-center gap-2.5 flex-wrap">
+            <span id="quiz-progress-text" class="text-sm font-bold text-slate-900 dark:text-slate-100">Question 1 of 10</span>
+            <span id="category-badge" class="px-2.5 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold rounded-md">Category</span>
+            <span id="lecture-badge" class="px-2.5 py-1 bg-slate-200 text-slate-900 dark:bg-slate-700 dark:text-slate-100 text-xs font-semibold rounded-md">Lecture</span>
+
+          </div>
+          <button onclick="toggleBookmarkCurrent()" id="bookmark-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold card-theme text-slate-900 dark:text-slate-100">
+            ★ Bookmark
+          </button>
+        </div>
+
+        <!-- Question Card -->
+        <div class="card-theme rounded-2xl p-6 shadow-sm border space-y-6">
+          <div id="question-text" class="text-base md:text-lg leading-relaxed font-semibold whitespace-pre-line text-slate-900 dark:text-slate-100">
+            Vignette content...
+          </div>
+
+          <!-- Answer Options -->
+          <div id="options-container" class="space-y-3"></div>
+
+          <!-- Explanation Box -->
+          <div id="explanation-box" class="hidden card-theme border rounded-xl p-5 space-y-3">
+            <div class="flex justify-between items-center gap-2 flex-wrap border-b border-slate-200 dark:border-slate-800 pb-2">
+              <h4 class="font-bold text-sm uppercase text-slate-900 dark:text-slate-100">Explanation & Rationale</h4>
+            </div>
+            <p id="explanation-text" class="text-sm leading-relaxed whitespace-pre-line text-slate-800 dark:text-slate-200"></p>
+          </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="flex justify-between items-center">
+          <button onclick="prevQuestion()" id="prev-btn" class="px-5 py-2.5 rounded-xl border font-semibold text-sm card-theme disabled:opacity-50 text-slate-900 dark:text-slate-100">Previous</button>
+          <div class="flex gap-2">
+            <button onclick="submitExam()" id="submit-btn" class="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm">Submit Exam</button>
+            <button onclick="nextQuestion()" id="next-btn" class="px-5 py-2.5 rounded-xl btn-primary-theme font-semibold text-sm">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: POST-EXAM & QUESTION BANK REVIEW SCREEN -->
+    <section id="tab-review" class="hidden space-y-6">
+      <div class="card-theme rounded-2xl p-6 shadow-sm border space-y-4">
+        <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">Detailed Question Review</h2>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Review vignettes, your chosen answers, correct responses, and explanations.</p>
           </div>
           
           <!-- Review Filters -->
@@ -533,16 +1003,8 @@
 
     const PRELOADED_QUESTIONS = [];
 
-    const DEFAULT_SLIDES_MAP = {
-      "Renal functional anatomy & development": "slides/w1_01_renal_functional_anatomy_and_development_slides.pdf",
-      "Renal histology": "slides/w1_02_renal_histology_slides.pdf",
-      "Nitrogen disposal and the urea cycle I & II": "slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
-    };
-
     let questionBank = [];
     let userHistory = {};
-    let lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
-    let activeModalLecture = '';
     let currentQuiz = [];
     let currentIndex = 0;
     let selectedAnswers = {};
@@ -551,7 +1013,6 @@
     let currentReviewFilter = 'all';
 
     window.onload = async function() {
-      loadSlidesMap();
       await loadFromStorage();
       renderCategoryGrid();
       renderAnalytics();
@@ -578,72 +1039,6 @@
           resolve(null);
         };
       });
-    }
-
-    function normalizeKey(s) {
-      if (!s) return "";
-      return s.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '');
-    }
-
-    function getSlideUrl(lecName) {
-      if (!lecName) return null;
-      let rawUrl = lectureSlidesMap[lecName];
-      if (!rawUrl) {
-        const norm = normalizeKey(lecName);
-        for (const k of Object.keys(lectureSlidesMap)) {
-          if (normalizeKey(k) === norm) {
-            rawUrl = lectureSlidesMap[k];
-            break;
-          }
-        }
-      }
-
-      // If no explicit mapping found, auto-generate standard candidate PDF path from lecture name
-      if (!rawUrl) {
-        const cleanName = lecName.toLowerCase()
-          .replace(/&/g, 'and')
-          .replace(/[^a-z0-9]+/g, '_')
-          .replace(/^_+|_+$/g, '');
-        if (cleanName) {
-          rawUrl = `slides/${cleanName}_slides.pdf`;
-        }
-      }
-
-      if (!rawUrl) return null;
-
-      if (!rawUrl.startsWith('http://') && !rawUrl.startsWith('https://') && !rawUrl.startsWith('data:')) {
-        try {
-          return new URL(rawUrl, window.location.href).href;
-        } catch(e) { return rawUrl; }
-      }
-      return rawUrl;
-    }
-
-    function setSlideUrl(lecName, url) {
-      if (!lecName) return;
-      lectureSlidesMap[lecName] = url;
-      const normKey = normalizeKey(lecName);
-      for (const k of Object.keys(lectureSlidesMap)) {
-        if (normalizeKey(k) === normKey) {
-          lectureSlidesMap[k] = url;
-        }
-      }
-    }
-
-    function loadSlidesMap() {
-      try {
-        const savedMap = localStorage.getItem('renal_quiz_slides');
-        if (savedMap) {
-          const parsed = JSON.parse(savedMap);
-          lectureSlidesMap = { ...DEFAULT_SLIDES_MAP, ...parsed };
-        }
-      } catch(e) { console.warn('localStorage slides map read error:', e); }
-    }
-
-    function saveSlidesMap() {
-      try {
-        localStorage.setItem('renal_quiz_slides', JSON.stringify(lectureSlidesMap));
-      } catch(e) { console.warn('localStorage slides map write error:', e); }
     }
 
     function determineCategory(item, data, path) {
@@ -686,18 +1081,12 @@
         const manifestRes = await fetch('questions/manifest.json');
         if (manifestRes.ok) {
           let manifestText = await manifestRes.text();
-          // Auto-strip trailing commas before parsing to avoid JSON syntax errors
           manifestText = manifestText.replace(/,\s*([\]}])/g, '$1');
           const manifestEntries = JSON.parse(manifestText);
           for (const entry of manifestEntries) {
             const filePath = typeof entry === 'string' ? entry : (entry.path || entry.file);
             const manifestCat = (typeof entry === 'object' && entry !== null) ? (entry.category || entry.discipline) : null;
             const manifestLec = (typeof entry === 'object' && entry !== null) ? (entry.lecture || entry.lecture_title || entry.title) : null;
-            const manifestSlides = (typeof entry === 'object' && entry !== null) ? (entry.slides || entry.slides_url || entry.pdf) : null;
-
-            if (manifestLec && manifestSlides) {
-              setSlideUrl(manifestLec, manifestSlides);
-            }
 
             if (!filePath) continue;
 
@@ -707,28 +1096,11 @@
                 const data = await qRes.json();
                 const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || data.data || []);
                 const rootLec = manifestLec || data.lecture_title || data.lecture || 'General Vignettes';
-                
-                // Extract filename without path and extension (e.g. questions/w1_04_gfr.json -> w1_04_gfr)
-                const pathParts = filePath.split('/');
-                const baseFileName = pathParts[pathParts.length - 1].replace(/\.json$/i, '');
-                
-                // Priority: manifest entry > json root > auto-derived from filename
-                const inferredSlidePath = `slides/${baseFileName}_slides.pdf`;
-                const slideSource = manifestSlides || data.slides || data.slides_url || data.pdf || inferredSlidePath;
-                
-                if (slideSource && rootLec) {
-                  setSlideUrl(rootLec, slideSource);
-                }
 
                 items.forEach((item, idx) => {
                   const qId = item.id ? String(item.id) : `remote_${filePath.replace(/[^a-zA-Z0-9]/g, '_')}_${idx}`;
                   const cat = manifestCat || determineCategory(item, data, filePath);
                   const itemLec = item.lecture_title || manifestLec || rootLec || item.lecture || 'General Vignettes';
-
-                  const activeSlide = item.slides || item.slides_url || slideSource;
-                  if (activeSlide && itemLec) {
-                    setSlideUrl(itemLec, activeSlide);
-                  }
 
                   remoteQuestions.push({
                     id: qId,
@@ -746,7 +1118,6 @@
               console.warn("Error fetching question file:", filePath, err);
             }
           }
-          saveSlidesMap();
         }
       } catch (err) {
         console.warn("No questions/manifest.json found or failed to fetch:", err);
@@ -875,8 +1246,7 @@
         const url = prompt(`Paste PDF or Google Slides URL for "${targetLecture}":`, getSlideUrl(targetLecture) || "");
         if (url !== null && url.trim() !== "") {
           setSlideUrl(targetLecture, url.trim());
-          saveSlidesMap();
-          showToast(`Saved slides link for "${targetLecture}"`);
+                    showToast(`Saved slides link for "${targetLecture}"`);
           openSlidesModal(targetLecture);
           renderCategoryGrid();
         }
@@ -890,8 +1260,7 @@
             const reader = new FileReader();
             reader.onload = function(evt) {
               setSlideUrl(targetLecture, evt.target.result);
-              saveSlidesMap();
-              showToast(`Attached PDF file to "${targetLecture}"`);
+                            showToast(`Attached PDF file to "${targetLecture}"`);
               openSlidesModal(targetLecture);
               renderCategoryGrid();
             };
@@ -1367,8 +1736,7 @@
           
           if (parsed.slides || parsed.slides_url) {
             setSlideUrl(rootLectureTitle, parsed.slides || parsed.slides_url);
-            saveSlidesMap();
-          }
+                      }
 
           if (items.length === 0) {
             const arrayKey = Object.keys(parsed).find(k => Array.isArray(parsed[k]));
@@ -1412,8 +1780,7 @@
           importedCount++;
         });
 
-        saveSlidesMap();
-        saveToStorage();
+                saveToStorage();
         renderCategoryGrid();
         showToast(`Imported ${importedCount} questions under "${items[0]?.lecture_title || rootLectureTitle || 'General Vignettes'}"!`);
         document.getElementById('json-input').value = '';
@@ -1448,27 +1815,21 @@
           }
         });
         saveToStorage();
-        saveSlidesMap();
-        renderCategoryGrid();
+                renderCategoryGrid();
         renderAnalytics();
         renderReviewList();
-        showToast(`Synced! Updated ${updatedCount} questions & slides.`);
+        showToast(`Synced! Updated ${updatedCount} questions.`);
       } else {
         showToast("No new question files found in questions/ folder.");
       }
     }
 
     function resetToPreloaded() {
-      localStorage.removeItem('renal_quiz_slides');
-      lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
-      questionBank = [...PRELOADED_QUESTIONS];
-      localStorage.removeItem('renal_quiz_slides');
-      localStorage.removeItem('renal_quiz_bank');
+            questionBank = [...PRELOADED_QUESTIONS];
+            localStorage.removeItem('renal_quiz_bank');
       localStorage.removeItem('renal_quiz_history');
       userHistory = {};
-      lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
-      saveSlidesMap();
-      saveToStorage();
+                  saveToStorage();
       renderCategoryGrid();
       renderAnalytics();
       renderReviewList();
@@ -1478,12 +1839,9 @@
     function clearQuestionBank() {
       questionBank = [];
       userHistory = {};
-      localStorage.removeItem('renal_quiz_slides');
-      localStorage.removeItem('renal_quiz_bank');
+            localStorage.removeItem('renal_quiz_bank');
       localStorage.removeItem('renal_quiz_history');
-      lectureSlidesMap = { ...DEFAULT_SLIDES_MAP };
-      saveSlidesMap();
-      saveToStorage();
+                  saveToStorage();
       renderCategoryGrid();
       renderAnalytics();
       renderReviewList();
