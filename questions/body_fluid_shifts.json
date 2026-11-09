@@ -1,7 +1,7 @@
 {
   "lecture_title": "Physiology: Body Fluid Compartments, Volume Expansions and Contractions",
   "total_questions": 20,
-  "description": "20 Consolidated Unique USMLE-Style Clinical Vignette Practice Problems (1st, 2nd, 3rd, and 5th Order) with No IDs",
+  "description": "20 Consolidated Unique USMLE-Style Clinical Vignette Practice Problems (1st, 2nd, 3rd, and 3rd Order) with No IDs",
   "usmle_practice_problems": [
     {
       "lecture_title": "Physiology: Body Fluid Compartments, Volume Expansions and Contractions",
@@ -61,7 +61,7 @@
     },
     {
       "lecture_title": "Physiology: Body Fluid Compartments, Volume Expansions and Contractions",
-      "order": "5th order",
+      "order": "3rd order",
       "vignette": "A 66-year-old male with extensive-stage small cell lung carcinoma is admitted to the hospital with progressive lethargy, confusion, and generalized muscle weakness. Physical examination reveals an euvolemic state without peripheral edema, jugular venous distension, or postural hypotension. Laboratory testing demonstrates profound hyponatremia (serum sodium: 114 mEq/L; reference: 135\u2013145 mEq/L), decreased serum osmolality (238 mOsm/kg; reference: 275\u2013295 mOsm/kg), inappropriately elevated urine osmolality (580 mOsm/kg), and urine sodium of 48 mEq/L. A diagnosis of syndrome of inappropriate antidiuretic hormone secretion (SIADH) is established. If a Darrow-Yannet diagram representing this patient's fluid status following osmotic equilibration is compared to that of a patient experiencing primary adrenal insufficiency, which of the following physiological parameters changes in opposite directions between these two clinical conditions?",
       "options": {
         "A": "Intracellular fluid (ICF) volume",
@@ -201,7 +201,7 @@
     },
     {
       "lecture_title": "Physiology: Body Fluid Compartments, Volume Expansions and Contractions",
-      "order": "5th order",
+      "order": "3rd order",
       "vignette": "A 58-year-old male with a history of alcohol use disorder presents to the hospital after consuming a massive quantity of highly concentrated salty broth and pretzels without drinking water, precipitating hyperosmotic volume expansion. At the same time, another patient in the clinical unit with small cell lung carcinoma develops severe hyponatremia due to syndrome of inappropriate antidiuretic hormone secretion (SIADH), representing hyposmotic volume expansion. Both patients have reached complete transcellular osmotic equilibration. If Darrow-Yannet diagrams representing their respective fluid states are compared against each other, which of the following physiological parameters shifts in the SAME direction in both patients relative to normal baseline?",
       "options": {
         "A": "Intracellular fluid (ICF) volume",
