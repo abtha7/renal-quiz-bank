@@ -2,67 +2,56 @@
   {
     "path": "questions/renal_anatomy.json",
     "category": "Anatomy",
-    "lecture": "Renal functional anatomy & development",
-    "slides": "slides/w1_01_renal_functional_anatomy_and_development_slides.pdf"
+    "lecture": "Renal functional anatomy & development"
   },
   {
     "path": "questions/renal_histology.json",
     "category": "Anatomy",
-    "lecture": "Renal histology",
-    "slides": "slides/w1_02_renal_histology_slides.pdf"
+    "lecture": "Renal histology"
   },
   {
     "path": "questions/nitrogen_disposal.json",
     "category": "Biochemistry",
-    "lecture": "Nitrogen disposal and the urea cycle I & II",
-    "slides": "slides/w1_03_nitrogen_disposal_and_the_urea_cycle_I_and_II_slides.pdf"
+    "lecture": "Nitrogen disposal and the urea cycle I & II"
   },
   {
     "path": "questions/body_fluid_shifts.json",
     "category": "Physiology",
-    "lecture": "Body fluid shifts",
-    "slides": "slides/w1_04_body_fluid_shifts_slides.pdf"
+    "lecture": "Body fluid shifts"
   },
   {
     "path": "questions/four_key_processes.json",
     "category": "Physiology",
-    "lecture": "Four key processes of kidney",
-    "slides": "slides/w1_05_four_key_processes_of_kidney.pdf"
+    "lecture": "Four key processes of kidney"
   },
   {
     "path": "questions/renal_clearance.json",
     "category": "Physiology",
-    "lecture": "Renal clearance",
-    "slides": "slides/w1_06_renal_clearance.pdf"
+    "lecture": "Renal clearance"
   },
   {
     "path": "questions/renal_processing_of_sodium_and_water_I.json",
     "category": "Physiology",
-    "lecture": "Renal processing of sodium and water I",
-    "slides": "slides/w1_07_renal_processing_of_sodium_and_water_I.pdf"
+    "lecture": "Renal processing of sodium and water I"
   },
   {
     "path": "questions/renal_processing_of_sodium_and_water_II.json",
     "category": "Physiology",
-    "lecture": "Renal processing of sodium and water II",
-    "slides": "slides/w1_08_renal_processing_of_sodium_and_water_II.pdf"
+    "lecture": "Renal processing of sodium and water II"
   },
   {
     "path": "questions/nucleotide_metabolism_I_and_II.json",
     "category": "Biochemistry",
-    "lecture": "Nucleotide metabolism I and II",
-    "slides": "slides/w1_09_nucleotide_metabolism_I_and_II.pdf"
+    "lecture": "Nucleotide metabolism I and II"
   },
   {
     "path": "questions/gout_pharm.json",
     "category": "Pharmacology",
-    "lecture": "Gout pharmacology",
-    "slides": "slides/w1_10_gout_pharm.pdf"
+    "lecture": "Gout pharmacology"
   },
   {
     "path": "questions/diuretics_I_II_III.json",
     "category": "Pharmacology",
-    "lecture": "Diuretics",
-    "slides": "slides/w1_11_diuretics_I_II_III.pdf"
+    "lecture": "Diuretics"
   }
 ]
