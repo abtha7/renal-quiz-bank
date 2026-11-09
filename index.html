@@ -597,9 +597,20 @@
           }
         }
       }
+
+      // If no explicit mapping found, auto-generate standard candidate PDF path from lecture name
+      if (!rawUrl) {
+        const cleanName = lecName.toLowerCase()
+          .replace(/&/g, 'and')
+          .replace(/[^a-z0-9]+/g, '_')
+          .replace(/^_+|_+$/g, '');
+        if (cleanName) {
+          rawUrl = `slides/${cleanName}_slides.pdf`;
+        }
+      }
+
       if (!rawUrl) return null;
 
-      // Convert relative URL to full absolute URL based on site origin
       if (!rawUrl.startsWith('http://') && !rawUrl.startsWith('https://') && !rawUrl.startsWith('data:')) {
         try {
           return new URL(rawUrl, window.location.href).href;
@@ -690,7 +701,14 @@
                 const items = Array.isArray(data) ? data : (data.usmle_practice_problems || data.questions || data.data || []);
                 const rootLec = manifestLec || data.lecture_title || data.lecture || 'General Vignettes';
                 
-                const slideSource = manifestSlides || data.slides || data.slides_url || data.pdf;
+                // Extract filename without path and extension (e.g. questions/w1_04_gfr.json -> w1_04_gfr)
+                const pathParts = filePath.split('/');
+                const baseFileName = pathParts[pathParts.length - 1].replace(/\.json$/i, '');
+                
+                // Priority: manifest entry > json root > auto-derived from filename
+                const inferredSlidePath = `slides/${baseFileName}_slides.pdf`;
+                const slideSource = manifestSlides || data.slides || data.slides_url || data.pdf || inferredSlidePath;
+                
                 if (slideSource && rootLec) {
                   setSlideUrl(rootLec, slideSource);
                 }
@@ -814,12 +832,7 @@
         externalLink.href = slideUrl;
         externalLink.classList.remove('hidden');
 
-        // For cross-origin Google Sites iframe compatibility, embed PDFs using Google Docs viewer
-        if ((slideUrl.endsWith('.pdf') || slideUrl.includes('/slides/')) && slideUrl.startsWith('http')) {
-          iframe.src = `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(slideUrl)}`;
-        } else {
-          iframe.src = slideUrl;
-        }
+        iframe.src = slideUrl;
       } else {
         iframe.classList.add('hidden');
         iframe.src = 'about:blank';
