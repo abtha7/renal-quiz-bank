@@ -1,0 +1,287 @@
+{
+  "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+  "description": "20 USMLE-Style Clinical Vignette Practice Problems (Sets 1-4: 1st, 2nd, and 3rd Order) with No IDs",
+  "total_questions": 20,
+  "usmle_practice_problems": [
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "1st order",
+      "vignette": "A 48-year-old healthy male participates in a renal physiology study evaluating electrolyte handling along the nephron. A 24-hour urine collection reveals that the patient consumes and excretes approximately 150 mEq of sodium per day, while inulin and plasma sodium measurements establish his filtered sodium load at approximately 25,200 mEq/day. Which of the following nephron segments is responsible for reabsorbing the largest absolute fraction (approximately 67%) of this filtered sodium load in an isosmotic manner with water?",
+      "options": {
+        "A": "Proximal convoluted tubule",
+        "B": "Thick ascending limb of Henle loop",
+        "C": "Early distal convoluted tubule",
+        "D": "Cortical collecting duct",
+        "E": "Medullary collecting duct"
+      },
+      "correct_answer": "A",
+      "rationale": "The proximal convoluted tubule (PCT) performs the bulk reabsorption of filtered fluid and solutes, reclaiming approximately 67% (two-thirds) of the filtered sodium load (as well as water) isosmotically. The remaining nephron segments reabsorb smaller proportions: the thick ascending limb reabsorbs ~25% (diluting segment without water), the early distal tubule reabsorbs ~5%, and the late distal tubule and collecting ducts fine-tune the final ~3% under hormonal control."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A researcher performs micro-puncture fluid sampling along the proximal convoluted tubule (PCT) of an experimental mammal. In the first 25% of the tubule length, secondary active sodium-solute cotransporters rapidly strip the luminal fluid of glucose and amino acids, and sodium-hydrogen exchange reclaims most of the filtered bicarbonate, while water follows isosmotically. Micro-puncture sampling in the mid-to-late proximal tubule reveals that the tubular fluid-to-plasma concentration ratio for chloride ([TF/P]Cl-) has risen to 1.35. Which of the following transport mechanisms directly drives the subsequent passive paracellular reabsorption of sodium in the late proximal convoluted tubule?",
+      "options": {
+        "A": "Passive diffusion of chloride down its concentration gradient through leaky tight junctions creating a +4 mV lumen-positive transepithelial potential",
+        "B": "Rapid electrogenic entry of sodium through apical ENaC channels establishing a -50 mV lumen-negative transepithelial potential",
+        "C": "Active ATP-dependent chloride extrusion by apical CFTR channels generating a lumen-negative potential",
+        "D": "Upregulation of apical NKCC2 cotransporters creating a 200 mOsm/kg transcellular osmotic gradient",
+        "E": "Aldosterone-dependent phosphorylation of the basolateral sodium-bicarbonate cotransporter NBC1"
+      },
+      "correct_answer": "A",
+      "rationale": "In the early proximal tubule, bicarbonate is preferentially reabsorbed with sodium, leaving chloride behind in the lumen. As water is reabsorbed isosmotically, luminal chloride becomes concentrated ([TF/P]Cl- rises to ~1.3-1.4). In the late proximal tubule, this elevated chloride concentration drives passive paracellular diffusion of chloride down its chemical gradient across leaky tight junctions into the interstitium. The exit of negative chloride ions generates a lumen-positive transepithelial potential (+4 mV). This positive luminal charge electrostatically repels sodium cations, driving passive paracellular sodium reabsorption."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 54-year-old male presents to the clinic with persistent headaches and fatigue. Physical examination reveals a blood pressure of 168/102 mm Hg without peripheral edema. Laboratory studies reveal a low serum potassium of 2.8 mEq/L, elevated serum bicarbonate of 32 mEq/L (metabolic alkalosis), and markedly suppressed plasma renin activity. Further workup reveals an autonomous aldosterone-producing adrenal adenoma (Conn syndrome). Despite continuously elevated circulating aldosterone levels and persistent hypertension, the patient does not develop generalized edema. Which of the following physiological mechanisms best explains this 'aldosterone escape'?",
+      "options": {
+        "A": "Extracellular fluid volume expansion dilutes peritubular oncotic pressure and stimulates ANP release, inhibiting proximal tubule sodium reabsorption",
+        "B": "Autonomous down-regulation of mineralocorticoid receptors in principal cells due to receptor internalization",
+        "C": "Direct transcriptional suppression of basolateral Na+/K+-ATPase pumps in the collecting duct by hypokalemia",
+        "D": "Activation of renal sympathetic nerves causing preferential afferent arteriolar vasoconstriction",
+        "E": "Immune-mediated destruction of epithelial sodium channels (ENaC) across the distal nephron"
+      },
+      "correct_answer": "A",
+      "rationale": "Aldosterone escape (mineralocorticoid escape) explains why patients with primary hyperaldosteronism (Conn syndrome) develop hypertension and hypokalemia but escape generalized edema. Autonomous aldosterone hypersecretion initially stimulates distal principal cell ENaC and Na+/K+-ATPase, leading to sodium retention and ECF volume expansion. This expansion raises arterial blood pressure, dilutes peritubular capillary oncotic pressure (pi_c), raises capillary hydrostatic pressure (Pc), and stretches cardiac atria to release atrial natriuretic peptide (ANP). Decreased peritubular oncotic pressure and elevated ANP powerfully inhibit proximal tubule sodium and water reabsorption. The increased distal sodium delivery overwhelms distal reabsorptive capacity, restoring daily urinary sodium excretion to match intake at a new hypertensive steady state."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 68-year-old male with severe membranous nephropathy and nephrotic-range proteinuria (4+ protein on urinalysis; serum albumin 1.7 g/dL) presents with profound ascites and 3+ pitting lower extremity edema. He is prescribed 40 mg of oral furosemide daily, but after three days his urine output has not increased and his weight has increased by 3 kg, demonstrating diuretic resistance. Which of the following pairs of pathophysiological mechanisms explains this patient's failure to respond to standard loop diuretic therapy?",
+      "options": {
+        "A": "Binding of filtered luminal furosemide by urinary albumin and distal nephron ENaC hyperactivation driven by low effective arterial blood volume (EABV)",
+        "B": "Destruction of the apical NKCC2 cotransporter by circulating anti-GBM antibodies and suppression of aldosterone secretion",
+        "C": "Increased glomerular filtration rate delivering excessive fluid to the loop of Henle and hyperalbuminemic expansion of the vasa recta",
+        "D": "Selective blockade of the basolateral Na+/K+-ATPase in principal cells and toxic intrarenal accumulation of furosemide",
+        "E": "Competitive displacement of furosemide by elevated plasma urea at the macula densa"
+      },
+      "correct_answer": "A",
+      "rationale": "Loop diuretics like furosemide are organic anions that must reach the tubular lumen to bind the Cl- site of apical NKCC2 in the thick ascending limb. In nephrotic syndrome, massive proteinuria allows substantial albumin to enter the tubular lumen, which binds free furosemide and prevents it from interacting with NKCC2. Furthermore, severe hypoalbuminemia drops plasma oncotic pressure, shifting fluid into the interstitium and markedly decreasing effective arterial blood volume (EABV). The kidneys perceive this low EABV as underfilling and hyperactivate the RAAS, leading to high aldosterone levels and compensatory sodium hyper-reabsorption via distal ENaC channels. Overcoming this resistance requires escalating loop diuretic doses and adding an aldosterone antagonist (e.g., spironolactone)."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "3rd order",
+      "vignette": "A 32-year-old female presents to the emergency department after 3 days of severe choleraic watery diarrhea and vomiting, unable to tolerate oral fluids. Physical examination demonstrates postural hypotension (supine BP 105/65 mm Hg, standing BP 80/50 mm Hg), tachycardia, and dry mucous membranes, consistent with severe ECF volume contraction and low effective arterial blood volume (EABV). In response, the juxtaglomerular apparatus releases renin, triggering the generation of high systemic levels of angiotensin II. Which of the following combinations of cellular and microvascular changes occurs in the proximal tubule and peritubular capillaries to maximize renal fluid retrieval and maintain glomerulotubular balance?",
+      "options": {
+        "A": "Direct stimulation of apical NHE3 antiporters; preferential efferent arteriolar constriction increasing filtration fraction (FF); and elevated peritubular capillary oncotic pressure (pi_c)",
+        "B": "Inhibition of apical NHE3 antiporters; dilation of the efferent arteriole; and decreased peritubular capillary oncotic pressure (pi_c)",
+        "C": "Direct activation of apical ENaC channels; dilation of afferent arterioles; and increased peritubular capillary hydrostatic pressure (Pc)",
+        "D": "Selective downregulation of basolateral Na+/K+-ATPase; constriction of afferent arterioles; and decreased filtration fraction (FF)",
+        "E": "Suppression of apical SGLT2 cotransporters; efferent arteriolar vasodilation; and elevated peritubular hydrostatic pressure (Pc)"
+      },
+      "correct_answer": "A",
+      "rationale": "This 3rd-order question integrates cellular transport, renal hemodynamics, and peritubular Starling forces: (1) Cellular action of Angiotensin II: Angiotensin II binds AT1 receptors on proximal convoluted tubule epithelial cells to directly stimulate apical NHE3 antiporters, enhancing transcellular sodium and bicarbonate reclamation; (2) Microvascular hemodynamic action: Angiotensin II preferentially constricts the efferent arteriole, which sustains glomerular capillary hydrostatic pressure (PGC) and GFR during hypoperfusion while reducing renal plasma flow (RPF). Because GFR is preserved relative to falling RPF, the filtration fraction (FF = GFR / RPF) increases; (3) Peritubular Starling forces: Because a larger fraction of plasma water is filtered at the glomerulus, the blood exiting the efferent arteriole into peritubular capillaries has a high concentration of retained proteins, markedly increasing peritubular capillary oncotic pressure (pi_c) while efferent resistance drops peritubular hydrostatic pressure (Pc). This powerful oncotic driving force draws reabsorbed interstitial fluid into the capillaries, increasing proximal fractional sodium reabsorption above 67% and producing contraction alkalosis."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "1st order",
+      "vignette": "A 45-year-old male with treatment-resistant hypertension is evaluated in the nephrology clinic. The physician reviews the physiological mechanisms that regulate total body sodium and blood pressure. Which of the following statements represents the master physiological principle governing renal sodium handling?",
+      "options": {
+        "A": "Total body sodium content determines extracellular fluid (ECF) volume and arterial blood pressure, whereas total body water content primarily determines plasma sodium concentration",
+        "B": "Plasma sodium concentration directly determines total extracellular fluid volume, whereas total body sodium content regulates intracellular fluid volume",
+        "C": "Extracellular fluid volume is determined by renal potassium excretion, whereas systemic blood pressure is governed by intracellular chloride stores",
+        "D": "Daily urinary sodium excretion must always be twice the daily dietary sodium intake to maintain negative sodium balance",
+        "E": "Total body sodium content determines plasma osmolality, whereas renal water reabsorption regulates the total quantity of exchangeable bone sodium"
+      },
+      "correct_answer": "A",
+      "rationale": "The fundamental principle of renal sodium handling dictates that total body sodium content governs extracellular fluid (ECF) volume, plasma volume, and systemic arterial blood pressure, because sodium and its accompanying anions account for >90% of osmotically active solutes in the ECF. In contrast, total body water content governs the plasma sodium concentration ([Na+])."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 50-year-old male presents to the emergency department with acute shortness of breath and orthopnea due to acute pulmonary edema. He is administered an intravenous bolus of furosemide. Furosemide acts on the thick ascending limb of Henle loop by competing for the luminal chloride-binding site of the apical Na+-K+-2Cl- (NKCC2) cotransporter. Under normal physiological conditions, apical recycling of reabsorbed potassium through ROMK channels generates a +7 mV lumen-positive transepithelial potential. Which of the following electrolyte transport processes is directly abolished by furosemide as a consequence of collapsing this lumen-positive potential?",
+      "options": {
+        "A": "Passive paracellular reabsorption of calcium and magnesium",
+        "B": "Transcellular active secretion of hydrogen ions via apical H+-ATPase",
+        "C": "Secondary active cotransport of glucose via apical SGLT2",
+        "D": "Passive transcellular reabsorption of water via aquaporin-1 channels",
+        "E": "Electroneutral reabsorption of sodium and chloride via apical NCC"
+      },
+      "correct_answer": "A",
+      "rationale": "In the thick ascending limb, apical NKCC2 cotransporters import Na+, K+, and 2 Cl-. While Na+ and Cl- exit basolaterally, K+ recycles back into the tubular lumen via apical ROMK channels. This positive charge back-leak creates a +7 mV lumen-positive transepithelial potential that electrostatically repels divalent cations, driving passive paracellular reabsorption of Ca2+ and Mg2+. Loop diuretics (furosemide) block NKCC2, abolishing this +7 mV lumen-positive potential and resulting in profound urinary wasting of Ca2+ and Mg2+ alongside Na+, K+, and Cl-."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 42-year-old male with recurrent bilateral nephrolithiasis is found to have idiopathic hypercalciuria with recurrent calcium oxalate stones. His nephrologist initiates treatment with hydrochlorothiazide. Hydrochlorothiazide selectively blocks the apical electroneutral sodium-chloride cotransporter (NCC) in the early distal convoluted tubule (DCT). Unlike transport in the proximal convoluted tubule and thick ascending limb, distal tubular sodium and calcium handling are functionally uncoupled. How does hydrochlorothiazide administration alter urinary calcium excretion in this patient?",
+      "options": {
+        "A": "Decreases urinary calcium excretion by stimulating distal tubular calcium reabsorption",
+        "B": "Increases urinary calcium excretion by blocking paracellular calcium diffusion",
+        "C": "Has no effect on urinary calcium handling because DCT epithelium is impermeable to divalent cations",
+        "D": "Causes massive hypercalciuria by directly activating basolateral calcium ATPase pumps",
+        "E": "Precipitates acute calcium wasting by collapsing the lumen-negative potential"
+      },
+      "correct_answer": "A",
+      "rationale": "In the early distal convoluted tubule (DCT), sodium and calcium transport are uncoupled. Thiazide diuretics inhibit the apical NCC cotransporter, decreasing intracellular Na+ concentration. This lower intracellular Na+ augments the chemical gradient driving basolateral Na+/Ca2+ exchange (NCX1), which accelerates basolateral calcium extrusion into peritubular capillaries and enhances apical transcellular calcium reabsorption (via TRPV5). Thiazides thereby decrease urinary calcium excretion, making them clinically useful for preventing recurrent calcium nephrolithiasis."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 60-year-old female with acute decompensated heart failure develops marked fluid overload with bilateral pulmonary crackles and jugular venous distention. The severe stretch of her cardiac atria triggers the rapid secretion of atrial natriuretic peptide (ANP) into the systemic circulation. In the renal microcirculation, ANP coordinates a unique hemodynamic response to promote natriuresis and diuresis. Which of the following vascular actions does ANP exert on the renal arterioles to elevate glomerular filtration rate (GFR)?",
+      "options": {
+        "A": "Dilation of afferent arterioles and constriction of efferent arterioles",
+        "B": "Constriction of afferent arterioles and dilation of efferent arterioles",
+        "C": "Simultaneous dilation of both afferent and efferent arterioles",
+        "D": "Simultaneous constriction of both afferent and efferent arterioles",
+        "E": "Selective constriction of the afferent arteriole with no effect on the efferent arteriole"
+      },
+      "correct_answer": "A",
+      "rationale": "Atrial natriuretic peptide (ANP) exerts a distinct hemodynamic action on the renal microcirculation: it dilates afferent arterioles (reducing input resistance) while constricting efferent arterioles (increasing outflow resistance). Both vascular actions act synergistically to raise glomerular capillary hydrostatic pressure (PGC) and GFR, markedly increasing the filtered load of sodium delivered to the nephron to promote natriuresis."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "3rd order",
+      "vignette": "A 29-year-old female participates in a renal physiology study evaluating proximal tubular fluid dynamics. Micro-puncture fluid samples are aspirated along the length of her proximal convoluted tubule (PCT) during an isosmotic volume expansion induced by rapid intravenous infusion of 0.9% normal saline. Analysis reveals that the tubular fluid-to-plasma inulin concentration ratio ([TF/P]inulin) at the end of the PCT decreases from her baseline value of 3.0 down to 2.0. At the same time, her tubular fluid-to-plasma sodium concentration ratio ([TF/P]Na+) remains constant at 1.0 throughout the entire tubule length. Which of the following combinations of fractional water reabsorption, fractional sodium reabsorption, and peritubular Starling forces correctly describes this patient's proximal tubule during volume expansion?",
+      "options": {
+        "A": "Fractional water reabsorption = 50%; fractional sodium reabsorption = 50%; peritubular capillary oncotic pressure is decreased (decreased pi_c) and hydrostatic pressure is increased (increased Pc)",
+        "B": "Fractional water reabsorption = 67%; fractional sodium reabsorption = 33%; peritubular capillary oncotic pressure is increased (increased pi_c) and hydrostatic pressure is decreased (decreased Pc)",
+        "C": "Fractional water reabsorption = 33%; fractional sodium reabsorption = 67%; peritubular capillary oncotic pressure is unchanged and hydrostatic pressure is decreased (decreased Pc)",
+        "D": "Fractional water reabsorption = 50%; fractional sodium reabsorption = 67%; peritubular capillary oncotic pressure is increased (increased pi_c) and hydrostatic pressure is increased (increased Pc)",
+        "E": "Fractional water reabsorption = 75%; fractional sodium reabsorption = 25%; peritubular capillary oncotic pressure is decreased (decreased pi_c) and hydrostatic pressure is decreased (decreased Pc)"
+      },
+      "correct_answer": "A",
+      "rationale": "This 3rd-order question requires a 3-step synthesis of [TF/P] ratios, fractional transport mathematics, and peritubular Starling forces: (1) Fractional water reabsorption from inulin: Inulin is freely filtered but neither reabsorbed nor secreted. The fraction of water remaining is 1 / [TF/P]inulin = 1 / 2.0 = 0.50 (50% remaining), which means fractional water reabsorbed is 1 - 0.50 = 0.50 (50% reabsorbed, down from baseline 67%); (2) Fractional sodium reabsorption: Fractional solute remaining = [TF/P]Na+ / [TF/P]inulin = 1.0 / 2.0 = 0.50 (50% remaining), so fractional sodium reabsorption is 1 - 0.50 = 0.50 (50% reabsorbed); (3) Peritubular Starling forces: Rapid isosmotic volume expansion dilutes circulating plasma proteins (decreasing peritubular capillary oncotic pressure, pi_c) and expands vascular volume (increasing capillary hydrostatic pressure, Pc). This blunts the inward Starling reabsorptive driving force and increases back-leak across leaky tight junctions into the lumen, overriding glomerulotubular balance and depressing proximal fractional sodium and water reabsorption below the normal 67% set-point to produce pressure natriuresis."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "1st order",
+      "vignette": "A 49-year-old female presents to the clinic for evaluation of mild generalized weakness. Laboratory testing reveals a normal serum sodium of 140 mEq/L, a mild hypokalemia of 3.2 mEq/L, and a serum bicarbonate of 30 mEq/L. In the late distal convoluted tubule and cortical collecting duct, principal cells reabsorb approximately 3% of the filtered sodium load. In these principal cells, which of the following transport mechanisms is responsible for the entry of sodium across the apical (luminal) membrane?",
+      "options": {
+        "A": "Uncoupled passive diffusion through epithelial sodium channels (ENaC)",
+        "B": "Electroneutral cotransport with chloride via the NCC symporter",
+        "C": "Secondary active cotransport with potassium and chloride via NKCC2",
+        "D": "Countertransport with hydrogen ions via the NHE3 antiporter",
+        "E": "Primary active transport via the apical sodium-potassium ATPase pump"
+      },
+      "correct_answer": "A",
+      "rationale": "In principal cells of the late distal tubule and cortical collecting duct, sodium reabsorption across the apical (luminal) membrane occurs via uncoupled passive diffusion through amiloride-sensitive epithelial sodium channels (ENaC), driven down its steep electrochemical gradient established by the basolateral Na+/K+-ATPase. Unlike upstream segments, this apical entry is not coupled to chloride, bicarbonate, or organic solutes."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 16-year-old male is referred to the pediatric nephrology clinic for evaluation of severe persistent hypertension (blood pressure 162/104 mm Hg). Laboratory testing demonstrates hypokalemia (serum potassium 2.9 mEq/L) and metabolic alkalosis (serum bicarbonate 31 mEq/L). Endocrine evaluation reveals that both plasma renin activity and plasma aldosterone concentration are markedly suppressed (< 1 ng/dL). Genetic testing identifies an autosomal dominant gain-of-function mutation in the SCNN1B gene encoding the beta-subunit of the epithelial sodium channel (ENaC), which impairs channel ubiquitination and internalization (Liddle syndrome). In these principal cells, what immediate electrophysiological consequence results from this constitutive ENaC hyperactivity to drive the patient's hypokalemia?",
+      "options": {
+        "A": "Exaggerated electrogenic apical sodium entry increases the lumen-negative transepithelial potential (-50 mV), accelerating potassium secretion through apical ROMK channels",
+        "B": "Excessive basolateral sodium-potassium ATPase activity directly pumps potassium into the tubular lumen",
+        "C": "Apical sodium accumulation converts the lumen potential to +15 mV, electrostatically expelling potassium through paracellular tight junctions",
+        "D": "Constitutive ENaC activation directly phosphorylates and closes basolateral Kir4.1 potassium channels",
+        "E": "Apical ENaC channels directly transport potassium into the lumen in exchange for sodium entry"
+      },
+      "correct_answer": "A",
+      "rationale": "In principal cells, apical sodium entry through ENaC is electrogenic, leaving negative counterions (primarily chloride) behind in the tubular fluid. This establishes a lumen-negative transepithelial potential of approximately -50 mV. In Liddle syndrome, constitutive ENaC expression and hyperactivity accelerate apical sodium influx, further enhancing this lumen electronegativity. This steep electrical gradient pulls positively charged potassium out of principal cells into the lumen through apical ROMK channels (and pulls H+ out of intercalated cells), producing profound hypokalemia and metabolic alkalosis despite suppressed aldosterone levels."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 6-day-old male infant is admitted to the neonatal intensive care unit with poor feeding, lethargy, vomiting, and profound dehydration. Physical examination demonstrates hypotension and sunken fontanelles. Laboratory studies reveal severe hyponatremia (serum sodium 118 mEq/L), life-threatening hyperkalemia (serum potassium 7.6 mEq/L), metabolic acidosis, and an elevated urinary sodium excretion (> 80 mEq/L). Plasma renin activity and serum aldosterone concentrations are both markedly elevated. Administration of exogenous fludrocortisone fails to correct the electrolyte abnormalities or induce sodium retention. Genetic analysis confirms an autosomal recessive loss-of-function mutation in the ENaC alpha-subunit, diagnostic of systemic pseudohypoaldosteronism type 1 (PHA1). Which of the following transport failures in collecting duct principal cells is the primary physiological cause of this infant's renal salt wasting and hyperkalemic metabolic acidosis?",
+      "options": {
+        "A": "Loss of apical ENaC-mediated sodium entry eliminates the lumen-negative potential, preventing electrical driving forces for potassium and hydrogen secretion",
+        "B": "Complete failure of basolateral sodium-bicarbonate cotransport (NBC1) in the proximal convoluted tubule",
+        "C": "Excessive apical recycling of potassium through ROMK channels causing intracellular hypertonicity",
+        "D": "Hyperactivation of the apical NCC cotransporter in the early distal tubule",
+        "E": "Selective absence of basolateral mineralocorticoid receptors with normal ENaC membrane insertion"
+      },
+      "correct_answer": "A",
+      "rationale": "Pseudohypoaldosteronism type 1 (PHA1) is a state of aldosterone unresponsiveness. In the autosomal recessive form, inactivating loss-of-function mutations in ENaC subunits prevent apical sodium entry into principal cells despite sky-high circulating aldosterone levels. The failure of electrogenic sodium entry prevents generation of the normal -50 mV lumen-negative transepithelial potential. Without this lumen electronegativity, the electrical gradient necessary to drive potassium secretion through ROMK and hydrogen secretion through intercalated cell H+-ATPases is abolished. Consequently, patients present with severe renal salt wasting (hypovolemic hyponatremia), hyperkalemia, and metabolic acidosis."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 42-year-old male with a history of alcohol use disorder presents to the emergency department after a 4-day bout of severe viral gastroenteritis with continuous vomiting. Laboratory testing reveals: serum sodium 136 mEq/L, serum potassium 3.0 mEq/L, serum chloride 86 mEq/L, arterial pH 7.52, and serum bicarbonate 34 mEq/L, consistent with hypokalemic, hypochloremic metabolic alkalosis (contraction alkalosis). Endocrine testing confirms marked secondary hyperreninemic hyperaldosteronism. Which of the following integrated proximal and distal tubular transport adaptations is directly responsible for maintaining and worsening this patient's metabolic alkalosis?",
+      "options": {
+        "A": "Angiotensin II-driven stimulation of proximal NHE3 antiporters coupled with aldosterone-driven distal intercalated cell H+ secretion",
+        "B": "Suppression of proximal carbonic anhydrase with massive distal bicarbonate wasting",
+        "C": "Inhibition of basolateral Na+/K+-ATPase in principal cells accompanied by paracellular bicarbonate secretion",
+        "D": "Selective downregulation of apical ENaC channels with complete cessation of collecting duct potassium excretion",
+        "E": "ANP-mediated afferent arteriolar vasodilation increasing filtered bicarbonate load beyond transport capacity"
+      },
+      "correct_answer": "A",
+      "rationale": "In severe extracellular fluid (ECF) volume contraction (such as from vomiting and dehydration), low effective arterial blood volume activates the RAAS axis. Elevated angiotensin II directly stimulates apical NHE3 antiporters in the proximal convoluted tubule, accelerating the combined reabsorption of sodium, water, and bicarbonate, thereby maintaining metabolic alkalosis (contraction alkalosis). Simultaneously, elevated aldosterone stimulates principal cell ENaC to generate a lumen-negative potential that accelerates H+ secretion via apical H+-ATPase pumps in alpha-intercalated cells of the collecting duct. These coordinated proximal and distal responses prioritize ECF volume defense at the expense of exacerbating systemic alkalosis and hypokalemia."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "3rd order",
+      "vignette": "A 52-year-old male with a long-standing history of consuming excessive quantities of imported natural black licorice candy presents with severe muscle weakness, paresthesias, and a blood pressure of 184/110 mm Hg. Laboratory studies reveal severe hypokalemia (serum potassium 2.4 mEq/L) and metabolic alkalosis (serum bicarbonate 33 mEq/L). Evaluation of the adrenal axis demonstrates that both plasma renin activity and serum aldosterone concentrations are profoundly suppressed (< 0.5 ng/dL), while plasma cortisol is normal. Glycyrrhetinic acid, the active ingredient in natural licorice, induces apparent mineralocorticoid excess (AME) by selectively inhibiting 11beta-hydroxysteroid dehydrogenase type 2 (11beta-HSD2). In collecting duct principal cells, which of the following sequences of molecular events accounts for this patient's severe hypertension and hypokalemia?",
+      "options": {
+        "A": "Failure to convert cortisol to inactive cortisone allows circulating cortisol to illicitly bind and activate cytoplasmic mineralocorticoid receptors, upregulating apical ENaC and ROMK",
+        "B": "Direct covalent binding of glycyrrhetinic acid to apical ENaC channels locks them in a constitutively open conformation",
+        "C": "Inhibition of 11beta-HSD2 prevents aldosterone degradation in the liver, causing autonomous hyperaldosteronism",
+        "D": "Intracellular cortisone accumulation directly phosphorylates and hyperactivates the basolateral Na+/K+-ATPase",
+        "E": "Suppression of 11beta-HSD2 blocks glucocorticoid receptor translocation, shunting free cortisol into the cell nucleus"
+      },
+      "correct_answer": "A",
+      "rationale": "This 3rd-order question requires a 3-step molecular, enzymatic, and physiological reasoning sequence: (1) Receptor affinity vs. circulating concentrations: The cytoplasmic mineralocorticoid receptor (MR) in principal cells has an equal binding affinity for aldosterone and cortisol; however, circulating cortisol levels are ~100- to 1000-fold higher than aldosterone; (2) The enzymatic protective shield: Under normal conditions, the enzyme 11beta-hydroxysteroid dehydrogenase type 2 (11beta-HSD2) inside principal cells rapidly metabolizes active cortisol into inactive cortisone (which cannot bind MR), thereby protecting the MR and allowing aldosterone exclusive access; (3) The pathophysiological consequence of licorice/glycyrrhetinic acid ingestion: Glycyrrhetinic acid inhibits 11beta-HSD2. Unmetabolized cortisol floods and binds the unprotected mineralocorticoid receptors, translocating to the nucleus to stimulate transcription of aldosterone-induced proteins. This results in marked upregulation of apical ENaC channels (driving sodium retention, ECF volume expansion, and hypertension) and apical ROMK channels (driving massive potassium wasting and hypokalemia) alongside suppressed endogenous renin and aldosterone levels (apparent mineralocorticoid excess)."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "1st order",
+      "vignette": "A 45-year-old male presents to the urgent care clinic with severe postural lightheadedness following three days of profuse watery diarrhea. Supine blood pressure is 100/65 mm Hg, and standing blood pressure drops to 78/48 mm Hg with a compensatory heart rate of 118 beats/min. Systemic baroreceptors in the carotid sinus, aortic arch, and renal afferent arterioles sense this acute reduction in effective arterial blood volume (EABV). Specialized juxtaglomerular (granular) cells of the renal afferent arteriole respond to this reduced perfusion and sympathetic beta-1 adrenergic input by releasing renin into the renal circulation. Which of the following substrates is cleaved by renin to initiate the hormonal cascade that restores blood volume?",
+      "options": {
+        "A": "Circulating hepatic angiotensinogen",
+        "B": "Endothelial-bound angiotensin I",
+        "C": "Adrenal mineralocorticoid precursors",
+        "D": "Atrial natriuretic pro-peptide",
+        "E": "Pituitary arginine vasopressin pro-hormone"
+      },
+      "correct_answer": "A",
+      "rationale": "Renin is an aspartyl protease enzyme synthesized, stored, and secreted by the juxtaglomerular (granular) cells of the renal afferent arteriole. Its sole enzymatic function is to catalyze the initial, rate-limiting step of the RAAS cascade: cleaving circulating hepatic angiotensinogen (a large 453-amino acid globular plasma protein) to release the decapeptide angiotensin I. Angiotensin-converting enzyme (ACE), predominantly expressed on pulmonary and vascular endothelial surfaces, subsequently hydrolyzes angiotensin I into the active octapeptide angiotensin II."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 63-year-old female with decompensated systolic heart failure (ejection fraction 25%) presents with worsening orthopnea, 3+ bilateral lower extremity pitting edema, and abdominal distention from ascites. Despite her expanded total extracellular fluid (ECF) volume and elevated venous pressures, a random spot urine sodium is remarkably low at 6 mEq/L (fractional excretion of sodium < 0.2%). Physical examination confirms low cardiac output and decreased arterial fullness, demonstrating a classic discordance between total ECF volume and effective arterial blood volume (EABV). Which of the following pathophysiological mechanisms accounts for this paradoxical, avid renal sodium retention in the presence of generalized systemic edema?",
+      "options": {
+        "A": "Perceived arterial underfilling by high-pressure baroreceptors triggers maladaptive neurohumoral activation of the RAAS and renal sympathetic nerves",
+        "B": "Direct compressive necrosis of collecting duct principal cells by interstitial edema preventing sodium excretion",
+        "C": "Autonomous hypersecretion of atrial natriuretic peptide (ANP) causing massive afferent arteriolar vasoconstriction",
+        "D": "Loss of fixed negative charges across the glomerular basement membrane causing selective sodium hyperfiltration",
+        "E": "Downregulation of apical NHE3 antiporters in the proximal tubule driven by elevated central venous pressure"
+      },
+      "correct_answer": "A",
+      "rationale": "Effective arterial blood volume (EABV) refers to the effective fullness and perfusion of the arterial circulation as sensed by arterial baroreceptors (carotid sinus, aortic arch, and renal afferent arterioles). In congestive heart failure, although total ECF volume is expanded due to fluid retention and venous pooling, poor cardiac output leads to decreased EABV. The arterial baroreceptors sense this arterial underfilling and mount a maladaptive response identical to hypovolemia: activating renal sympathetic nerves, stimulating the RAAS cascade, and promoting non-osmotic ADH release. These neurohumoral pathways stimulate proximal and distal sodium and water reabsorption (urinary Na+ drops < 10 mEq/L), worsening the hypervolemia and peripheral edema."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 50-year-old male with a history of recurrent nephrolithiasis is treated with oral chlorthalidone, a long-acting thiazide diuretic. He is instructed to adhere strictly to a low-sodium diet (< 2.0 g NaCl/day). Under normal homeostatic conditions, the human kidneys maintain precise sodium balance across dietary intakes ranging from 10 mEq/day to > 300 mEq/day. When a healthy individual transitions from an average sodium diet to a strict low-sodium diet, which of the following coordinated physiological adaptations occurs within 3 to 5 days to prevent volume contraction?",
+      "options": {
+        "A": "Increased sympathetic tone, activation of the RAAS axis, elevated peritubular oncotic pressure (pi_c), and suppressed ANP release",
+        "B": "Suppressed sympathetic tone, inhibition of the RAAS axis, decreased peritubular oncotic pressure (pi_c), and elevated ANP release",
+        "C": "Dilation of afferent arterioles, constriction of efferent arterioles, and marked stimulation of medullary collecting duct natriuresis",
+        "D": "Downregulation of apical proximal NHE3 antiporters and decreased distal ENaC channel membrane insertion",
+        "E": "Selective inhibition of the basolateral Na+/K+-ATPase across all nephron segments"
+      },
+      "correct_answer": "A",
+      "rationale": "When dietary sodium intake is acutely reduced, a transient negative sodium balance causes subtle ECF volume contraction and reduced EABV. To defend blood pressure and achieve a new steady state where daily urinary excretion matches low intake, the body mounts a coordinated neurohumoral and hemodynamic response: (1) Arterial baroreceptor unloading activates renal sympathetic nerves; (2) Renal hypoperfusion and sympathetic stimulation trigger renin release and RAAS activation; (3) Angiotensin II stimulates proximal NHE3 and aldosterone upregulates distal ENaC/ROMK; (4) Angiotensin II-mediated efferent arteriolar constriction increases filtration fraction, concentrating peritubular capillary proteins (elevating pi_c) to augment proximal fluid reabsorption; and (5) Reduced atrial stretch suppresses ANP secretion. These integrated adaptations reduce urinary sodium excretion to near zero within 3 to 5 days."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "2nd order",
+      "vignette": "A 28-year-old male presents to the clinic for a comprehensive check-up. As part of a clinical investigation on renal hemodynamics, micro-puncture analysis is performed along the proximal tubule. Under baseline resting conditions, the patient demonstrates a normal GFR of 120 mL/min, with the proximal tubule reabsorbing approximately 67% of filtered sodium and water. When his GFR spontaneously fluctuates upward to 140 mL/min during daytime activities, the absolute reabsorption of sodium and water by the proximal tubule increases from 80 mL/min to ~94 mL/min, maintaining fractional proximal reabsorption constant at ~67%. Which of the following concepts and microvascular mechanisms defines this load-dependent proximal adaptation?",
+      "options": {
+        "A": "Glomerulotubular balance; mediated by increased filtration fraction elevating efferent arteriolar and peritubular capillary oncotic pressure (pi_c)",
+        "B": "Tubuloglomerular feedback; mediated by macula densa release of adenosine causing afferent arteriolar constriction",
+        "C": "Myogenic autoregulation; mediated by stretch-activated calcium channels in afferent arteriolar vascular smooth muscle",
+        "D": "Mineralocorticoid escape; mediated by atrial natriuretic peptide inhibition of medullary collecting duct sodium transport",
+        "E": "Pressure natriuresis; mediated by increased peritubular capillary hydrostatic pressure promoting tight-junction back-leak"
+      },
+      "correct_answer": "A",
+      "rationale": "Glomerulotubular (GT) balance is the intrinsic property of the proximal tubule to reabsorb a constant fraction (~65-67%) of the filtered sodium and water load despite spontaneous variations in GFR and filtered load. This adaptation operates via peritubular Starling forces: an increase in GFR raises the filtration fraction (FF = GFR / RPF), filtering more protein-free fluid and leaving efferent arteriolar blood hemoconcentrated. This elevates peritubular capillary oncotic pressure (pi_c) and lowers capillary hydrostatic pressure (Pc), which proportionally increases the Starling driving force pulling reabsorbed interstitial fluid into the capillaries, matching proximal reabsorption to the elevated filtered load and preventing large swings in distal delivery."
+    },
+    {
+      "lecture_title": "Renal Physiology: Renal Sodium Handling and ECF Volume Regulation",
+      "order": "3rd order",
+      "vignette": "A 58-year-old male with treatment-resistant hypertension is enrolled in a clinical trial evaluating novel renal vasodilators. An acute infusion of phenylephrine elevates his mean arterial pressure (MAP) from 95 mm Hg to 140 mm Hg. Despite intact autoregulation maintaining renal blood flow (RBF) and GFR relatively constant, the patient exhibits a dramatic fourfold increase in urinary sodium excretion, a classic demonstration of pressure natriuresis. Which of the following sequential microvascular, interstitial, and epithelial alterations accounts for this pressure natriuresis during acute arterial hypertension?",
+      "options": {
+        "A": "Elevated renal arterial pressure increases medullary blood flow and peritubular capillary hydrostatic pressure (Pc); interstitial hydrostatic pressure rises, promoting tight-junction back-leak of NaCl and water into the proximal tubule lumen, while apical NHE3 is internalized",
+        "B": "Elevated renal arterial pressure causes massive afferent arteriolar vasodilation; peritubular oncotic pressure (pi_c) doubles, completely halting basolateral Na+/K+-ATPase activity in the thick ascending limb",
+        "C": "Hypertension stimulates juxtaglomerular cells to release excess renin; high angiotensin II constricts efferent arterioles and directly downregulates distal ENaC channels",
+        "D": "Increased arterial stretch stimulates atrial myocytes to release endothelin-1; endothelin selectively constricts afferent arterioles, collapsing the GFR",
+        "E": "Elevated systemic pressure causes direct mechanical tearing of the glomerular basement membrane, permitting paracellular filtration of intact erythrocytes"
+      },
+      "correct_answer": "A",
+      "rationale": "This 3rd-order question requires a 3-step hemodynamic and cellular reasoning sequence: (1) Hemodynamic transmission: Although cortical autoregulation blunts GFR changes, acute arterial hypertension transmits increased perfusion pressure to deeper intrarenal microvessels, increasing medullary blood flow and elevating peritubular capillary hydrostatic pressure (Pc); (2) Interstitial Starling force shift: Increased capillary hydrostatic pressure opposes fluid uptake from the renal interstitium into peritubular capillaries, causing renal interstitial hydrostatic pressure (P_int) to rise. This increased interstitial pressure increases paracellular back-leak of isosmotic fluid and NaCl across leaky proximal tight junctions back into the tubular lumen; (3) Epithelial transport response: Concurrently, the elevated perfusion pressure and reduced local angiotensin II tone trigger the retraction and internalization of apical NHE3 antiporters from the brush border membrane. The resulting depression of proximal tubular fractional sodium reabsorption delivers a massive sodium load to downstream segments, overwhelming their transport capacity and producing pressure natriuresis."
+    }
+  ]
+}
